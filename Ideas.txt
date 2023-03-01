@@ -1,0 +1,42 @@
+Idea: Study Tracker
+
+base Features:
+1. You can divide a year into terms/phases , and enter syllabus to be covered in those terms.
+2. You can tick off parts of syllabus when they're complete.
+3. You will be able to see your progress of overall syllabus and progress made in the term.
+4. You can also use a todo-list and tick off assignments when they are done.
+5. You will be able to set deadlines to all these.
+
+Extra features:
+1. You will be able to save resources and reading materials 
+2. You can track your progress on reading books
+3. There could be a strict option where you'll need to answer a few questions related to the topics covered 
+	to move on to the next part of the syllabus. These questions could potentially be set up by teachers.
+4. Focus mode: Deep focus mode with a timer to help track efficiency. Backed by the pomodoro technique.
+
+
+
+
+Ideas2
+-> Study management / Syllabus management app: Learnen/ ziel
+
+1. Join chatrooms with friends to discuss studies.
+
+2. Each room will have an admin (creator of the room).
+
+3. Coding based roadmaps/ syllabus maps will be given
+		through the app for the user to complete.
+		these maps will be in the database and can be subject to
+		change/ updation.
+
+4. The courses you started and your progress in them will be 
+	visible to members in the chatroom so that others can
+	understand you better.
+
+5. There will be a focus mode that will start a timer that
+	cant be stopped even if the user quits the website. 
+	(tracks time from "epoch time" 1st jan 1970)
+	You can set a time with breaks.
+	Example: 60 mins- 25min - 5 min; 25min-5min.
+
+	chat will be disabled during focus mode.
