@@ -5,7 +5,7 @@ body, html {margin: 0;
   
   .parallax {
     /* The image used */
-    background-image: url(./resources/laptop0.jpg);
+    background-image: url(../resources/laptop0.jpg);
   
     /* Full height */
     height: 100%; 
@@ -20,7 +20,7 @@ body, html {margin: 0;
 
   .parallax1 {
     /* The image used */
-    background-image: url(./resources/p3.jpg);
+    background-image: url(../resources/p3.jpg);
     /* Full height */
     height: 60%; 
   
