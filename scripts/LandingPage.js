@@ -12,5 +12,5 @@ setTimeout(() => {
 
 function loadLoginPage() {
     // Load the login page into the current window
-    window.location.href = "../src/Login_SignUp.html";
+    window.location.href = "src/Login_SignUp.html";
   }
