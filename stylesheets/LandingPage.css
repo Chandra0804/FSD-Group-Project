@@ -1,11 +1,12 @@
-body, html {margin: 0;
-  padding: 12px;
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+body, html {
+    margin: 0;
     height: 100%;
   }
   
   .parallax {
     /* The image used */
-    background-image: url(./resources/laptop0.jpg);
+    background-image: url(../resources/laptop1.jpg);
   
     /* Full height */
     height: 100%; 
@@ -19,18 +20,14 @@ body, html {margin: 0;
 
 
   .parallax1 {
-    /* The image used */
-    background-image: url(./resources/p3.jpg);
-    /* Full height */
+    background-image: url(../resources/p3.jpg);
     height: 60%; 
-  
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
-  #welcome{
+  /* #welcome{
     margin-top: 0%;
     margin-bottom: 0%;
     text-align: center;
@@ -56,7 +53,7 @@ body, html {margin: 0;
     font-size: 100px;
     letter-spacing: 5px;
     font-family: 'Bebas Neue', cursive;
-  }
+  } */
   
 
   .btn {
@@ -66,7 +63,6 @@ body, html {margin: 0;
     color: #ffffff;
     font-size: 20px;
     background: #013049;
-    /* background: #ffffff; */
     padding: 10px 20px 10px 20px;
     text-decoration: none;
   }
@@ -79,7 +75,6 @@ body, html {margin: 0;
     font-size: 20px;
     background: #7acce8;
     cursor: pointer;
-    /* background: #E5D1FA; */
     padding: 10px 20px 10px 20px;
     text-decoration: none;
   } 
@@ -102,6 +97,7 @@ body, html {margin: 0;
   }
   .Learnen
   {
+    color:#013049;
     padding: 0px;
     border:0px;
     letter-spacing: 2px;
@@ -157,6 +153,8 @@ body, html {margin: 0;
   }
   #gs{
     text-align: center;
+    padding-top: 30%;
+    padding-left: 25%;
   }
 
   .borderb1{
@@ -228,14 +226,14 @@ body, html {margin: 0;
   a:link,a:visited {
     color: #ffffff;
     margin-top: 50px;
-    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Outfit', sans-serif;
     color: #000000;
    text-decoration: none;
 
    }
    a:hover {
     color: #000000;
-    font-family:sans-serif;
+    font-family: 'Outfit', sans-serif;
     text-decoration: underline;
 
    }
@@ -244,4 +242,99 @@ body, html {margin: 0;
     font-size: 20px;
     font-family: Arial;
   }
+  @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@keyframes showTopText {
+  0% { transform: translate3d(0, 100%, 0); }
+  40%, 60% { transform: translate3d(0, 50%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+.animated-title {
+  color: #222;
+  font-family: Roboto, Arial, sans-serif;
+  height: 90vmin;
+  left: 40%;
+  position: absolute;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  width: 70vmin;
+}
+.animated-title > div {
+  font-family: 'Dancing Script', cursive;
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+.animated-title > div div {
+  font-size: 12vmin;
+  padding: 2vmin 0;
+  position: absolute;
+}
+.animated-title > div div span {
+  display: block;
+}
+.animated-title > div.text-top {
+  border-bottom: 1vmin solid #000;
+  top: 0;
+}
+.animated-title > div.text-top div {
+  animation: showTopText 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+.animated-title > div.text-top div span:first-child {
+  color: #767676;
+}
+.animated-title > div.text-bottom {
+  font-family: 'Bebas Neue', cursive;
+  bottom: 0;
+}
+.animated-title > div.text-bottom div {
+  animation: showBottomText 0.5s;
+  animation-delay: 1.75s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
+}
+
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 999999;
+}
+
+svg text{
+  font-family: 'Dancing Script', sans-serif;
+  letter-spacing: 10px;
+  stroke: #013049;
+  font-size: 150px;
+  font-weight: 700;
+  stroke-width: 3;
+  animation: textAnimate 5s infinite alternate; 
+}
+
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset:  20%;
+    fill:#00a1c0
+
+  }
   
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: #feb200
+  }
+  
+}
