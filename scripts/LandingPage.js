@@ -8,7 +8,7 @@ setTimeout(() => {
         }
         hidePreloader();
     });
-}, 1000);
+}, 2000);
 
 function loadLoginPage() {
     // Load the login page into the current window
