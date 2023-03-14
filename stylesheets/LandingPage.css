@@ -320,7 +320,7 @@ svg text{
   font-size: 150px;
   font-weight: 700;
   stroke-width: 3;
-  animation: textAnimate 5s infinite alternate; 
+  animation: textAnimate 3s infinite alternate; 
 }
 
 @keyframes textAnimate {
@@ -331,7 +331,7 @@ svg text{
 
   }
   
-  100% {
+  60% {
     stroke-dasharray: 50% 0;
     stroke-dashoffstet: -20%;
     fill: #feb200
