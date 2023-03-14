@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 body, html {
     margin: 0;
     height: 100%;
@@ -300,4 +301,40 @@ body, html {
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
+}
+
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 999999;
+}
+
+svg text{
+  font-family: 'Dancing Script', sans-serif;
+  letter-spacing: 10px;
+  stroke: #013049;
+  font-size: 150px;
+  font-weight: 700;
+  stroke-width: 3;
+  animation: textAnimate 5s infinite alternate; 
+}
+
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset:  20%;
+    fill:#00a1c0
+
+  }
+  
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: #feb200
+  }
+  
 }
