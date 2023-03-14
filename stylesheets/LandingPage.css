@@ -283,7 +283,7 @@ body, html {
 }
 .animated-title > div.text-top div {
   animation: showTopText 1s;
-  animation-delay: 0.5s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
   bottom: 0;
   transform: translate(0, 100%);
@@ -297,7 +297,7 @@ body, html {
 }
 .animated-title > div.text-bottom div {
   animation: showBottomText 0.5s;
-  animation-delay: 1.75s;
+  animation-delay: 3s;
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
