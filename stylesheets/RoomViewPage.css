@@ -12,6 +12,8 @@
     height: calc(100vh - 25px);
     padding : 5px;
     gap:0.5rem;
+    background-color: #7acce8;
+    border-radius: 15px;
 }
 
 .top-wrapper{
@@ -27,28 +29,50 @@
 }
 
 .wrapper-timer{
-    background-color: aquamarine;
     border-radius: 15px;
     display: inline;
+    background-color: white;
+    /* box-shadow: 0px -25px 20px -20px #7acce8,
+25px 0px 20px -20px #7acce8,
+0px 25px 20px -20px #7acce8,
+-25px 0px 20px -20px #7acce8; */
 }
 
 .wrapper-title{
-    background-color: aqua;
+    background-color: white;
+    /* box-shadow: 0px -25px 20px -20px #7acce8,
+25px 0px 20px -20px #7acce8,
+0px 25px 20px -20px #7acce8,
+-25px 0px 20px -20px #7acce8; */
     border-radius: 15px;
+    text-align: center;
+    justify-content: center;
 }
 
 .wrapper-participants{
-    background-color: bisque;
+    background-color: white;
+    /* box-shadow: 0px -25px 20px -20px #7acce8,
+25px 0px 20px -20px #7acce8,
+0px 25px 20px -20px #7acce8,
+-25px 0px 20px -20px #7acce8; */
     border-radius: 15px;
 }
 
 .wrapper-resources{
-    background-color: blue;
+    background-color: white;
+    /* box-shadow: 0px -25px 20px -20px #7acce8,
+25px 0px 20px -20px #7acce8,
+0px 25px 20px -20px #7acce8,
+-25px 0px 20px -20px #7acce8; */
     border-radius: 15px;
 }
 
 .wrapper-todo{
-    background-color: coral;
+    background-color: white;
+    /* box-shadow: 0px -25px 20px -20px #7acce8,
+25px 0px 20px -20px #7acce8,
+0px 25px 20px -20px #7acce8,
+-25px 0px 20px -20px #7acce8; */
     border-radius: 15px;
 }
 
@@ -61,7 +85,7 @@
     display: inline;
 }
 
-/* The switch - the box around the slider */
+/* The switch - the box around the slider
 .switch {
     font-size: 15px;
     position: relative;
@@ -71,7 +95,7 @@
     margin-left: 0.2rem;
    }
    
-   /* Hide default HTML checkbox */
+   Hide default HTML checkbox
    .switch input {
     background-color: transparent;
     opacity: 0;
@@ -79,7 +103,7 @@
     height: 0;
    }
    
-   /* The slider */
+   The slider
    .slider {
     position: absolute;
     cursor: pointer;
@@ -112,4 +136,14 @@
    
    input:checked + .slider:before {
     transform: translateX(2.5em);
-   }
+   } */
+
+.title-heading{
+    font-size: 2rem;
+}
+
+.title-description{
+    font-size: 1rem;
+    font-weight: 2rem;
+    color: gray;
+}
