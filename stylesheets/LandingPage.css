@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 body, html {
     margin: 0;
     height: 100%;
@@ -152,8 +153,8 @@ body, html {
   }
   #gs{
     text-align: center;
-    padding-top: 8%;
-    padding-left: 60%;
+    padding-top: 30%;
+    padding-left: 25%;
   }
 
   .borderb1{
@@ -179,14 +180,14 @@ body, html {
     font-family: 'Bebas Neue', cursive;
     margin-left: 15px;
     font-weight: bold;
-    color: #ffffff;
+    color: #000000;
     font-size: 50px;
   }
   #coloumn1 {
     border-top-left-radius: 25px;
     padding-top: 30px;
     margin-top: 7%;
-    background-color: #013049;
+    background-color: #42bad2;
     float:left;
     width:40%;
     height:280px;
@@ -195,58 +196,49 @@ body, html {
     margin-top: 7%;
   }
   #coloumn2{
-    background-color: #013049;
+    background-color: #42bad2;
     padding-top: 30px;
     margin-top: 7%;
-    line-height: 1.75;
+    line-height: 1.5;
     float:left;
     width:20%;
     height:280px;
   }
   #coloumn3{
-    background-color: #013049;
+    background-color: #42bad2;
     padding-top: 30px;
     margin-top: 7%;
-    line-height: 1.75;
+    line-height: 1.5;
     float:left;
     width:20%;
     height:280px;
   }
   #coloumn4{
     border-top-right-radius: 25px;
-    background-color: #013049;
+    background-color: #42bad2;
     padding-top: 30px;
     margin-top: 7%;
-    line-height: 1.75;
+    line-height: 1.5;
     float:right;
     width:20%;
     height:280px;
   }
-  .underline{
-    height:2px;
-    width:100px;
-    background-color: #feb200;
-    margin-bottom: 20px;
-  }
   a:link,a:visited {
-    
-    margin-top: 50px;
-    font-size: 15px;
-    font-family: 'Outfit', sans-serif;
     color: #ffffff;
-    text-decoration: none;
+    margin-top: 50px;
+    font-family: 'Outfit', sans-serif;
+    color: #000000;
+   text-decoration: none;
 
    }
    a:hover {
-    font-size: 17px;
-    color: #ffffff;
+    color: #000000;
     font-family: 'Outfit', sans-serif;
     text-decoration: underline;
 
    }
   h2{
-    margin-bottom: 4px;
-    color: #ffffff;
+    color: #013049;
     font-size: 20px;
     font-family: Arial;
   }
@@ -291,7 +283,7 @@ body, html {
 }
 .animated-title > div.text-top div {
   animation: showTopText 1s;
-  animation-delay: 0.5s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
   bottom: 0;
   transform: translate(0, 100%);
@@ -305,15 +297,44 @@ body, html {
 }
 .animated-title > div.text-bottom div {
   animation: showBottomText 0.5s;
-  animation-delay: 1.75s;
+  animation-delay: 3s;
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
 }
-#gs{
-  animation: showBottomText 0.5s;
-  animation-delay: 2.25s;
-  animation-fill-mode: forwards;
+
+.spinner-wrapper {
+  position: fixed;
   top: 0;
-  transform: translate(0, -100%);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 999999;
+}
+
+svg text{
+  font-family: 'Dancing Script', sans-serif;
+  letter-spacing: 10px;
+  stroke: #013049;
+  font-size: 150px;
+  font-weight: 700;
+  stroke-width: 3;
+  animation: textAnimate 3s infinite alternate; 
+}
+
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset:  20%;
+    fill:#00a1c0
+
+  }
+  
+  60% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: #feb200
+  }
+  
 }
