@@ -5,6 +5,7 @@
 	<title>My Webpage</title>
 	<link rel="stylesheet" href="../stylesheets/RoomViewPage.css">
 	<script src="https://kit.fontawesome.com/9608e97d56.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -27,11 +28,22 @@
 					<h1 style="font-size: 40px;">Unnamed Room</h1>
 				</div>
 				<div class="heading-bottom">
-					<h2 class="title-description">Enter a description</h2>
+					<h2 style="color:grey;font-size:15px">Description</h2>
 					<div class="invite-wrapper">
-						<input type="text" class="link-textbox" disabled>
-						<i class="fa-solid fa-brain"></i>
+						<div class="input-container">
+							<input placeholder="URL" type="text" class="input" disabled>
+							<span><i class="fa-solid fa-copy"></i></span>
+						</div>
+						<div class="icons">
+							<button class="focus-button">
+								<i class="fa-solid fa-brain" style="color: #6360d8; font-size: 25px;"></i>
+							</button>
+							<button class="focus-button">
+								<i class="fa-solid fa-music" style="color: #6360d8; font-size: 25px;"></i>
+							</button>
+						</div>
 					</div>
+					
 				</div>
 				<!-- <h2 class="title-description">Enter a description</h2>
 				<input type="text" disabled> -->

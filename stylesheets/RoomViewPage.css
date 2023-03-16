@@ -53,12 +53,12 @@
     grid-template-rows: 0.5fr 2fr;
 }
 
-.header-participants{
+.header-participants {
     text-align: center;
     justify-content: space-around;
 }
 
-.participants-list{
+.participants-list {
     overflow-x: hidden;
     overflow-y: auto;
     height: 200px;
@@ -146,11 +146,83 @@
     color: gray;
 }
 
-.invite-wrapper{
+.invite-wrapper {
     display: inline;
 
 }
 
-.link-textbox{
-    
+.focus-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border: 0px solid transparent;
+    background-color: rgba(98, 72, 246, 0.08);
+    border-radius: 1.25em;
+    transition: all 0.2s linear;
 }
+
+.focus-button:hover {
+    box-shadow: 3.4px 2.5px 4.9px rgba(0, 0, 0, 0.025),
+        8.6px 6.3px 12.4px rgba(0, 0, 0, 0.035),
+        17.5px 12.8px 25.3px rgba(0, 0, 0, 0.045),
+        36.1px 26.3px 52.2px rgba(0, 0, 0, 0.055),
+        99px 72px 143px rgba(0, 0, 0, 0.08);
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 290px;
+  }
+  
+  .input-container > span,
+  .input-container .input:first-child {
+    border-radius: 6px 0 0 6px;
+  }
+  
+  .input-container > span,
+  .input-container .input {
+    border-radius: 0 6px 6px 0;
+    margin-left: -1px;
+  }
+  
+  .input-container span {
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 25px;
+    color: #6b7385;
+    background: #d4def5;
+    border: 1px solid #CDD9ED;
+    font-weight: bold;
+    transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+  }
+  
+  .input {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    line-height: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 6px;
+    -webkit-appearance: none;
+    color: #99A3BA;
+    border: 1px solid  #CDD9ED;
+    background: #fff;
+    transition: border 0.3s ease;
+  }
+  
+  .input::placeholder {
+    color: #CBD1DC;
+  }
+
+  .icons{
+      display: flex;
+      gap:1rem;
+      margin: 1rem;
+  }
