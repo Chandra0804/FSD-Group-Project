@@ -77,14 +77,21 @@
 }
 
 .wrapper-todo {
+    position: relative;
     background-color: white;
     border-radius: 15px;
     text-align: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-rows: 0.5fr 2fr;
 }
 
 .participansts-list {
     text-align: left;
+}
+
+.todo-topwrapper{
+    width: 100%;
+    display: block;
 }
 
 /* The switch - the box around the slider
@@ -243,3 +250,40 @@
     margin: 0;
     padding: 0;
   }
+
+  .line {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    color: red;
+    font-size: 20px;
+    float: left;
+    position: relative;
+    padding: 10px 20px;
+    overflow: hidden;
+  }
+  
+  .line::after {
+    background-color: #7acce8;
+    content: "";
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    transition: width 0.35s ease 0s;
+    position: absolute;
+  }
+  
+  .line:hover::after {
+    width: 100%;
+  }
+
+  #tasks-wrapper{
+      display: none;
+      margin: 10px;
+  }
+
+  #notes-wrapper{
+      display: none;
+  }
+
+  

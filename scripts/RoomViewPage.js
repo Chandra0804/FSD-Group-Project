@@ -51,3 +51,24 @@ function stopTimer() {
 startBtn.addEventListener('click', startTimer);
 pauseBtn.addEventListener('click', pauseTimer);
 stopBtn.addEventListener('click', stopTimer);
+
+
+const istasks = false;
+const isnotes = false;
+document.getElementById("tasks").onmousedown = function() {
+    if(isnotes===false){
+        document.getElementById("tasks-wrapper").style.display = "block";
+        document.getElementById("notes-wrapper").style.display = "none";
+        istasks = true;
+        isnotes = false;
+    }
+}
+
+document.getElementById("notes").onmousedown = function() {
+    if(istasks===false){
+        document.getElementById("notes-wrapper").style.display = "block";
+        document.getElementById("tasks-wrapper").style.display = "none";
+        isnotes = true;
+        istasks = false;
+    }
+}
