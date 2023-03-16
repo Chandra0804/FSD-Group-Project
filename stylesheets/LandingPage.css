@@ -1,189 +1,175 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
-body, html {
-    margin: 0;
-    height: 100%;
-  }
-  
-  .parallax {
-    /* The image used */
-    background-image: url(../resources/laptop1.jpg);
-  
-    /* Full height */
-    height: 100%; 
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+
+body,
+html {
+  margin: 0;
+  height: 100%;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url(../resources/laptop1.jpg);
+
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 
-  .parallax1 {
-    background-image: url(../resources/p3.jpg);
-    height: 60%; 
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  /* #welcome{
-    margin-top: 0%;
-    margin-bottom: 0%;
-    text-align: center;
-    padding-top:11%;
-    color: #000000;
-    font-size: 80px;
-    font-family: 'Dancing Script', cursive;
-  }
-  #to{
-    margin-top: 0%;
-    margin-bottom: 0%;
-    text-align: center;
-    padding-top:0%;
-    color: #000000;
-    font-size: 80px;
-    font-family: 'Dancing Script', cursive;
-  }
-  #lh{
-    margin-top: 0%;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #000000;
-    font-size: 100px;
-    letter-spacing: 5px;
-    font-family: 'Bebas Neue', cursive;
-  } */
-  
+.parallax1 {
+  background-image: url(../resources/p3.jpg);
+  height: 60%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  .btn {
-    text-align: right;
-    border:none;
-    font-family: Arial;
-    color: #ffffff;
-    font-size: 20px;
-    background: #013049;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-  }
 
-  .btn:hover {
-    text-align: right;
-    border-radius: 50px;
-    font-family: Arial;
-    color: #000000;
-    font-size: 20px;
-    background: #7acce8;
-    cursor: pointer;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-  } 
-  #header{
-    position: sticky;
-    display:flex;
-  }
-  #left{
-    padding-top: 10px;
-    width: 25%;
-    background: #013049;
-  } 
-  #right{  
-    text-align: right; 
-    width:75%;
-    margin:0px;
-    border:0px;
-    padding:5px;
-    background-color:#013049;
-  }
-  .Learnen
-  {
-    color:#013049;
-    padding: 0px;
-    border:0px;
-    letter-spacing: 2px;
-    font-family: 'Bebas Neue', cursive;
-    margin-left: 15px;
-    margin-bottom: 0%;
-    margin-top: 0%;
-    font-weight: bold;
-    color: #ffffff;
-    font-size: 25px;
-  }
-  
-  body{ 
-    background-color: #fcfcfc;
-  }
-  #body1{
-    display:flex;
-  }
-  #leftBody{
-    width: 60%;
-  } 
-  #matter{
-    font-family: 'Montserrat', sans-serif; 
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 200px;
-  }
-  #Learnen1{
-    margin-top:70px;
-    margin-left: 200px;
-    font-weight: bold;
-    font-family: 'Satisfy', cursive;
-    font-size: 70px;
-  }
-  .btn1 {
-    border:none;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 50px ;
-    font-weight: 300;
-    line-height: 1.6;
-    color: #000000;
-    font-size: 20px;
-    background: #7acce8;
-    padding: 10px 30px 10px 30px;
-    text-decoration: none;
-  }
-  
-  .btn1:hover {
-    font-family: 'Poppins', sans-serif;
-    background: #00a1c0;
-    text-decoration: none;
-  }
-  #gs{
-    text-align: center;
-    padding-top: 30%;
-    padding-left: 25%;
-  }
+.btn {
+  text-align: right;
+  border: none;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #013049;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
 
-  .borderb1{
-    background-color: #00a1c0;
-  }
-  .block1{
-    font-family: 'Montserrat', sans-serif;
-    width:50%;
-    margin:100px auto 100px auto; 
-    text-align: left;
-    line-height: 2;
-    font-size: 20px;
-  } 
-  .certificate{
-    float:left;
-    margin-right:70px;
-  }
-  .Learnenf
-  {
-    margin-top: 10%;
-    text-align: center;
-    letter-spacing: 2px;
-    font-family: 'Bebas Neue', cursive;
-    margin-left: 15px;
-    font-weight: bold;
-    color: #000000;
-    font-size: 50px;
-  }
-  #coloumn1 {
+.btn:hover {
+  text-align: right;
+  border-radius: 50px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 20px;
+  background: #7acce8;
+  cursor: pointer;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+#header {
+  position: sticky;
+  display: flex;
+}
+
+#left {
+  padding-top: 10px;
+  width: 25%;
+  background: #013049;
+}
+
+#right {
+  text-align: right;
+  width: 75%;
+  margin: 0px;
+  border: 0px;
+  padding: 5px;
+  background-color: #013049;
+}
+
+.Learnen {
+  color: #013049;
+  padding: 0px;
+  border: 0px;
+  letter-spacing: 2px;
+  font-family: 'Bebas Neue', cursive;
+  margin-left: 15px;
+  margin-bottom: 0%;
+  margin-top: 0%;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 25px;
+}
+
+body {
+  background-color: #fcfcfc;
+}
+
+#body1 {
+  display: flex;
+}
+
+#leftBody {
+  width: 60%;
+}
+
+#matter {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 200px;
+}
+
+#Learnen1 {
+  margin-top: 70px;
+  margin-left: 200px;
+  font-weight: bold;
+  font-family: 'Satisfy', cursive;
+  font-size: 70px;
+}
+
+.btn1 {
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 50px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #000000;
+  font-size: 20px;
+  background: #7acce8;
+  padding: 10px 30px 10px 30px;
+  text-decoration: none;
+}
+
+.btn1:hover {
+  font-family: 'Poppins', sans-serif;
+  background: #00a1c0;
+  text-decoration: none;
+}
+
+#gs {
+  text-align: center;
+  padding-top: 28%;
+}
+
+.borderb1 {
+  background-color: #00a1c0;
+}
+
+.block1 {
+  font-family: 'Montserrat', sans-serif;
+  width: 50%;
+  margin: 100px auto 100px auto;
+  text-align: left;
+  line-height: 2;
+  font-size: 20px;
+}
+
+.certificate {
+  float: left;
+  margin-right: 70px;
+}
+
+.Learnenf {
+  margin-top: 10%;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: 'Bebas Neue', cursive;
+  margin-left: 15px;
+  font-weight: bold;
+  color: #000000;
+  font-size: 50px;
+}
+
+/* #coloumn1 {
     border-top-left-radius: 25px;
     padding-top: 30px;
     margin-top: 7%;
@@ -301,6 +287,179 @@ body, html {
   animation-fill-mode: forwards;
   top: 0;
   transform: translate(0, -100%);
+} */
+
+#coloumn1 {
+  border-top-left-radius: 25px;
+  padding-top: 30px;
+  margin-top: 7%;
+  background-color: #013049;
+  float: left;
+  width: 40%;
+  height: 280px;
+}
+
+.coloumn11 {
+  margin-top: 7%;
+}
+
+#coloumn2 {
+  background-color: #013049;
+  padding-top: 30px;
+  margin-top: 7%;
+  line-height: 1.75;
+  float: left;
+  width: 20%;
+  height: 280px;
+}
+
+#coloumn3 {
+  background-color: #013049;
+  padding-top: 30px;
+  margin-top: 7%;
+  line-height: 1.75;
+  float: left;
+  width: 20%;
+  height: 280px;
+}
+
+#coloumn4 {
+  border-top-right-radius: 25px;
+  background-color: #013049;
+  padding-top: 30px;
+  margin-top: 7%;
+  line-height: 1.75;
+  float: right;
+  width: 20%;
+  height: 280px;
+}
+
+.underline {
+  height: 2px;
+  width: 100px;
+  background-color: #feb200;
+  margin-bottom: 20px;
+}
+
+a:link,
+a:visited {
+
+  margin-top: 50px;
+  font-size: 15px;
+  font-family: 'Outfit', sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+
+}
+
+a:hover {
+  font-size: 17px;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  text-decoration: underline;
+
+}
+
+h2 {
+  margin-bottom: 4px;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: Arial;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+@keyframes showTopText {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(0, 50%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes showBottomText {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animated-title {
+  color: #222;
+  font-family: Roboto, Arial, sans-serif;
+  height: 90vmin;
+  left: 40%;
+  position: absolute;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  width: 70vmin;
+}
+
+.animated-title>div {
+  font-family: 'Dancing Script', cursive;
+  height: 50%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.animated-title>div div {
+  font-size: 12vmin;
+  padding: 2vmin 0;
+  position: absolute;
+}
+
+.animated-title>div div span {
+  display: block;
+}
+
+.animated-title>div.text-top {
+  border-bottom: 1vmin solid #000;
+  z-index: 1;
+  top: 0;
+}
+
+.animated-title>div.text-top div {
+  animation: showTopText 1s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+}
+
+.animated-title>div.text-top div span:first-child {
+  color: #767676;
+}
+
+.animated-title>div.text-bottom {
+  font-family: 'Bebas Neue', cursive;
+  bottom: 0;
+}
+
+.animated-title>div.text-bottom div {
+  animation: showBottomText 0.5s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
+}
+
+#gs {
+  animation: showBottomText 0.5s;
+  animation-delay: 3.5s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
 }
 
 .spinner-wrapper {
@@ -313,28 +472,27 @@ body, html {
   z-index: 999999;
 }
 
-svg text{
+svg text {
   font-family: 'Dancing Script', sans-serif;
   letter-spacing: 10px;
   stroke: #013049;
   font-size: 150px;
   font-weight: 700;
   stroke-width: 3;
-  animation: textAnimate 3s infinite alternate; 
+  animation: textAnimate 3s infinite alternate;
 }
 
 @keyframes textAnimate {
   0% {
     stroke-dasharray: 0 50%;
-    stroke-dashoffset:  20%;
-    fill:#00a1c0
-
+    stroke-dashoffset: 20%;
+    fill: #00a1c0
   }
-  
+
   60% {
     stroke-dasharray: 50% 0;
     stroke-dashoffstet: -20%;
     fill: #feb200
   }
-  
+
 }
