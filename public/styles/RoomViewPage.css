@@ -623,3 +623,17 @@ form button{
 .content form .row-decription,.row-title{
   margin-bottom: 20px;
 }
+
+.popup{
+  position: fixed;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  transition: 0.2s ease-in-out;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #FFB703;
+  z-index: 10;
+  width: 400px;
+  max-width: 80%;
+}
