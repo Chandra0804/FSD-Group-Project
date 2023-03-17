@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>My Webpage</title>
-	<link rel="stylesheet" href="../stylesheets/RoomViewPage.css">
+	<link rel="stylesheet" href="../public/styles/RoomViewPage.css">
 	<script src="https://kit.fontawesome.com/9608e97d56.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
 </head>
 
@@ -133,7 +133,6 @@
 			</div>
 			<div class="wrapper-todo">
 				<div class="todo-topwrapper">
-					<h1 class="heading">Todo List</h1>
 					<ul>
 						<li class="line" id="tasks">Tasks</li>
 						<li class="line" id="notes">Notes</li>
@@ -194,13 +193,41 @@
 						</div>
 					</div>
 					<div id="notes-wrapper">
-						<h1>notes</h1>
+						<div class="notes-container">
+							<div class="popup-box">
+								<div class="popup">
+									<div class="content">
+										<header>
+											<p></p>
+											<i class="uil uil-times"></i>
+										</header>
+										<form action="#">
+											<div class="row-title">
+												<label class="label-style">Title</label>
+												<input type="text" spellcheck="false" class="popup-form-input">
+											</div>
+											<div class="row-description">
+												<label>Description</label>
+												<textarea spellcheck="false" class="popup-form-description" style="resize: none;"></textarea>
+											</div>
+											<button></button>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="notes-main-wrapper">
+								<li class="add-box">
+									<div class="icon"><i class="uil uil-plus"></i></div>
+									<p>Add new note</p>
+								</li>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="/scripts/RoomViewPage.js"></script>
+	<script src="../public/scripts/RoomViewPage.js"></script>
 </body>
 
 </html>
