@@ -14,12 +14,6 @@
 			<div class="wrapper-timer">
 				<h1 class="heading">Timer</h1>
 				<div class="timer-top">
-					<!-- <h3 class="heading">Group</h3>
-					<label class="switch">
-						<input type="checkbox">
-						<span class="slider"></span>
-					</label>
-					<h3 class="heading">Personal</h3> -->
 					<label for="time">Select timer length:</label>
 					<select id="time">
 						<option value="300">5 minutes</option>
@@ -37,8 +31,8 @@
 				<div class="timer-bottom"></div>
 			</div>
 			<div class="wrapper-title">
-				<div class="heading-title">
-					<h1 style="font-size: 40px;">Unnamed Room</h1>
+				<div class="heading-title-wrapper">
+					<h1 class="heading-title">Unnamed Room</h1>
 				</div>
 				<div class="heading-bottom">
 					<h2 style="color:grey;font-size:15px">Description</h2>
@@ -48,10 +42,10 @@
 							<span><i class="fa-solid fa-copy"></i></span>
 						</div>
 						<div class="icons">
-							<button class="focus-button">
+							<button class="focus-button" title="Focus mode">
 								<i class="fa-solid fa-brain" style="color: #6360d8; font-size: 25px;"></i>
 							</button>
-							<button class="focus-button">
+							<button class="focus-button" title="Play Music">
 								<i class="fa-solid fa-music" style="color: #6360d8; font-size: 25px;"></i>
 							</button>
 						</div>
@@ -66,26 +60,76 @@
 					<h1 class="heading">Participants</h1>
 				</div>
 				<div class="participants-list">
-					<ul>
-						<li><span>Chandra Sai Teja Adhikarla</span></li>
-						<li><span>Chandra Sai Teja Adhikarla</span></li>
-						<li><span>Chandra Sai Teja Adhikarla</span></li>
-						<li><span>Chandra Sai Teja Adhikarla</span></li>
-						<li><span>Chandra Sai Teja Adhikarla</span></li>
-						<li><span>Chandra Sai Teja Adhikarla</span></li>
-						<li><span>Chandra Sai Teja Adhikarla</span></li>
-						<li><span>Chandra Sai Teja Adhikarla</span></li>
-						<li><span>Chandra Sai Teja Adhikarla</span></li>
-						<li><span>Chandra Sai Teja Adhikarla</span></li>
-						<li><span>Chandra Sai Teja Adhikarla</span></li>
-						<li><span>Chandra Sai Teja Adhikarla</span></li>
+					<ul style="list-style-type: none;">
+						<li>
+							<div class="participant-user">
+								<i class="fa-solid fa-circle-user"></i>
+								<p>Chandra Sai Teja Adhikarla</p>
+								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+							</div>
+						</li>
+						<li>
+							<div class="participant-user">
+								<i class="fa-solid fa-circle-user"></i>
+								<p>Chandra Sai Teja Adhikarla</p>
+								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+							</div>
+						</li>
+						<li>
+							<div class="participant-user">
+								<i class="fa-solid fa-circle-user"></i>
+								<p>Chandra Sai Teja Adhikarla</p>
+								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+							</div>
+						</li>
+						<li>
+							<div class="participant-user">
+								<i class="fa-solid fa-circle-user"></i>
+								<p>Chandra Sai Teja Adhikarla</p>
+								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+							</div>
+						</li>
+						<li>
+							<div class="participant-user">
+								<i class="fa-solid fa-circle-user"></i>
+								<p>Chandra Sai Teja Adhikarla</p>
+								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+							</div>
+						</li>
+						<li>
+							<div class="participant-user">
+								<i class="fa-solid fa-circle-user"></i>
+								<p>Chandra Sai Teja Adhikarla</p>
+								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+							</div>
+						</li>
+						<li>
+							<div class="participant-user">
+								<i class="fa-solid fa-circle-user"></i>
+								<p>Chandra Sai Teja Adhikarla</p>
+								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="bottom-wrapper">
 			<div class="wrapper-resources">
-				<h1 class="heading">Resources</h1>
+				<div class="top-resourcewrapper">
+					<ul>
+						<li class="line" id="assignments">Assignments</li>
+						<li class="line" id="resources">Resources</li>
+					</ul>
+				</div>
+				<div class="bottom-resourcewrapper">
+					<div id="assignments-wrapper">
+						<h1>Assignments</h1>
+					</div>
+					<div id="resources-wrapper">
+						<h1>Resources</h1>
+					</div>
+				</div>
 			</div>
 			<div class="wrapper-todo">
 				<div class="todo-topwrapper">
@@ -97,7 +141,57 @@
 				</div>
 				<div class="todo-bottomwrapper">
 					<div id="tasks-wrapper">
-						<h1>tasks</h1>
+						<div class="tasks-container">
+							<div class="tasks-top-wrapper">
+								<i class="fa-solid fa-circle-user"></i>
+								<p>Chandra Sai Teja Adhikarla</p>
+							</div>
+							<div class="tasks-card">
+								<div class="todoList">
+									<div class="content">
+										<form class="add">
+											<input type="text" name="add" placeholder="Add item...">
+											<div class="input-buttons">
+												<a href="#" class="add-todo">
+													<i class="fas fa-plus add"></i>
+												</a>
+											</div>
+										</form>
+										<ul class="todos">
+											<li>
+												<input type="checkbox" id="todo_1" />
+												<label for="todo_1">
+													<span class="check"></span>Buy Flight Tickets
+												</label>
+												<i class="far fa-trash-alt delete"></i>
+											</li>
+											<li>
+												<input type="checkbox" id="todo_2" />
+												<label for="todo_2">
+													<span class="check"></span>Find AirBnB
+												</label>
+												<i class="far fa-trash-alt delete"></i>
+											</li>
+											<li>
+												<input type="checkbox" id="todo_3" />
+												<label for="todo_3">
+													<span class="check"></span> Look up things to do
+												</label>
+												<i class="far fa-trash-alt delete"></i>
+											</li>
+											<li>
+												<input type="checkbox" id="todo_4" />
+												<label for="todo_4">
+													<span class="check"></span> Passport
+												</label>
+												<i class="far fa-trash-alt delete"></i>
+											</li>
+										</ul>
+									</div>
+
+								</div>
+							</div>
+						</div>
 					</div>
 					<div id="notes-wrapper">
 						<h1>notes</h1>
