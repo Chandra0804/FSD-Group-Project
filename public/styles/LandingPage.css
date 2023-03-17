@@ -5,6 +5,10 @@
     height: 100%;
   }
   .parallax {
+<<<<<<< HEAD
+=======
+    background-image: url(./images/laptop1.jpg);
+>>>>>>> c71b6d8c247e9739a4ab595b0cc855f10f593bb5
     height: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -14,7 +18,11 @@
   
   
   .parallax1 {
+<<<<<<< HEAD
    
+=======
+    background-image: url(./images/p3.jpg);
+>>>>>>> c71b6d8c247e9739a4ab595b0cc855f10f593bb5
     height: 60%;
     background-attachment: fixed;
     background-position: center;
