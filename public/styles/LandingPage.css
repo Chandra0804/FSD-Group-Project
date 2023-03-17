@@ -5,7 +5,7 @@
     height: 100%;
   }
   .parallax {
-    background-image: url(/resources/laptop1.jpg);
+    background-image: url(/public/images/laptop1.jpg);
     height: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -15,7 +15,7 @@
   
   
   .parallax1 {
-    background-image: url(/resources/p3.jpg);
+    background-image: url(/public/images/p3.jpg);
     height: 60%;
     background-attachment: fixed;
     background-position: center;
