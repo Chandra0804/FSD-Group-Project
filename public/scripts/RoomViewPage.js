@@ -1,56 +1,84 @@
-// Get HTML elements
-const timeSelect = document.querySelector('#time');
-const startBtn = document.querySelector('#start');
-const pauseBtn = document.querySelector('#pause');
-const stopBtn = document.querySelector('#stop');
-const display = document.querySelector('.display');
+let countdown;
+let paused = false;
+let remainingTime = 0;
 
-let timeLeft, timerId;
+function timer(seconds) {
+  clearInterval(countdown);
 
-// Format remaining time as a string (mm:ss)
-function formatTime(time) {
-  let minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-  minutes = (minutes < 10) ? `0${minutes}` : minutes;
-  seconds = (seconds < 10) ? `0${seconds}` : seconds;
-  return `${minutes}:${seconds}`;
-}
+  const now = Date.now();
+  const then = now + seconds * 1000;
+  
+  if (paused) {
+    then += remainingTime * 1000;
+    paused = false;
+  }
+  
+  displayTimeLeft(seconds);
 
-// Start the timer
-function startTimer() {
-  timeLeft = parseInt(timeSelect.value);
-  timerId = setInterval(() => {
-    timeLeft--;
-    if (timeLeft <= 0) {
-      stopTimer();
+  countdown = setInterval(() => {
+    const secondsLeft = Math.round((then - Date.now()) / 1000);
+    remainingTime = secondsLeft;
+    
+    if (secondsLeft < 0) {
+      clearInterval(countdown);
+      return;
     }
-    display.textContent = formatTime(timeLeft);
+    
+    if (!paused) {
+      displayTimeLeft(secondsLeft);
+    }
   }, 1000);
-  startBtn.hidden = true;
-  pauseBtn.hidden = false;
-  stopBtn.hidden = false;
 }
 
-// Pause the timer
+function displayTimeLeft(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainderSeconds = seconds % 60;
+  const display = `${minutes < 10 ? '0' : ''}${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+
+  document.title = display;
+  const timerDisplay = document.querySelector('.display');
+  timerDisplay.textContent = display;
+}
+
+function startTimer() {
+  const seconds = parseInt(document.querySelector('input[name="item"]:checked').getAttribute('data-time'));
+  timer(seconds);
+  document.getElementById('start').style.display='none';
+  document.getElementById('pause').style.display='inline-block';
+  document.getElementById('stop').style.display='inline-block';
+}
+
 function pauseTimer() {
-  clearInterval(timerId);
-  startBtn.hidden = false;
-  pauseBtn.hidden = true;
+  clearInterval(countdown);
+  paused = true;
+  document.getElementById('pause').style.display='none';
+  document.getElementById('play').style.display='inline-block';
 }
 
-// Stop the timer
-function stopTimer() {
-  clearInterval(timerId);
-  display.textContent = '00:00';
-  startBtn.hidden = false;
-  pauseBtn.hidden = true;
-  stopBtn.hidden = true;
+function playTimer() {
+  paused = false;
+  timer(remainingTime);
+  document.getElementById('play').style.display='none';
+  document.getElementById('pause').style.display='inline-block';
 }
 
-// Add event listeners to buttons
-startBtn.addEventListener('click', startTimer);
-pauseBtn.addEventListener('click', pauseTimer);
-stopBtn.addEventListener('click', stopTimer);
+const startButton = document.querySelector('#start');
+const pauseButton = document.querySelector('#pause');
+const stopButton = document.querySelector('#stop');
+const playButton = document.getElementById('play');
+
+startButton.addEventListener('click', startTimer);
+pauseButton.addEventListener('click', pauseTimer);
+playButton.addEventListener('click', playTimer);
+stopButton.addEventListener('click', () => {
+  clearInterval(countdown);
+  displayTimeLeft(0);
+  document.getElementById('pause').style.display='none';
+  document.getElementById('stop').style.display='none';
+  document.getElementById('start').style.display='inline-block';
+  document.getElementById('play').style.display='none';
+  paused = false;
+});
 
 
 const istasks = false;
@@ -234,3 +262,28 @@ addBtn.addEventListener("click", e => {
         closeIcon.click();
     }
 });
+
+    // get all folders in our .directory-list
+    var allFolders = $(".directory-list li > ul");
+    allFolders.each(function() {
+  
+      // add the folder class to the parent <li>
+      var folderAndName = $(this).parent();
+      folderAndName.addClass("folder");
+  
+      // backup this inner <ul>
+      var backupOfThisFolder = $(this);
+      // then delete it
+      $(this).remove();
+      // add an <a> tag to whats left ie. the folder name
+      folderAndName.wrapInner("<a href='#' />");
+      // then put the inner <ul> back
+      folderAndName.append(backupOfThisFolder);
+  
+      // now add a slideToggle to the <a> we just added
+      folderAndName.find("a").click(function(e) {
+        $(this).siblings("ul").slideToggle("slow");
+        e.preventDefault();
+      });
+  
+    });
