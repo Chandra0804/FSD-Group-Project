@@ -263,27 +263,20 @@ addBtn.addEventListener("click", e => {
     }
 });
 
-    // get all folders in our .directory-list
-    var allFolders = $(".directory-list li > ul");
-    allFolders.each(function() {
+    // var allFolders = $(".directory-list li > ul");
+    // allFolders.each(function() {
+    //   var folderAndName = $(this).parent();
+    //   folderAndName.addClass("folder");
   
-      // add the folder class to the parent <li>
-      var folderAndName = $(this).parent();
-      folderAndName.addClass("folder");
+    //   var backupOfThisFolder = $(this);
+    //   $(this).remove();
+    //   folderAndName.wrapInner("<a href='#' />");
+    //   folderAndName.append(backupOfThisFolder);
   
-      // backup this inner <ul>
-      var backupOfThisFolder = $(this);
-      // then delete it
-      $(this).remove();
-      // add an <a> tag to whats left ie. the folder name
-      folderAndName.wrapInner("<a href='#' />");
-      // then put the inner <ul> back
-      folderAndName.append(backupOfThisFolder);
+      
+    //   folderAndName.find("a").click(function(e) {
+    //     $(this).siblings("ul").slideToggle("slow");
+    //     e.preventDefault();
+    //   });
   
-      // now add a slideToggle to the <a> we just added
-      folderAndName.find("a").click(function(e) {
-        $(this).siblings("ul").slideToggle("slow");
-        e.preventDefault();
-      });
-  
-    });
+    // });
