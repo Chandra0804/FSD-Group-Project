@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body{
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/laptop0.jpg');
+}
+#header {
+    position: sticky;
+    display: flex;
+}
+
+#left {
+    padding-top: 10px;
+    width: 25%;
+    background: #013049;
+    padding: 15px;
+}
+
+#right {
+    text-align: right;
+    width: 75%;
+    margin: 0px;
+    border: 0px;
+    padding: 5px;
+    background-color: #013049;
+}
+
+.Learnen {
+    color: #013049;
+    padding: 0px;
+    border: 0px;
+    letter-spacing: 2px;
+    font-family: 'Bebas Neue', cursive;
+    margin-left: 15px;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 25px;
+}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 0.7fr;
+    grid-template-rows: 1fr 1.4fr 1.8fr;
+    gap: 0px 2px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "profile-pic Form Form"
+        "profile-pic Form Form"
+        "profile-pic Form Form";
+}
+
+.profile-pic {
+    grid-area: profile-pic;
+}
+
+.Form {
+    grid-area: Form;
+}
+button{
+    border-radius: 50%;
+    background-color: inherit;
+    border: none;
+    cursor:default;
+}
+.other-images {
+    display: none;
+    transition: 300ms ease-in-out;
+    height: 120px;
+    width: 100px;
+    position: absolute;
+    
+    flex-direction: row;
+}
+
+.fa-xmark{
+    font-size: 30px;
+}
+
+.fa-xmark:hover{
+    color: rgba(128, 128, 128, 0.94);
+}
+
+div.gallery img:hover {
+    border: 2px solid #777;
+}
+
+div.gallery img {
+    border: 1px solid #ccc;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    
+}
+
+.profile {
+    margin: 20px auto;
+    max-width: 200px;
+    position: relative;
+    border-radius: 50%;
+}
+
+.profile:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.profile:hover .overlay p {
+    display: block;
+}
+
+.profile img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+    height: auto;
+}
+
+.profile .overlay {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile .overlay input {
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    bottom: 20px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.profile .overlay p {
+    position: absolute;
+    bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    display: none;
+}
+
+i{
+    cursor: pointer;
+}
+
+
+#other{
+    display: none;
+
+}
+input {
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
+    outline: none;
+    color: dimgray;
+}
+
+label{
+    font-size: 30px;
+    font-family: 'Poppins',cursive;
+}
+
+.switch-button {
+    background: rgba(255, 255, 255, 0.56);
+    border-radius: 30px;
+    overflow: hidden;
+    width: 240px;
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: #013049;
+    position: relative;
+    padding-right: 120px;
+    position: relative;
+}
+.switch-button:before {
+    content: "Private";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
+}
+.switch-button-checkbox {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+}
+.switch-button-checkbox:checked + .switch-button-label:before {
+    transform: translateX(120px);
+    transition: transform 200ms linear;
+}
+.switch-button-checkbox + .switch-button-label {
+    position: relative;
+    padding: 15px 0;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
+.switch-button-checkbox + .switch-button-label:before {
+    content: "";
+    background: #7acce8;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    transform: translateX(0);
+    transition: transform 200ms;
+}
+.switch-button-checkbox + .switch-button-label .switch-button-label-span {
+    position: relative;
+}
+
