@@ -66,7 +66,8 @@
         </div>
 
         <div class="sidebar-information">
-          <h1>Tarun</h1>
+
+          <h1>Welcome, <%= user %> </h1>
           <p>
             Joined : 01/01/2000
             <progress></progress>
@@ -86,7 +87,7 @@
             <img src="/images/lotus.jpg" id="profile-picture" alt="Profile Picture">
           </div>
           <div class="profile-info">
-            <h2 style="color: azure;">Tarun</h2>
+            <h2 style="color: azure;">Welcome, <%= user %> </h2>
           <div class="progress-bar">
             <div class="progress" style="width: 75%"></div>
           </div>
@@ -100,7 +101,7 @@
           
           <ul id="navbar-links">
             <li id="home-button">
-             <a href="#"> <img src="images/home.png" style="height: 30px; width: auto;" alt="home">
+             <a href="/home"> <img src="images/home.png" style="height: 30px; width: auto;" alt="home">
             </a></li>
             <div>
             <li><button data-sidebar-target="#sidebar" class="hamburger-button" id="hamburger-button"> <img src="images/hamburger_icon.png" alt="hamburger"></button></li>
@@ -112,50 +113,12 @@
         </div>
         <div class="image-grid">
 
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-              <button data-popup-target="#popup" class="room-information-button">DemoRoom</button>
-          </div>
-          
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
-          <div class="grid-item-container">
-            <div class="single-image"></div>
-          </div>
+            <% for(let i = 0; i < 15; i++) { %>
+              <div class="grid-item-container">
+              <div class="single-image"></div>
+                <button data-popup-target="#popup" class="room-information-button">DemoRoom</button>
+              </div>
+            <% } %>
 
         </div>
       </div>
