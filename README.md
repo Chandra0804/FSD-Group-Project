@@ -59,9 +59,9 @@ You can do that by using the GIT CLI or by downloading the ZIP folder. <br>
 after running `npm init` on your terminal 
 in the current working directory, install: <br>
 
-..* Express: `npm install express`
-..* EJS    : `npm install ejs`
-..* SQLite : `npm install sqlite`
+- Express: `npm install express`
+- EJS    : `npm install ejs`
+- SQLite : `npm install sqlite`
 
 3. Start the server:
 
