@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path')
-const sqlite3 = require('sqlite3').verbose()
+const sqlite3 = require('sqlite3')
 const app = express()
 const bodyparser = require("body-parser")
 
@@ -18,7 +18,7 @@ app.get('/',(req,res)=>{
     res.render('index')
 })
 
-app.get('/login-signup',(req,res)=>{
+app.get('/signin-signup',(req,res)=>{
     res.render('Login_SignUp')
 })
 
@@ -30,18 +30,58 @@ app.get('/mentorApplication',(req,res)=>{
     res.render('mentorApplication')
 })
 
-app.get('/dashboard',(req,res)=>{
-    res.render('dashboard_page')
-})
+const db_name = path.join(__dirname, "data", "LearnenApp.db");
+const db = new sqlite3.Database(db_name, err =>{
+   if(err){
+       return console.log(err.message);
+   }
+   console.log("Database connected")
+});
 
-app.post("/login-signup/signup", (req,res)=>{
-    console.log("creating acount")
-})
+const ctusertable = `CREATE TABLE IF NOT EXISTS users(
+    uid INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL
+);`
 
+db.run(ctusertable, err =>{
+    if(err){
+        return console.log(err.message);
+    }
+    console.log("Table Created")
+ });
 
-app.post('/login-signup/login',(req,res)=>{
-    console.log("logging in")
-})
+ app.post('/signin-signup/login', (req, res) => {
+    const email = req.body.logemail;
+    const password = req.body.logpass;
+
+    db.get(`
+        SELECT * FROM users
+        WHERE email = ? AND password = ?
+    `, [email, password], (err, row) => {
+        if (err) {
+            console.error(err.message);
+            res.status(500).send('Internal server error');
+        } else if (!row) {
+            res.status(401).send('Invalid email or password');
+        } else {
+            res.send(`Welcome ${row.name}`);
+        }
+    });
+});
+
+app.post('/signin-signup/signup', (req, res) => {
+    const username = req.body.signupname;
+    const email = req.body.signupemail;
+    const password = req.body.signuppass;  
+        db.run('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [username, email, password], function(err) {
+          if (err) {
+            return res.status(500).send(err.message);
+          }
+          res.redirect('/signin-signup')
+        });
+});
 
 
 app.listen(3000)

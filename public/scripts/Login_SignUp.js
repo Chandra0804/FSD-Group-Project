@@ -58,7 +58,6 @@ function signUpValidation(e) {
     else {
         // form is valid, submit
         alert('Form submitted successfully!');
-
         return true;
     }
 }
