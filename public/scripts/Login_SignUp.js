@@ -58,7 +58,7 @@ function signUpValidation(e) {
     else {
         // form is valid, submit
         alert('Form submitted successfully!');
-        
+
         return true;
     }
 }
@@ -86,6 +86,7 @@ function logInValidation(e) {
     } else {
         // form is valid, submit
         alert('Form submitted successfully!');
+        window.location.href = "/dashboard";
         return true;
     }
 }

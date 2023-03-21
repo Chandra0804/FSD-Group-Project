@@ -1,7 +1,8 @@
 const express = require('express')
 const path = require('path')
-const sqlite3 = require('sqlite3')
+const sqlite3 = require('sqlite3').verbose()
 const app = express()
+const bodyparser = require("body-parser")
 
 let userName = "Chandra Sai Teja Adhikarla"
 let participantNames = ["Bhanu Prakash Bhaskarla","Chappati Teja Sanjeev","Tarun Patibandla","HariPrasad Anuganti"];
@@ -11,12 +12,13 @@ let taskslists = ["Completing Assignment-1","Reading Textbook from pages 130 to 
 
 app.set('view engine', 'ejs')
 app.use(express.static("public"))
+app.use(bodyparser.urlencoded({extended: true}));
 
 app.get('/',(req,res)=>{
     res.render('index')
 })
 
-app.get('/login',(req,res)=>{
+app.get('/login-signup',(req,res)=>{
     res.render('Login_SignUp')
 })
 
@@ -27,5 +29,19 @@ app.get('/room',(req,res)=>{
 app.get('/mentorApplication',(req,res)=>{
     res.render('mentorApplication')
 })
+
+app.get('/dashboard',(req,res)=>{
+    res.render('dashboard_page')
+})
+
+app.post("/login-signup/signup", (req,res)=>{
+    console.log("creating acount")
+})
+
+
+app.post('/login-signup/login',(req,res)=>{
+    console.log("logging in")
+})
+
 
 app.listen(3000)
