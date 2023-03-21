@@ -55,7 +55,7 @@
 					<button id="start"><i class="fa-solid fa-clock"></i></button>
 					<button id="stop" hidden><i class="fa-solid fa-stop"></i></button>
 					<button id="pause" hidden><i class="fas fa-pause"></i></button>
-					
+
 					<button id='play' hidden><i class="fa-solid fa-play"></i></button>
 
 				</div>
@@ -100,52 +100,23 @@
 						<li>
 							<div class="participant-user">
 								<i class="fa-solid fa-circle-user"></i>
-								<p>Chandra Sai Teja Adhikarla</p>
+								<p>
+									<%= userName%>
+								</p>
 								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
 							</div>
 						</li>
-						<li>
-							<div class="participant-user">
-								<i class="fa-solid fa-circle-user"></i>
-								<p>Chandra Sai Teja Adhikarla</p>
-								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
-							</div>
-						</li>
-						<li>
-							<div class="participant-user">
-								<i class="fa-solid fa-circle-user"></i>
-								<p>Chandra Sai Teja Adhikarla</p>
-								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
-							</div>
-						</li>
-						<li>
-							<div class="participant-user">
-								<i class="fa-solid fa-circle-user"></i>
-								<p>Chandra Sai Teja Adhikarla</p>
-								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
-							</div>
-						</li>
-						<li>
-							<div class="participant-user">
-								<i class="fa-solid fa-circle-user"></i>
-								<p>Chandra Sai Teja Adhikarla</p>
-								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
-							</div>
-						</li>
-						<li>
-							<div class="participant-user">
-								<i class="fa-solid fa-circle-user"></i>
-								<p>Chandra Sai Teja Adhikarla</p>
-								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
-							</div>
-						</li>
-						<li>
-							<div class="participant-user">
-								<i class="fa-solid fa-circle-user"></i>
-								<p>Chandra Sai Teja Adhikarla</p>
-								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
-							</div>
-						</li>
+							<% for(let i=0;i<participantNames.length;i++){ %>
+								<li>
+									<div class="participant-user">
+										<i class="fa-solid fa-circle-user"></i>
+										<p>
+											<%= participantNames[i]%>
+										</p>
+										<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+									</div>
+								</li>
+								<% } %>
 					</ul>
 				</div>
 			</div>
@@ -162,86 +133,35 @@
 					<div id="assignments-wrapper">
 						<div class="assignments-list">
 							<ol>
-								<li class="assignments-list-items">
-									<div class="list-item-wrapper">
-										<a href="#" style="text-decoration: none;">
-											<div class="icon-and-text">
-												<div class="icon-assignment">
-													<i class="material-icons">assignment</i>
-												</div>
-												<div class="text-assignment">
-													<div class="divide-text-assignment">
-														<div class="divide-text-assignment-container">
-															<p class="text-top-assignment">Lab-01</p>
-															<p class="text-bottom-assignment">Posted Wednesday, Jan
-																22, 2022</p>
+								<% if(assignmentName.length>0){ %>
+									<% for(let i=0;i<assignmentName.length;i++){ %>
+										<li class="assignments-list-items">
+											<div class="list-item-wrapper">
+												<a href="#" style="text-decoration: none;">
+													<div class="icon-and-text">
+														<div class="icon-assignment">
+															<i class="material-icons">assignment</i>
+														</div>
+														<div class="text-assignment">
+															<div class="divide-text-assignment">
+																<div class="divide-text-assignment-container">
+																	<p class="text-top-assignment">
+																		<%= assignmentName[i] %>
+																	</p>
+																	<p class="text-bottom-assignment">
+																		<%= assignmentPosted[i] %>
+																	</p>
+																</div>
+															</div>
 														</div>
 													</div>
-												</div>
+												</a>
 											</div>
-										</a>
-									</div>
-								</li>
-								<li class="assignments-list-items">
-									<div class="list-item-wrapper">
-										<a href="#" style="text-decoration: none;">
-											<div class="icon-and-text">
-												<div class="icon-assignment">
-													<i class="material-icons">assignment</i>
-												</div>
-												<div class="text-assignment">
-													<div class="divide-text-assignment">
-														<div class="divide-text-assignment-container">
-															<p class="text-top-assignment">Lab-01</p>
-															<p class="text-bottom-assignment">Posted Wednesday, Jan
-																22, 2022</p>
-														</div>
-													</div>
-												</div>
-											</div>
-										</a>
-									</div>
-								</li>
-								<li class="assignments-list-items">
-									<div class="list-item-wrapper">
-										<a href="#" style="text-decoration: none;">
-											<div class="icon-and-text">
-												<div class="icon-assignment">
-													<i class="material-icons">assignment</i>
-												</div>
-												<div class="text-assignment">
-													<div class="divide-text-assignment">
-														<div class="divide-text-assignment-container">
-															<p class="text-top-assignment">Lab-01</p>
-															<p class="text-bottom-assignment">Posted Wednesday, Jan
-																22, 2022</p>
-														</div>
-													</div>
-												</div>
-											</div>
-										</a>
-									</div>
-								</li>
-								<li class="assignments-list-items">
-									<div class="list-item-wrapper">
-										<a href="#" style="text-decoration: none;">
-											<div class="icon-and-text">
-												<div class="icon-assignment">
-													<i class="material-icons">assignment</i>
-												</div>
-												<div class="text-assignment">
-													<div class="divide-text-assignment">
-														<div class="divide-text-assignment-container">
-															<p class="text-top-assignment">Lab-01</p>
-															<p class="text-bottom-assignment">Posted Wednesday, Jan
-																22, 2022</p>
-														</div>
-													</div>
-												</div>
-											</div>
-										</a>
-									</div>
-								</li>
+										</li>
+										<% } %>
+										<% }else{ %>
+											<p>No Assignments</p>
+										<% } %>
 							</ol>
 						</div>
 					</div>
@@ -312,7 +232,7 @@
 						<div class="tasks-container">
 							<div class="tasks-top-wrapper">
 								<i class="fa-solid fa-circle-user"></i>
-								<p>Chandra Sai Teja Adhikarla</p>
+								<p><%= userName %></p>
 							</div>
 							<div class="tasks-card">
 								<div class="todoList">
@@ -326,34 +246,19 @@
 											</div>
 										</form>
 										<ul class="todos">
-											<li>
-												<input type="checkbox" id="todo_1" />
-												<label for="todo_1">
-													<span class="check"></span>Buy Flight Tickets
-												</label>
-												<i class="far fa-trash-alt delete"></i>
-											</li>
-											<li>
-												<input type="checkbox" id="todo_2" />
-												<label for="todo_2">
-													<span class="check"></span>Find AirBnB
-												</label>
-												<i class="far fa-trash-alt delete"></i>
-											</li>
-											<li>
-												<input type="checkbox" id="todo_3" />
-												<label for="todo_3">
-													<span class="check"></span> Look up things to do
-												</label>
-												<i class="far fa-trash-alt delete"></i>
-											</li>
-											<li>
-												<input type="checkbox" id="todo_4" />
-												<label for="todo_4">
-													<span class="check"></span> Passport
-												</label>
-												<i class="far fa-trash-alt delete"></i>
-											</li>
+											<% if(taskslists.length>0){ %>
+												<% for(let i=0;i<taskslists.length;i++){ %>
+													<li>
+														<input type="checkbox" id="todo_1" />
+														<label for="todo_1">
+														<span class="check"></span><%= taskslists[i] %>
+														</label>
+														<i class="far fa-trash-alt delete"></i>
+													</li>
+												<% } %>
+											<% }else{ %>
+												<p>No Tasks</p>
+											<% } %>
 										</ul>
 									</div>
 
