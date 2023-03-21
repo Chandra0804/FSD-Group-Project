@@ -1,7 +1,7 @@
 # Learnen - Where communities gather to grow together.
 ---
 
-## Learnen: the goal and agenda
+## Learnen: <u> the goal and agenda </u>
 
 ### Why learnen?
 :heavy_plus_sign: Learnen is a place for passionate teachers and curious students to share knowledge! <br>
