@@ -4,6 +4,28 @@
 body{
   background-color: dimgray;
 }
+.btn {
+  text-align: right;
+  border: none;
+  font-family: Arial;
+  color: #ffffff;
+  font-size:15px;
+  background: #013049;
+  padding: 10px 5px 10px 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  text-align: right;
+  border-radius: 50px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 15px;
+  background: #7acce8;
+  cursor: pointer;
+  padding: 10px 5px 10px 5px;;
+  text-decoration: none;
+}
 #header {
     position: sticky;
     display: flex;
@@ -170,7 +192,7 @@ body{
   }
 
   section{
-    background-color: dimgrey;
+    background-color: #168ba280;
     font-family: 'Poppins';
   }
   
@@ -229,7 +251,7 @@ body{
   .about-item p{
     margin-top: 20px;
     color: black;
-    padding: 3px;
+    padding: 20px;
   }
   .about-item p::selection{
     background-color: black;
@@ -238,7 +260,7 @@ body{
 
   }
   .about-item:hover{
-    background-color: #5fbff9;
+    background-color: #feb200;
   }
   .about-item:hover i,
   .about-item:hover h3,
