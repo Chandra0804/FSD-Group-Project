@@ -280,3 +280,44 @@ addBtn.addEventListener("click", e => {
     //   });
   
     // });
+
+// Get references to the DOM elements
+const chatCircle = document.getElementById('chat-circle');
+const chatBox = document.querySelector('.chat-box');
+const chatBoxToggle = document.querySelector('.chat-box-toggle');
+const chatInput = document.getElementById('chat-input');
+const chatLogs = document.querySelector('.chat-logs');
+
+// Hide the chat box initially
+chatBox.style.display = 'none';
+
+// Add a click event listener to the chat circle
+chatCircle.addEventListener('click', () => {
+  chatBox.style.display = 'block';
+});
+
+// Add a click event listener to the chat box toggle button
+chatBoxToggle.addEventListener('click', () => {
+  chatBox.style.display = 'none';
+});
+
+// Add a submit event listener to the chat input form
+chatInput.form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  
+  // Get the user's input from the chat input field
+  const userInput = chatInput.value.trim();
+  
+  // Clear the chat input field
+  chatInput.value = '';
+  
+  // Create a new chat log element with the user's input
+  const newChatLog = document.createElement('div');
+  newChatLog.classList.add('chat-log');
+  newChatLog.innerHTML = `
+    <div class="chat-msg">${userInput}</div>
+  `;
+  
+  // Add the new chat log element to the chat logs container
+  chatLogs.appendChild(newChatLog);
+});

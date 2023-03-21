@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -106,17 +108,17 @@
 								<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
 							</div>
 						</li>
-							<% for(let i=0;i<participantNames.length;i++){ %>
-								<li>
-									<div class="participant-user">
-										<i class="fa-solid fa-circle-user"></i>
-										<p>
-											<%= participantNames[i]%>
-										</p>
-										<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
-									</div>
-								</li>
-								<% } %>
+						<% for(let i=0;i<participantNames.length;i++){ %>
+							<li>
+								<div class="participant-user">
+									<i class="fa-solid fa-circle-user"></i>
+									<p>
+										<%= participantNames[i]%>
+									</p>
+									<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+								</div>
+							</li>
+							<% } %>
 					</ul>
 				</div>
 			</div>
@@ -159,9 +161,9 @@
 											</div>
 										</li>
 										<% } %>
-										<% }else{ %>
-											<p>No Assignments</p>
-										<% } %>
+											<% }else{ %>
+												<p>No Assignments</p>
+												<% } %>
 							</ol>
 						</div>
 					</div>
@@ -232,7 +234,9 @@
 						<div class="tasks-container">
 							<div class="tasks-top-wrapper">
 								<i class="fa-solid fa-circle-user"></i>
-								<p><%= userName %></p>
+								<p>
+									<%= userName %>
+								</p>
 							</div>
 							<div class="tasks-card">
 								<div class="todoList">
@@ -251,14 +255,15 @@
 													<li>
 														<input type="checkbox" id="todo_1" />
 														<label for="todo_1">
-														<span class="check"></span><%= taskslists[i] %>
+															<span class="check"></span>
+															<%= taskslists[i] %>
 														</label>
 														<i class="far fa-trash-alt delete"></i>
 													</li>
-												<% } %>
-											<% }else{ %>
-												<p>No Tasks</p>
-											<% } %>
+													<% } %>
+														<% }else{ %>
+															<p>No Tasks</p>
+															<% } %>
 										</ul>
 									</div>
 
@@ -298,6 +303,32 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div id="chat-circle" class="btn btn-raised">
+			<div id="chat-overlay"></div>
+			<i class="material-icons">speaker_phone</i>
+		</div>
+
+		<div class="chat-box">
+			<div class="chat-box-header">
+				Chat
+				<span class="chat-box-toggle"><i class="material-icons">close</i></span>
+			</div>
+			<div class="chat-box-body">
+				<div class="chat-box-overlay">
+				</div>
+				<div class="chat-logs">
+
+				</div>
+				<!--chat-log -->
+			</div>
+			<div class="chat-input">
+				<form>
+					<input type="text" id="chat-input" placeholder="Send a message..." />
+					<button type="submit" class="chat-submit" id="chat-submit"><i
+							class="material-icons">send</i></button>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -80,5 +80,3 @@ function closeSidebar(sidebar){
     }
     sidebar.classList.remove('active-sidebar');
 }
-
-
