@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -30,17 +31,20 @@
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Log In</h4>
-                                            <div class="form-group">
-                                                <input type="email" name="logemail" class="form-style"
-                                                    placeholder="Your Email" id="logemail" autocomplete="off">
-                                                <i class="input-icon uil uil-at"></i>
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <input type="password" name="logpass" class="form-style"
-                                                    placeholder="Your Password" id="logpass" autocomplete="off" maxlength="16">
-                                                <i class="input-icon uil uil-lock-alt"></i>
-                                            </div>
-                                            <a class="btn mt-4">submit</a>
+                                            <form action="/login" method="POST">
+                                                <div class="form-group">
+                                                    <input type="email" name="logemail" class="form-style"
+                                                        placeholder="Your Email" id="logemail" autocomplete="off">
+                                                    <i class="input-icon uil uil-at"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="password" name="logpass" class="form-style"
+                                                        placeholder="Your Password" id="logpass" autocomplete="off"
+                                                        maxlength="16">
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <a class="btn mt-4">submit</a>
+                                            </form>
                                             <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your
                                                     password?</a></p>
                                         </div>
@@ -51,6 +55,7 @@
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Sign Up</h4>
+                                            <form action="/signup" method="POST">
                                             <div class="form-group">
                                                 <input type="text" name="logname" class="form-style"
                                                     placeholder="Your Full Name" id="signupname" autocomplete="off">
@@ -63,15 +68,18 @@
                                             </div>
                                             <div class="form-group mt-2">
                                                 <input type="password" name="logpass" class="form-style"
-                                                    placeholder="Your Password" id="signuppass" autocomplete="off" maxlength="16">
+                                                    placeholder="Your Password" id="signuppass" autocomplete="off"
+                                                    maxlength="16">
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
                                             <div class="form-group mt-2">
                                                 <input type="password" name="logpass2" class="form-style"
-                                                    placeholder="Confirm Password" id="signuppass2" autocomplete="off" maxlength="16">
+                                                    placeholder="Confirm Password" id="signuppass2" autocomplete="off"
+                                                    maxlength="16">
                                                 <i class="input-icon uil uil-lock-alt"></i>
                                             </div>
                                             <a href="#" class="btn mt-4">submit</a>
+                                            
                                         </div>
                                     </div>
                                 </div>
