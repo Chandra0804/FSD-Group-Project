@@ -42,7 +42,7 @@ body{
 }
 
 
-.container {
+/* .container {
     display: grid;
     grid-template-columns: 1fr 1.3fr 0.7fr;
     grid-template-rows: 1fr 1.4fr 1.8fr;
@@ -60,7 +60,28 @@ body{
 
 .Form {
     grid-area: Form;
+} */
+
+.container {
+    max-width: 960px;
+    margin: 2em auto;
 }
+
+@media screen and (min-width:600px) {
+    .container {
+        display: flex;
+    }
+
+    .profile-pic {
+        flex: 1;
+        margin-right: 5%;
+    }
+
+    .Form {
+        flex: 2;
+    }
+}
+
 button{
     border-radius: 50%;
     background-color: inherit;
@@ -98,8 +119,9 @@ div.gallery img {
 }
 
 .profile {
-    margin: 20px auto;
-    max-width: 200px;
+    margin-top: 20px;
+    margin-left: 7px;
+    max-width: 250px;
     position: relative;
     border-radius: 50%;
 }
@@ -156,6 +178,7 @@ i{
     display: none;
 
 }
+
 input {
     padding: 12px;
     border: none;
@@ -166,22 +189,25 @@ input {
 }
 
 label{
-    font-size: 30px;
+    /* font-size: 1.5vw; */
     font-family: 'Poppins',cursive;
 }
 
 .switch-button {
     background: rgba(255, 255, 255, 0.56);
-    border-radius: 30px;
+    border-radius: 20px;
     overflow: hidden;
     width: 240px;
     text-align: center;
-    font-size: 25px;
+    font-size: 18px;
     letter-spacing: 1px;
     color: #013049;
     position: relative;
     padding-right: 120px;
     position: relative;
+}
+.switch-button-label-span {
+    font-size: 18px;
 }
 .switch-button:before {
     content: "Private";
@@ -189,7 +215,8 @@ label{
     top: 0;
     bottom: 0;
     right: 0;
-    width: 120px;
+    width: 100px;
+    text-align: center;
     display: flex;
     align-items: center;
     font-weight: bold;
@@ -214,7 +241,7 @@ label{
 }
 .switch-button-checkbox + .switch-button-label {
     position: relative;
-    padding: 15px 0;
+    padding: 1px 0;
     display: block;
     user-select: none;
     pointer-events: none;

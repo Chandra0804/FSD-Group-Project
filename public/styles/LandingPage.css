@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
-@media  (min-width: 00px) and (max-width: 425px) {
+@media  (min-width: 00px) and (max-width: 473px) {
   body,html {
     margin: 0;
     height: 100%;
   }
   .parallax {
+    background-image: url(../resources/laptop1.jpg);
     height: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -14,6 +15,7 @@
   
   
   .parallax1 {
+    background-image: url(../resources/p3.jpg);
     height: 60%;
     background-attachment: fixed;
     background-position: center;
@@ -29,7 +31,7 @@
     color: #ffffff;
     font-size:15px;
     background: #013049;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 5px 10px 5px;
     text-decoration: none;
   }
   
@@ -41,7 +43,7 @@
     font-size: 15px;
     background: #7acce8;
     cursor: pointer;
-    padding: 10px 20px 10px 20px;
+    padding: 10px 5px 10px 5px;;
     text-decoration: none;
   }
   
@@ -73,6 +75,7 @@
     margin-left: 15px;
     margin-bottom: 0%;
     margin-top: 0%;
+    padding-bottom: 10%;
     font-weight: bold;
     color: #ffffff;
     font-size: 25px;
@@ -181,7 +184,7 @@
     padding-left: 37%;
     background-color: #013049;
     line-height: 1.75;
-    width: 60%;
+    width: 63%;
     height: 200px;
     border: 0;
   }
@@ -191,7 +194,7 @@
     background-color: #013049;
     line-height: 1.75;
     /* float: left; */
-    width: 60%;
+    width: 63%;
     height: 200px;
   }
   h2 {
@@ -370,7 +373,7 @@
   }
 
 }
-@media  (min-width: 425px) and (max-width: 800px) {
+@media  (min-width: 474px) and (max-width: 800px) {
   body,html {
     margin: 0;
     height: 100%;

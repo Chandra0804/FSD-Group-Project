@@ -3,10 +3,15 @@
     <title>
         Learnen
     </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">.
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="resources">
     <link rel="stylesheet" href="/styles/LandingPage.css"><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://kit.fontawesome.com/9608e97d56.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Outfit:wght@300&family=Sacramento&family=Satisfy&family=Source+Code+Pro:ital,wght@0,500;1,600;1,800&display=swap" rel="stylesheet">
     <style>
         .parallax{
             background-image: url("/images/laptop0.jpg");
@@ -55,14 +60,7 @@
 
     </div>
 <div id="header">
-    <div id="left">
-        <p class="Learnen">Learnen</p>
-    </div>
-    <div id="right">
-        <button class="btn" type="button" >Contact us</button>
-        <button class="btn" type="button" onclick="loadLoginPage()">Log in</button>
-        <button class="btn" type="button" onclick="loadLoginPage()">Sign up</button>
-    </div>
+    <%- include('navbar'); %>
 </div>  
 
 <div class="parallax">
@@ -137,5 +135,6 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"
         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="/scripts/LandingPage.js"></script>
+    <script src="/scripts/navbar.js"></script>
 </body>
 </html>

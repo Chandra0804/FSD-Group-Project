@@ -26,8 +26,20 @@ app.get('/room',(req,res)=>{
     res.render('RoomViewPage' , {participantNames : participantNames , assignmentName : assignmentName , assignmentPosted : assignmentPosted , taskslists : taskslists , userName : userName})
 })
 
+app.get('/contactus',(req,res)=>{
+    res.render('contact_us')
+})
+
+app.get('/dashboard',(req,res)=>{
+    res.render('dashboard_page',{user : "Chandra"})
+})
+
 app.get('/mentorApplication',(req,res)=>{
     res.render('mentorApplication')
+})
+
+app.get('/createroom',(req,res)=>{
+    res.render('createroom')
 })
 
 const db_name = path.join(__dirname, "data", "LearnenApp.db");
@@ -67,6 +79,7 @@ db.run(ctusertable, err =>{
             res.status(401).send('Invalid email or password');
         } else {
             res.send(`Welcome ${row.name}`);
+            // res.render('/dashboard_page',{user : row.name})
         }
     });
 });
@@ -77,7 +90,6 @@ app.post('/signin-signup/signup', (req, res) => {
     const password = req.body.signuppass;  
         db.run('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [username, email, password], function(err) {
           if (err) {
-            return res.status(500).send(err.message);
           }
           res.redirect('/signin-signup')
         });

@@ -32,4 +32,4 @@ function CheckOther(val){
       element.style.display='block';
     else  
       element.style.display='none';
-   }
+}

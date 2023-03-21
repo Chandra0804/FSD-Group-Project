@@ -85,7 +85,6 @@ function logInValidation(e) {
     } else {
         // form is valid, submit
         alert('Form submitted successfully!');
-        window.location.href = "/dashboard";
         return true;
     }
 }
