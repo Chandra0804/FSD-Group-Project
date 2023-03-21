@@ -1,27 +1,27 @@
 # Learnen - Where communities gather to grow together.
 ---
 
-## Learnen: the goal and agenda
+## Learnen: the goal and agenda 
 
 ### Why learnen?
-➕ Learnen is a place for passionate teachers and curious students to share knowledge! <br>
-➕ With learnen, skilled and experienced teachers can **make a learning room** for students and post various **assignments and resources **to aid their learning. <br>
-➕ Students can **talk to other students** in the learning room and help each other out. <br>
-➕ Students can **visually track their progress** and remove all ambiguity from their study. <br>
-➕ Students can track and organize their study with a **TODO list.** <br>
-➕ Maintain focus with the ** room timer! ** <br>
-➕ Students can note resources, track their studies, assignments and todo lists and talk to like-minded students, all in **ONE PLACE** !
+:heavy_plus_sign: Learnen is a place for passionate teachers and curious students to share knowledge! <br>
+:heavy_plus_sign: With learnen, skilled and experienced teachers can **make a learning room** for students and post various **assignments and resources ** to aid their learning. <br>
+:heavy_plus_sign: Students can **talk to other students** in the learning room and help each other out. <br>
+:heavy_plus_sign: Students can **visually track their progress** and remove all ambiguity from their study. <br>
+:heavy_plus_sign: Students can track and organize their study with a **TODO list.** <br>
+:heavy_plus_sign: Maintain focus with the ** room timer! ** <br>
+:heavy_plus_sign: Students can note resources, track their studies, assignments and todo lists and talk to like-minded students, all in **ONE PLACE** !
 
 ### Who is Learnen for?
 
-✔️ Students <br>
-✔️ Professionals <br>
-✔️ Children <br>
-✔️ Teens <br>
-✔️ Adults <br>
-✔️ Newbies <br>
-✔️ Veterans <br>
-✔️ **EVERYONE!!! ** <br>
+:heavy_check_mark: Students <br>
+:heavy_check_mark: Professionals <br>
+:heavy_check_mark: Children <br>
+:heavy_check_mark: Teens <br>
+:heavy_check_mark: Adults <br>
+:heavy_check_mark: Newbies <br>
+:heavy_check_mark: Veterans <br>
+:heavy_check_mark: **EVERYONE!!!** <br>
 
 ---
 
@@ -59,9 +59,9 @@ You can do that by using the GIT CLI or by downloading the ZIP folder. <br>
 after running `npm init` on your terminal 
 in the current working directory, install: <br>
 
-.. Express: `npm install express`
-.. EJS    : `npm install ejs`
-.. SQLite : `npm install sqlite`
+- Express: `npm install express`
+- EJS    : `npm install ejs`
+- SQLite : `npm install sqlite`
 
 3. Start the server:
 
