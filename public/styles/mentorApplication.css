@@ -158,3 +158,8 @@ button:hover svg {
 button:active {
     transform: scale(0.95);
 }
+
+#show-login {
+    margin-left: 40vw;
+    margin-right: 35vw;
+}
