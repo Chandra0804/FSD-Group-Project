@@ -21,7 +21,7 @@
 ✔️ Adults <br>
 ✔️ Newbies <br>
 ✔️ Veterans <br>
-✔️ **EVERYONE!!! ** <br>
+ **EVERYONE!!!** <br>
 
 ---
 
