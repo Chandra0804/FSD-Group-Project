@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body{
+  background-color: dimgray;
+}
+#header {
+    position: sticky;
+    display: flex;
+  }
+  
+  #left {
+    padding-top: 10px;
+    width: 25%;
+    background: #013049;
+  }
+  
+  #right {
+    text-align: right;
+    width: 75%;
+    margin: 0px;
+    border: 0px;
+    padding: 5px;
+    background-color: #013049;
+    color: white;
+  }
+  
+  .Learnen {
+    padding: 0px;
+    border: 0px;
+    letter-spacing: 2px;
+    font-family: 'Bebas Neue', cursive;
+    margin-left: 15px;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 25px;
+  }
+  .btn {
+    text-align: right;
+    border: none;
+    font-family: Arial;
+    color: #ffffff;
+    font-size:15px;
+    background: #013049;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    text-align: right;
+    border-radius: 50px;
+    font-family: Arial;
+    color: #000000;
+    font-size: 15px;
+    background: #7acce8;
+    cursor: pointer;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+.banner{
+    background-image: url('https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8ZWR1Y2F0aW9ufHx8fHx8MTY3OTM4OTgwOA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200');
+    background-size: cover;
+    min-height: 500px;
+    min-width: 1200px;
+}
+
+.focus-in-expand-fwd {
+	-webkit-animation: focus-in-expand-fwd 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: focus-in-expand-fwd 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+  font-size: 72px;
+  color: white;
+  font-family: 'Poppins';
+  text-align: center;
+}
+.wrapper{
+  height: 400px;
+  width: 500px;
+  padding: 40px;
+  position: absolute;
+  z-index: 2;
+  background-color:transparent;
+  margin-top: 10px;
+  margin-left: 700px;
+}
+
+.caption-wrapper{
+  height: 400px;
+  width: 1290px;
+  padding: 30px;
+  position: absolute;
+  z-index: 2;
+  background-color:transparent;
+  margin-top: 120px;
+  margin-left: 80px;
+}
+
+.caption{
+	color: white;
+	padding: 50px;
+	font-family: 'Poppins';
+	font-size: 20px;
+}
+
+ @-webkit-keyframes focus-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-800px);
+            transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-800px);
+            transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+
+
+.typewriter {
+	overflow:hidden; 
+	border-right: .1em solid orange; /* The typwriter cursor */
+	white-space: nowrap; /* Keeps the content on a single line */
+	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+	letter-spacing: .10em; /* Adjust as needed */
+	animation: 
+	  typing 5s steps(80, end),
+	  blink-caret .5s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+	from { width: 0 }
+	to { width: 1200px }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+	from, to { border-color: transparent }
+	100% { border-color: orange; }
+  }
+
+  *{
+    padding: 0;
+    margin: 0;
+  }
+
+  section{
+    background-color: dimgrey;
+    font-family: 'Poppins';
+  }
+  
+
+  .about-1{
+    padding: 5px;
+  }
+  .about-1 h1{
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-family: 'Bebas Neue',cursive;
+    font-size: 70px;
+
+  }
+  .about-1 p{
+    text-align: center;
+    padding: 3px;
+    color: black;
+  }
+
+  .about-item{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: white;
+    padding: 80px,30px;
+    box-shadow: 0 0 9px rgba(0,0,0, .6);
+    border-radius: 20px;
+
+  }
+
+  .about-item:hover{
+    transform: scale(1.15);
+    transition: 500ms ;
+  }
+  .about-item i{
+    font-size: 43px;
+    margin: 10px;
+
+
+  }
+
+  .about-item h3{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .about-item hr{
+    width: 46px;
+    height: 3px;
+    background-color: #5fbff9;
+    margin: 0 auto;
+    border: none;
+  }
+
+  .about-item p{
+    margin-top: 20px;
+    color: black;
+    padding: 3px;
+  }
+  .about-item p::selection{
+    background-color: black;
+    color: white;
+
+
+  }
+  .about-item:hover{
+    background-color: #5fbff9;
+  }
+  .about-item:hover i,
+  .about-item:hover h3,
+  .about-item:hover p{
+    color: #fff;
+  }
+
+  .about-item:hover hr{
+    background-color: #fff;
+    
+  }
+  .about-item:hover i{
+    transform: translateY(-5px);
+
+  }
+
+  .about-item:hover i,h3,hr{
+    transition: all 400ms ease-in-out;
+  }
+
+  footer{
+    background: #212226;
+    padding: 7px
+  }
+  footer p{
+    color: #fff;
+  }
