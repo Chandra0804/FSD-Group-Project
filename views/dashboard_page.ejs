@@ -12,7 +12,7 @@
   </head>
   <body>
     
-    <a class="logout-button" id="logout-button-1" href="#" title="logout"><img src="images/logout_orange.png" style="position: absolute; height: 30px; width: auto; margin: 10px;" alt=""></a>
+    <a class="logout-button" id="logout-button-1" href="/logout" title="logout"><img src="/images/logout_orange.png" style="position: absolute; height: 30px; width: auto; margin: 10px;" alt=""></a>
 
 
     <!-- //popup for room information// -->
@@ -38,7 +38,7 @@
           <p>
             This is the room description.
           </p>
-          <a href="#" class="enter-room-btn" style="text-align: center;">Enter Room</a>
+          <a href="/signin-signup/room" class="enter-room-btn" style="text-align: center;">Enter Room</a>
           
         </div>
 
@@ -65,8 +65,8 @@
       <div class="sidebar-body">
 
         <div style=" display: flex;">
-          <a href="#" title="Go Home"><img src="images/home.png" alt="" style="height: 30px; width: auto; margin: 5px;"></a>
-          <a class="logout-button" id="logout-button-2" href="#" title="logout"><img src="images/logout_black.png" style="position: relative; height: 30px; width: auto; margin: 5px;" alt=""></a>
+          <a href="#" title="Go Home"><img src="/images/home.png" alt="" style="height: 30px; width: auto; margin: 5px;"></a>
+          <a class="logout-button" id="logout-button-2" href="/logout" title="logout"><img src="/images/logout_black.png" style="position: relative; height: 30px; width: auto; margin: 5px;" alt=""></a>
         </div>
         <div class="sidebar-picture">
           
@@ -76,14 +76,15 @@
 
           <h1>Welcome </h1>
           <p>
+            <%= user %>
             Joined : 01/01/2000
             <progress></progress>
           </p>
-          <h6>Are you an educator? <a class="create-room" style="color: blueviolet;" href="#">Create Room</a></h6>
-          <h6>Want to be one? <a class="create-room" style="color: blueviolet;" href="#">Become an educator at learnen</a></h6>
+          <h6>Are you an educator? <a class="create-room" style="color: blueviolet;" href="/signin-signup/createroom">Create Room</a></h6>
+          <h6>Want to be one? <a class="create-room" style="color: blueviolet;" href="/signin-signup/mentorApplication">Become an educator at learnen</a></h6>
 
 
-          <a  href="#" id="diamond-premium-sidebar"><img style="height: 50px; width: auto; margin: 5px;" src="images/diamond_gif.gif" alt="premium" title="premium"></a>
+          <a  href="/signin-signup/premium" id="diamond-premium-sidebar"><img style="height: 50px; width: auto; margin: 5px;" src="/images/diamond_gif.gif" alt="premium" title="premium"></a>
         </div>
 
       </div>
@@ -99,14 +100,14 @@
             <img src="/images/lotus.jpg" id="profile-picture" alt="Profile Picture">
           </div>
           <div class="profile-info">
-            <h2 style="color: azure;">Welcome </h2>
+            <h2 style="color: azure;">Welcome <%= user %></h2>
           <div class="progress-bar">
             <div class="progress" style="width: 75%"></div>
           </div>
-          <h6>Are you an educator? <a class="create-room" href="#">Create Room</a></h6>
-          <h6>Want to be one?  <a class="create-room" href="#">Become an educator at learnen</a></h6>
+          <h6>Are you an educator? <a class="create-room" href="/signin-signup/createroom">Create Room</a></h6>
+          <h6>Want to be one?  <a class="create-room" href="/signin-signup/mentorApplication">Become an educator at learnen</a></h6>
           <div>
-            <a href="#" id="diamond-premium-profile"><img style="height: 50px; width: auto; margin: 5px;" src="images/diamond_gif.gif" alt="premium" title="premium"></a>
+            <a href="/signin-signup/premium" id="diamond-premium-profile"><img style="height: 50px; width: auto; margin: 5px;" src="/images/diamond_gif.gif" alt="premium" title="premium"></a>
           </div>
         </div>
           
@@ -117,10 +118,10 @@
           
           <ul id="navbar-links">
             <li id="home-button">
-             <a href="/home" title="Go Home"> <img src="images/home.png" style="height: 30px; width: auto;" alt="home">
+             <a href="#" title="Go Home"> <img src="/images/home.png" style="height: 30px; width: auto;" alt="home">
             </a></li>
             <div>
-            <li><button data-sidebar-target="#sidebar" class="hamburger-button" id="hamburger-button"> <img src="images/hamburger_icon.png" alt="hamburger"></button></li>
+            <li><button data-sidebar-target="#sidebar" class="hamburger-button" id="hamburger-button"> <img src="/images/hamburger_icon.png" alt="hamburger"></button></li>
             </div>
             <li><a href="#">Joined Rooms</a></li>
             <li><a href="#">Explore</a></li>

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title><%= title %></title>
+	<title>My Webpage</title>
 	<link rel="stylesheet" href="/styles/RoomViewPage.css">
 	<script src="https://kit.fontawesome.com/9608e97d56.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -20,8 +20,8 @@
 				<div class="timer-top">
 					<details class="custom-select">
 						<summary class="radios">
-							<input class="timer-input" type="radio" name="item" id="default" title="Timer length"
-								checked>
+								<input class="timer-input" type="radio" name="item" id="default" title="Timer length"
+									checked>
 							<input class="timer-input" type="radio" name="item" id="item1" title="5 minutes"
 								data-time="300">
 							<input class="timer-input" type="radio" name="item" id="item2" title="10 minutes"
@@ -54,9 +54,10 @@
 							</li>
 						</ul>
 					</details>
-					<button id="start"><i class="fa-solid fa-clock"></i></button>
-					<button id="stop" hidden><i class="fa-solid fa-stop"></i></button>
-					<button id="pause" hidden><i class="fas fa-pause"></i></button>
+					<button id="start" style="height: 50px; width: 50px;"><i class="fa-solid fa-clock"></i></button>
+					<button id="stop" style="height: 50px; width: 50px;" hidden><i
+							class="fa-solid fa-stop"></i></button>
+					<button id="pause" style="height: 50px; width: 50px;" hidden><i class="fas fa-pause"></i></button>
 
 					<button id='play' hidden><i class="fa-solid fa-play"></i></button>
 
@@ -97,7 +98,7 @@
 				<div class="header-participants">
 					<h1 class="heading">Participants</h1>
 				</div>
-				<div class="participants-list">
+				<div class="participants-list" style="overflow: scroll;">
 					<ul style="list-style-type: none;">
 						<li>
 							<div class="participant-user">
@@ -238,7 +239,7 @@
 									<%= userName %>
 								</p>
 							</div>
-							<div class="tasks-card">
+							<div class="tasks-card" style="margin: 10px;">
 								<div class="todoList">
 									<div class="title-content">
 										<form class="add">
@@ -249,24 +250,25 @@
 												</a>
 											</div>
 										</form>
-										<ul class="todos">
-											<% if(taskslists.length>0){ %>
-												<% for(let i=0;i<taskslists.length;i++){ %>
-													<li>
-														<input type="checkbox" id="todo_1" />
-														<label for="todo_1">
-															<span class="check"></span>
-															<%= taskslists[i] %>
-														</label>
-														<i class="far fa-trash-alt delete"></i>
-													</li>
-													<% } %>
-														<% }else{ %>
-															<p>No Tasks</p>
-															<% } %>
-										</ul>
+										<div style="overflow-y: scroll;">
+											<ul class="todos">
+												<% if(taskslists.length>0){ %>
+													<% for(let i=0;i<taskslists.length;i++){ %>
+														<li>
+															<input type="checkbox" id="todo_1" />
+															<label for="todo_1">
+																<span class="check"></span>
+																<%= taskslists[i] %>
+															</label>
+															<i class="far fa-trash-alt delete"></i>
+														</li>
+														<% } %>
+															<% }else{ %>
+																<p>No Tasks</p>
+																<% } %>
+											</ul>
+										</div>
 									</div>
-
 								</div>
 							</div>
 						</div>

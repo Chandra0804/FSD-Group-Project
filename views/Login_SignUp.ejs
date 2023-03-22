@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    <div class="btnn">
+        <a href="/" id="back">Back</a>
+    </div>
     <!-- Main container -->
     <div class="section">
         <div class="container">
@@ -34,13 +37,13 @@
                                             <form action="/signin-signup/login" method="post" id="login">
                                                 <div class="form-group">
                                                     <input type="email" name="logemail" class="form-style"
-                                                        placeholder="Your Email" id="logemail" autocomplete="off">
+                                                        placeholder="Your Email" id="logemail" autocomplete="off" required>
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
                                                     <input type="password" name="logpass" class="form-style"
                                                         placeholder="Your Password" id="logpass" autocomplete="off"
-                                                        maxlength="16">
+                                                        maxlength="16" required>
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <button type="submit" class="btn mt-4">submit</button>
@@ -58,24 +61,26 @@
                                             <form action="/signin-signup/signup" method="post" id="signup">
                                                 <div class="form-group">
                                                     <input type="text" name="signupname" class="form-style"
-                                                        placeholder="Your Full Name" id="signupname" autocomplete="off">
+                                                        placeholder="Your Full Name" id="signupname" autocomplete="off" required>
                                                     <i class="input-icon uil uil-user"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
                                                     <input type="email" name="signupemail" class="form-style"
-                                                        placeholder="Your Email" id="signupemail" autocomplete="off">
+                                                        placeholder="Your Email" id="signupemail" autocomplete="off" required>
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
                                                     <input type="password" name="signuppass" class="form-style"
-                                                        placeholder="Your Password" id="signuppass" autocomplete="off"
-                                                        maxlength="16">
+placeholder="Your Password(Min length 8 ,atleast 1 special character)" id="signuppass" 
+pattern="^(?=.[!@#$%^&(),.?\:{}|<>])[a-zA-Z0-9!@#$%^&*(),.?\:{}|>]{8,}$"
+required>
+
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
                                                     <input type="password" name="signuppass2" class="form-style"
                                                         placeholder="Confirm Password" id="signuppass2"
-                                                        autocomplete="off" maxlength="16">
+                                                        autocomplete="off" maxlength="16" required minlength="8">
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
                                                 <button type="submit" class="btn mt-4">submit</button>
@@ -91,12 +96,12 @@
         </div>
     </div>
     <!-- <script src="/scripts/Login_SignUp.js"></script> -->
-    <script>
+    <!-- <script>
         const form1 = document.getElementById('login');
-        form.addEventListener('submit', async (event) => {
+        form1.addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            const formData = new FormData(form);
+            const formData = new FormData(form1);
             const response = await fetch('/signin-signup/login', {
                 method: 'POST',
                 body: formData,
@@ -104,13 +109,12 @@
 
             if (!response.ok) {
                 const data = await response.json();
-                alert(data.message);
+                alert(data.error);
             } else {
-                // Success handling
-                // ...
+                //Sucess...
             }
         });
-    </script>
+    </script> -->
 </body>
 
 </html>

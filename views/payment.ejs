@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="/styles/payment.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="btn">
+            <a id="back">Back</a>
+        </div>
+
+        <div class="head">
+            <h1>Banking Cards</h1>
+        </div>
+        <form action="" name="myform">
+            <div class="inputBox">
+                <span>Card Number</span>
+                <input type="text" maxlength="16" class="card-number-input" id ="card-number" name="one" required>
+            </div>
+            <div class="inputBox">
+                <span>Card Holder Name</span>
+                <input type="text" class="card-holder-input" id="card-holder" required>
+            </div>
+            <div class="flexbox">
+                <div class="inputBox">
+                    <span>Expiring Month</span>
+                    <select name="" id="expiry-month" class="month-input">
+                        <option value="month" selected disabled>Month</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>Expiring Year</span>
+                    <select name="" id="expiry-year" class="year-input">
+                        <option value="year" selected disabled>Year</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>cvv</span>
+                    <input type="text" id="cvv" maxlength="3" class="cvv-input" required>
+                </div>
+            </div>
+            <input type="submit" class="button" id="submit-button" name="order" id="order" value="Place Order">
+
+        </form>
+    </div>
+
+    <script src="/scripts/payment.js"></script>
+</body>
+
+</html>
