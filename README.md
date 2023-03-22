@@ -88,11 +88,11 @@ Enjoy your learning!
 
 ### Team: 
 
-🟠 [Chandra A]() <br>
-🟢 [Tarun P]() <br>
-🟡 [Bhanu A]() <br>
-🔴 [Sanjeev C]() <br>
-🟣 [Hariprasad A]() <br>
+🟠 [Chandra A](https://github.com/Chandra0804) <br>
+🟢 [Tarun P](https://github.com/Tarun-pvc) <br>
+🟡 [Bhanu A](https://github.com/bhanuprakash1606) <br>
+🔴 [Sanjeev C](https://github.com/TejaSanjeev) <br>
+🟣 [Hariprasad A](https://github.com/hariprasad2512) <br>
 
 ---
 # What lies in our future?
