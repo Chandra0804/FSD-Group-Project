@@ -46,6 +46,10 @@ app.get('/about',(req,res)=>{
     res.render('AboutUs')
 })
 
+app.get('/dashboard',(req,res)=>{
+    
+})
+
 const db_name = path.join(__dirname, "data", "LearnenApp.db");
 const db = new sqlite3.Database(db_name, err =>{
    if(err){
@@ -83,7 +87,7 @@ db.run(ctusertable, err =>{
             res.status(401).send('Invalid email or password');
         } else {
             res.send(`Welcome ${row.name}`);
-            // res.render('/dashboard_page',{user : row.name})
+            // res.redirect('/dashboard');
         }
     });
 });
