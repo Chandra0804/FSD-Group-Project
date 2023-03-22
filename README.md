@@ -90,7 +90,7 @@ Enjoy your learning!
 
 🟠 [Chandra A](https://github.com/Chandra0804) <br>
 🟢 [Tarun P](https://github.com/Tarun-pvc) <br>
-🟡 [Bhanu A](https://github.com/bhanuprakash1606) <br>
+🟡 [Bhanu B](https://github.com/bhanuprakash1606) <br>
 🔴 [Sanjeev C](https://github.com/TejaSanjeev) <br>
 🟣 [Hariprasad A](https://github.com/hariprasad2512) <br>
 
