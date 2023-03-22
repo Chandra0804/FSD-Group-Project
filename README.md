@@ -88,9 +88,9 @@ Enjoy your learning!
 
 ### Team: 
 
-🟠 [Chandra Guy]() <br>
+🟠 [Chandra A]() <br>
 🟢 [Tarun P]() <br>
-🟡 [Bhanu Guy]() <br>
+🟡 [Bhanu A]() <br>
 🔴 [Sanjeev C]() <br>
 🟣 [Hariprasad A]() <br>
 
