@@ -5,11 +5,11 @@
 
 ### Why learnen?
 :heavy_plus_sign: Learnen is a place for passionate teachers and curious students to share knowledge! <br>
-:heavy_plus_sign: With learnen, skilled and experienced teachers can **make a learning room** for students and post various **assignments and resources ** to aid their learning. <br>
+:heavy_plus_sign: With learnen, skilled and experienced teachers can **make a learning room** for students and post various **assignments and resources**. <br>
 :heavy_plus_sign: Students can **talk to other students** in the learning room and help each other out. <br>
 :heavy_plus_sign: Students can **visually track their progress** and remove all ambiguity from their study. <br>
 :heavy_plus_sign: Students can track and organize their study with a **TODO list.** <br>
-:heavy_plus_sign: Maintain focus with the ** room timer! ** <br>
+:heavy_plus_sign: Maintain focus with the **room timer!** <br>
 :heavy_plus_sign: Students can note resources, track their studies, assignments and todo lists and talk to like-minded students, all in **ONE PLACE** !
 
 ### Who is Learnen for?
@@ -88,11 +88,11 @@ Enjoy your learning!
 
 ### Team: 
 
-🟠 [Chandra A]() <br>
-🟢 [Tarun P]() <br>
-🟡 [Bhanu A]() <br>
-🔴 [Sanjeev C]() <br>
-🟣 [Hariprasad A]() <br>
+🟠 [Chandra A](https://github.com/Chandra0804) <br>
+🟢 [Tarun P](https://github.com/Tarun-pvc) <br>
+🟡 [Bhanu B](https://github.com/bhanuprakash1606) <br>
+🔴 [Sanjeev C](https://github.com/TejaSanjeev) <br>
+🟣 [Hariprasad A](https://github.com/hariprasad2512) <br>
 
 ---
 # What lies in our future?
