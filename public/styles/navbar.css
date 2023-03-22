@@ -9,6 +9,7 @@
     font-weight: bold;
     color: #ffffff;
     font-size: 25px;
+    cursor: pointer;
   }
   .btn {
     text-align: right;
