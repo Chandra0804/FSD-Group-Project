@@ -12,13 +12,10 @@
   </head>
   <body>
     
-    <a class="logout-button" id="logout-button-1" href="#"><img src="images/logout_orange.png" style="position: absolute; height: 30px; width: auto; margin: 10px;" alt=""></a>
+    <a class="logout-button" id="logout-button-1" href="#"><img src="/images/logout_orange.png" style="position: absolute; height: 30px; width: auto; margin: 10px;" alt=""></a>
 
 
     <!-- //popup for room information// -->
-
-    
-
     <div class="popup" id="popup">
       <div class="popup-header">
         <h2>Information.</h2>
@@ -65,8 +62,9 @@
       <div class="sidebar-body">
 
         <div style=" display: flex;">
-          <a href="#"><img src="images/home.png" alt="" style="height: 30px; width: auto; margin: 5px;"></a>
-          <a class="logout-button" id="logout-button-2" href="#"><img src="images/logout_black.png" style="position: relative; height: 30px; width: auto; margin: 5px;" alt=""></a>
+          <a href="#"><img src="/images/home.png" alt="" style="height: 30px; width: auto; margin: 5px;"></a>
+          <a class="logout-button" id="logout-button-2" href="#"><img src="/images/logout_black.png" style="position: relative; height: 30px; width: auto; margin: 5px;" alt=""></a>
+
         </div>
         <div class="sidebar-picture">
           
@@ -76,6 +74,7 @@
 
           <h1>Welcome </h1>
           <p>
+            <%= user %>
             Joined : 01/01/2000
             <progress></progress>
           </p>
@@ -94,7 +93,8 @@
             <img src="/images/lotus.jpg" id="profile-picture" alt="Profile Picture">
           </div>
           <div class="profile-info">
-            <h2 style="color: azure;">Welcome </h2>
+            <h2 style="color: azure;">Welcome
+              <%= user %></h2>
           <div class="progress-bar">
             <div class="progress" style="width: 75%"></div>
           </div>
@@ -109,10 +109,10 @@
           
           <ul id="navbar-links">
             <li id="home-button">
-             <a href="/home"> <img src="images/home.png" style="height: 30px; width: auto;" alt="home">
+             <a href="/home"> <img src="/images/home.png" style="height: 30px; width: auto;" alt="home">
             </a></li>
             <div>
-            <li><button data-sidebar-target="#sidebar" class="hamburger-button" id="hamburger-button"> <img src="images/hamburger_icon.png" alt="hamburger"></button></li>
+            <li><button data-sidebar-target="#sidebar" class="hamburger-button" id="hamburger-button"> <img src="/images/hamburger_icon.png" alt="hamburger"></button></li>
             </div>
             <li><a href="#">Joined Rooms</a></li>
             <li><a href="#">Explore</a></li>
