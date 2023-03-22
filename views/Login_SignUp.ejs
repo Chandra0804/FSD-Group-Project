@@ -31,7 +31,7 @@
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Log In</h4>
-                                            <form action="/signin-signup/login" method="post">
+                                            <form action="/signin-signup/login" method="post" id="login">
                                                 <div class="form-group">
                                                     <input type="email" name="logemail" class="form-style"
                                                         placeholder="Your Email" id="logemail" autocomplete="off">
@@ -55,7 +55,7 @@
                                     <div class="center-wrap">
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Sign Up</h4>
-                                            <form action="/signin-signup/signup" method="post">
+                                            <form action="/signin-signup/signup" method="post" id="signup">
                                                 <div class="form-group">
                                                     <input type="text" name="signupname" class="form-style"
                                                         placeholder="Your Full Name" id="signupname" autocomplete="off">
@@ -91,6 +91,26 @@
         </div>
     </div>
     <!-- <script src="/scripts/Login_SignUp.js"></script> -->
+    <script>
+        const form1 = document.getElementById('login');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const response = await fetch('/signin-signup/login', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (!response.ok) {
+                const data = await response.json();
+                alert(data.message);
+            } else {
+                // Success handling
+                // ...
+            }
+        });
+    </script>
 </body>
 
 </html>
