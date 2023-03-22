@@ -42,6 +42,10 @@ app.get('/createroom',(req,res)=>{
     res.render('createroom')
 })
 
+app.get('/about',(req,res)=>{
+    res.render('AboutUs')
+})
+
 const db_name = path.join(__dirname, "data", "LearnenApp.db");
 const db = new sqlite3.Database(db_name, err =>{
    if(err){

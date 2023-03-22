@@ -14,19 +14,12 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8182a1e71b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../public/styles/aboutUs_styles.css">
+    <link rel="stylesheet" href="/styles/aboutUs_styles.css">
 </head>
 
 <body>
     <div id="header">
-        <div id="left">
-            <p class="Learnen">Learnen</p>
-        </div>
-        <div id="right">
-            <a href="../views/contact_us.ejs"><button class="btn" type="button">Contact us</button></a>
-            <a href="../views/Login_SignUp.ejs"><button class="btn" type="button">Log in</button></a>
-            <a href="../views/Login_SignUp.ejs"><button class="btn" type="button">Sign up</button></a>
-        </div>
+        <%- include('navbar'); %>
     </div>
 
     <div class="banner">
@@ -101,19 +94,15 @@
                                 </p>
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <div>
+        <%- include('footer'); %>
+    </div>
 
-    <footer class="text-center">
-        <p>Copyright &copy; 2023 All Rights Reserved Learnen</p>
-
-    </footer>
     <script src="./aboutUs.js"></script>
 </body>
 

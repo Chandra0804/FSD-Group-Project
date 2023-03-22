@@ -47,7 +47,7 @@ body{
     color: white;
   }
   
-  .Learnen {
+  /* .Learnen {
     padding: 0px;
     border: 0px;
     letter-spacing: 2px;
@@ -64,7 +64,7 @@ body{
     border: none;
     font-family: Arial;
     color: #ffffff;
-    font-size:15px;
+    font-size:20px;
     background: #013049;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
@@ -75,12 +75,12 @@ body{
     border-radius: 50px;
     font-family: Arial;
     color: #000000;
-    font-size: 15px;
+    font-size: 20px;
     background: #7acce8;
     cursor: pointer;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
-  }
+  } */
 .banner{
     background-image: url('https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8ZWR1Y2F0aW9ufHx8fHx8MTY3OTM4OTgwOA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200');
     background-size: cover;
@@ -281,10 +281,3 @@ body{
     transition: all 400ms ease-in-out;
   }
 
-  footer{
-    background: #212226;
-    padding: 7px
-  }
-  footer p{
-    color: #fff;
-  }

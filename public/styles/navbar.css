@@ -1,0 +1,34 @@
+.Learnen {
+    padding: 0px;
+    border: 0px;
+    letter-spacing: 2px;
+    font-family: 'Bebas Neue', cursive;
+    margin-left: 15px;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 25px;
+  }
+  .btn {
+    text-align: right;
+    border: none;
+    font-family: Arial;
+    color: #ffffff;
+    font-size:20px;
+    background: #013049;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    text-align: right;
+    border-radius: 50px;
+    font-family: Arial;
+    color: #000000;
+    font-size: 20px;
+    background: #7acce8;
+    cursor: pointer;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
