@@ -8,7 +8,7 @@ let userName = ""
 let participantNames = ["Bhanu Prakash Bhaskarla", "Chappati Teja Sanjeev", "Tarun Patibandla", "HariPrasad Anuganti"];
 let assignmentName = ["Lab-01", "Lab-02", "Lab-03", "Lab-04"];
 let assignmentPosted = ["Posted Wednesday, Jan22, 2022", "Posted Tuesday, Jan21, 2022", "Posted Monday, Jan20, 2022", "Posted Sunday, Jan19, 2022"];
-let taskslists = ["Completing Assignment-1", "Reading Textbook from pages 130 to 150", "Completing Bootcamp", "Completing FSD Project"];
+let taskslists = ["Completing Assignment-1"];
 let title = "Room";
 
 app.set('view engine', 'ejs')
@@ -120,7 +120,7 @@ app.get('/dashboard',(req,res)=>{
     }
 })
 
-app.get('/payment',(req,res)=>{
+app.get('/signin-signup/payment',(req,res)=>{
     res.render('payment');
 })
 
