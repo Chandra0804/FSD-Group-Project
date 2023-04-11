@@ -10,7 +10,7 @@ setTimeout(() => {
     });
 }, 2000);
 
-function loadLoginPage() {
-    // Load the login page into the current window
-    window.location.href = "/signin-signup";
-  }
+
+function loadSignuppage(){
+    window.location.href="/signup";
+}

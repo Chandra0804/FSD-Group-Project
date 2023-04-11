@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+* {
+    box-sizing: border-box;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+body {
+    background: linear-gradient(90deg, #f3ebe2, #f6e3cf);
+}
+
+.container {
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    background: linear-gradient(90deg, #e9cbaa, #f0c494);
+    position: relative;
+    border-radius: 0.75rem;
+    width: 400px;
+    box-shadow: 0px 0px 24px #ab8e6f;
+}
+
+.content-wrapper {
+    position: relative;
+    height: 100%;
+    z-index: 1;
+}
+
+.background-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+    z-index: 0;
+}
+
+.background-shape {
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.background-shape-1 {
+    height: 520px;
+	width: 520px;
+    background: #FFF;
+	right: 140px;	
+    border-radius: 0 72px 0 0;
+}
+
+.background-shape-2 {
+    height: 220px;
+	width: 220px;
+    background: #f0aa5f;
+    top: -170px;
+	right: 50px;	
+    border-radius: 32px;
+}
+
+.background-shape-3 {
+    height: 540px;
+	width: 200px;
+    background: linear-gradient(270deg, #f3942f, #ecb575);
+    top: -24px;
+	right: 0;
+    border-radius: 32px;
+}
+
+.background-shape-4 {
+    height: 400px;
+	width: 200px;
+    background: #f1a655;
+    top: 420px;
+	right: 50px;
+    border-radius: 60px;
+}
+
+.login {
+    width: 320px;
+    padding: 30px;
+	padding-top: 156px;
+}
+
+.input-wrapper {
+    position: relative;
+    border-bottom: 2px solid #D1D1D4;
+    margin-bottom: 30px;
+    margin-left: 5px;
+    margin-top: 25px;
+}
+
+.login_icon {
+    color: #00a1c0;
+}
+
+.login_input {
+    border: none;
+    padding: 10px;
+    font-weight: 700;
+    width: 75%;
+    outline: none;
+}
+
+.input-wrapper:active,
+.input-wrapper:focus,
+.input-wrapper:hover {
+    outline: none;
+    border-bottom-color: #f0a85a;
+}
+
+.submit_button {
+    --primary-color: #645bff;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+}
+
+.submit_button .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit_button .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+.submit_button .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+.submit_button:hover {
+    background-color: var(--hover-color);
+}
+
+.submit_button:hover .arrow {
+    background: var(--secondary-color);
+}
+
+.submit_button:hover .arrow:before {
+    right: 0;
+}
+
+.signup_para {
+    color: #f2ad68;
+    font-size: 2vh;
+}
+
+.signup_link {
+    color: #f58104;
+    text-decoration: none;
+}
+
+.signup_link :hover {
+    color: #f2ad68;
+    border-radius: 5px;
+}
+
+.social-login{
+    font-size: 15px;
+    text-align: center;
+    height: 140px;
+	width: 160px;
+    margin-top: 50px;
+    margin-left: 240px;
+}
+
+.social-login h3{
+    font-size: 2.5vh;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    font-size: 20px;
+}
+
+#back {
+    margin-left: 0px;
+    text-decoration: none;
+}
+
+.btnn {
+    cursor: pointer;
+    font-weight: 700;
+    font-family: Poppins,"sans-serif";
+    transition: all .2s;
+    padding: 5px 30px;
+    border-radius: 100px;
+    background: #013049;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    width: 7vw;
+    margin-left:3rem;
+    margin-top: 1rem;
+    z-index: 2;
+    /* margin-right: 93vw;
+    margin-top: 10px;
+    margin-left: 10px; */
+}
+
+.btnn > a{
+    color: white;
+}
+.btnn:hover {
+    background: #feb200;
+}
+
+.btnn > svg {
+    width: 20px;
+    margin-left: 10px;
+    transition: transform .3s ease-in-out;
+}
+  
+.btnn:hover svg {
+    transform: translateX(5px);
+}
+
+.btnn:active {
+    transform: scale(0.95);
+}

@@ -1,6 +1,6 @@
 function loadLoginPage() {
   // Load the login page into the current window
-  window.location.href = "/signin-signup";
+  window.location.href = "/login";
 }
 
 function loadcontactusPage() {

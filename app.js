@@ -19,19 +19,23 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
-app.get('/signin-signup', (req, res) => {
-    res.render('Login_SignUp')
+app.get('/login', (req, res) => {
+    res.render('Login')
+})
+
+app.get('/signup',(req,res)=>{
+    res.render('SignUp')
 })
 
 app.get('/contactus', (req, res) => {
     res.render('contact_us')
 })
 
-app.get('/signin-signup/mentorApplication', (req, res) => {
+app.get('/login/mentorApplication', (req, res) => {
     res.render('mentorApplication')
 })
 
-app.get('/signin-signup/createroom', (req, res) => {
+app.get('/login/createroom', (req, res) => {
     res.render('createroom')
 })
 
@@ -39,11 +43,11 @@ app.get('/about', (req, res) => {
     res.render('AboutUs')
 })
 
-app.get('/signin-signup/index', (req, res) => {
+app.get('/login/index', (req, res) => {
     res.redirect('/')
 })
 
-app.get('/signin-signup/premium', (req, res) => {
+app.get('/login/premium', (req, res) => {
     res.render('premium')
 })
 
@@ -76,7 +80,7 @@ db.run(ctusertable, err => {
 });
 
 
-app.post('/signin-signup/login', (req, res) => {
+app.post('/login', (req, res) => {
     const email = req.body.logemail;
     const password = req.body.logpass;
 
@@ -103,7 +107,7 @@ app.post('/signin-signup/login', (req, res) => {
     // }
 });
 
-app.get('/signin-signup/room', (req, res) => {
+app.get('/login/room', (req, res) => {
     res.render('RoomViewPage', { participantNames: participantNames, assignmentName: assignmentName, assignmentPosted: assignmentPosted, taskslists: taskslists, userName: userName, title: title })
 })
 
@@ -116,11 +120,11 @@ app.get('/dashboard',(req,res)=>{
     res.render('dashboard_page',{user : userName});
     }
     else{
-        res.redirect('/signin-signup');
+        res.redirect('/login');
     }
 })
 
-app.get('/signin-signup/payment',(req,res)=>{
+app.get('/login/payment',(req,res)=>{
     res.render('payment');
 })
 
@@ -128,7 +132,7 @@ app.get('/paymentstatus',(req,res)=>{
     res.render('paymentstatus');
 })
 
-app.post('/signin-signup/signup', (req, res) => {
+app.post('/signup', (req, res) => {
     const username = req.body.signupname;
     const email = req.body.signupemail;
     const password = req.body.signuppass;
@@ -165,7 +169,7 @@ app.post('/signin-signup/signup', (req, res) => {
     db.run('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [username, email, password], function (err) {
         if (err) {
         }
-        res.redirect('/signin-signup')
+        res.redirect('/login')
     });
     // }
 });

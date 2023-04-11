@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9608e97d56.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="btnn">
+        <a href="/" id="back">Back</a>
+    </div>
+    <div class="container">
+        <div class="wrapper">
+            <div class="content-wrapper">
+                <form class="login" action="/login" method="post">
+                    <div class="input-wrapper">
+                        <i class="login_icon fa-solid fa-user"></i>
+                        <input class="login_input" type="email" name="logemail" class="input-field" placeholder="Enter your Email" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <i class="login_icon fa-solid fa-lock"></i>
+                        <input class="login_input" type="password" name="logpass" class="input-field" placeholder="Enter Password" required maxlength="16">
+                    </div>
+                    <button type="submit" class="submit_button"><span>Log In</span>
+                        <div class="arrow-wrapper">
+                            <div class="arrow"></div>
+                        </div>
+                    </button>
+                    <p class="signup_para">No account?<a href="/signup" class="signup_link">Sign Up!</a></p>
+                </form>
+                <div class="social-login">
+                    <h3>Login with</h3>
+                    <div class="icons">
+                        <i class="fa-brands fa-google"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="background-wrapper">
+                <span class="background-shape background-shape-4"></span>
+                <span class="background-shape background-shape-3"></span>
+                <span class="background-shape background-shape-2"></span>
+                <span class="background-shape background-shape-1"></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
