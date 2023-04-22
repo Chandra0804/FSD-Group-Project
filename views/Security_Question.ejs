@@ -1,0 +1,14 @@
+<html>
+
+<body>
+  <h1>Security Question</h1>
+  <p id="security_question">
+    <%= sec_ques %>
+  </p>
+  <form action="/changePW" method="post">
+  <input type="text" name="sec_ans" id="sec_ans">
+  <button type="submit">Change Password</button>
+  </form>
+</body>
+
+</html>

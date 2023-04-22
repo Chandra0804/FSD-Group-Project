@@ -42,26 +42,6 @@ body{
 }
 
 
-/* .container {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr 0.7fr;
-    grid-template-rows: 1fr 1.4fr 1.8fr;
-    gap: 0px 2px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        "profile-pic Form Form"
-        "profile-pic Form Form"
-        "profile-pic Form Form";
-}
-
-.profile-pic {
-    grid-area: profile-pic;
-}
-
-.Form {
-    grid-area: Form;
-} */
-
 .container {
     max-width: 960px;
     margin: 2em auto;
@@ -79,6 +59,14 @@ body{
 
     .Form {
         flex: 2;
+        
+    }
+    
+}
+
+@media screen and (max-width: 600px){
+    .Form{
+        padding-top: 25%;
     }
 }
 
@@ -94,9 +82,9 @@ button{
     height: 120px;
     width: 100px;
     position: absolute;
-    
     flex-direction: row;
 }
+
 
 .fa-xmark{
     font-size: 30px;
@@ -150,6 +138,7 @@ div.gallery img {
     border-radius: 50%;
 }
 
+
 .profile .overlay input {
     width: 100%;
     position: absolute;
@@ -191,74 +180,68 @@ input {
 label{
     /* font-size: 1.5vw; */
     font-family: 'Poppins',cursive;
+    font-size: 2.5rem;
 }
 
-.switch-button {
-    background: rgba(255, 255, 255, 0.56);
-    border-radius: 20px;
-    overflow: hidden;
-    width: 240px;
-    text-align: center;
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #013049;
+.switch {
     position: relative;
-    padding-right: 120px;
-    position: relative;
-}
-.switch-button-label-span {
-    font-size: 18px;
-}
-.switch-button:before {
-    content: "Private";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 100px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    justify-content: center;
-    z-index: 3;
-    pointer-events: none;
-}
-.switch-button-checkbox {
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
     opacity: 0;
-    z-index: 2;
-}
-.switch-button-checkbox:checked + .switch-button-label:before {
-    transform: translateX(120px);
-    transition: transform 200ms linear;
-}
-.switch-button-checkbox + .switch-button-label {
-    position: relative;
-    padding: 1px 0;
-    display: block;
-    user-select: none;
-    pointer-events: none;
-}
-.switch-button-checkbox + .switch-button-label:before {
-    content: "";
-    background: #7acce8;
-    height: 100%;
-    width: 100%;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
     position: absolute;
-    left: 0;
+    cursor: pointer;
     top: 0;
-    border-radius: 30px;
-    transform: translateX(0);
-    transition: transform 200ms;
-}
-.switch-button-checkbox + .switch-button-label .switch-button-label-span {
-    position: relative;
-}
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
 
