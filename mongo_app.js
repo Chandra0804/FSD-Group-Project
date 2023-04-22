@@ -3,13 +3,12 @@ const path = require('path')
 const app = express()
 const bodyparser = require("body-parser")
 const mongoose = require('mongoose')
-
-
+const nodemailer = require('nodemailer');
+const randomstring = require('randomstring');
 
 url = 'mongodb://0.0.0.0/Learnen'
 
 mongoose.connect(url)
-let security_question = ""
 let userName = ""
 let participantNames = ["Bhanu Prakash Bhaskarla", "Chappati Teja Sanjeev", "Tarun Patibandla", "HariPrasad Anuganti"];
 let assignmentName = ["Lab-01", "Lab-02", "Lab-03", "Lab-04"];
@@ -17,7 +16,7 @@ let assignmentPosted = ["Posted Wednesday, Jan22, 2022", "Posted Tuesday, Jan21,
 let taskslists = ["Completing Assignment-1"];
 let title = "Room";
 
-let emailCheck = ""
+
 
 
 
@@ -53,11 +52,8 @@ app.get('/about', (req, res) => {
 
 app.get('/login/forgot',(req,res)=>{
     res.render('Forgot_Password');
+    
 
-})
-
-app.get('/login/forgot/change',(req,res)=>{
-    res.render('Change_Password');
 })
 
 app.get('/login/index', (req, res) => {
@@ -106,37 +102,11 @@ app.post('/login', async (req, res) => {
 
 });
 
-app.post('/forgotpassword',async (req,res)=>{
-    const email = req.body.email;
-    emailCheck = email;
-    const user = await con.collection('users').findOne({Email: email});
-    res.render('Security_Question',{sec_ques : user.Security_Question});
-})
 
-
-app.post('/changePW',async (req,res)=>{
-    const email = emailCheck;
-    const user = await con.collection('users').findOne({Email: email});
-    const answer = req.body.sec_ans;
-    if (user){
-        const answerCheck = answer === user.Security_Answer;
-        if(answerCheck){
-            res.render('Change_Password');
-        }
-        else{
-            res.status(404).send("Wrong Answer");
-        }
-    }
-    else{
-        res.status(401).send("User Not Found");
-    }
-    
-});
-  
 app.post('/changepassword', (req, res) => {
-    const { newPassword ,confirmPW} = req.body;
+    const { email, oldPassword, newPassword } = req.body;
     const users = con.collection('users');
-    const email = emailCheck;
+
       // Find the user with the given email
       return users.findOne({Email: email })
         .then(user => {
@@ -144,16 +114,15 @@ app.post('/changepassword', (req, res) => {
             return res.status(404).send('User not found');
           }
 
-          if (newPassword != confirmPW) {
-            return res.send('Please match the Confirm Password');
+          if (user.Password !== oldPassword) {
+            return res.status(401).send('Old password is incorrect');
           }
 
           // Update the user's password in the database
           return users.updateOne({Email: email }, { $set: { Password: newPassword } })
             .then(result => {
               if (result.modifiedCount === 1) {
-                res.redirect('/login');
-                // return res.status(200).send('Password updated successfully');
+                return res.status(200).send('Password updated successfully');
               } else {
                 return res.status(500).send('Error updating password');
               }
@@ -191,15 +160,11 @@ app.post('/signup', (req, res) => {
     const username = req.body.signupname;
     const email = req.body.signupemail;
     const password = req.body.signuppass;
-    const security_question = req.body.security_question;
-    const security_answer = req.body.security_answer;
 
     const newUser = {
         userId : username,
         Email : email,
-        Password: password,
-        Security_Question: security_question,
-        Security_Answer: security_answer
+        Password: password
     }
 
     con.collection('users').insertOne(newUser)
