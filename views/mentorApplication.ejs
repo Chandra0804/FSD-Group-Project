@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Mentor Application Form</title>
-    <link rel="stylesheet" href="../public/styles/mentorApplication.css">
+    <link rel="stylesheet" href="/styles/mentorApplication.css">
+
 </head>
 
 <body>
@@ -22,7 +23,7 @@
     </div>
 
     <div class="banner">
-        <img src="../public/images/mentor.png" alt="Become a Mentor" style="max-width: 100%; height: auto;">
+        <img src="/images/mentorbanner.png" alt="Become a Mentor" style="max-width: 100%; height: auto;">
     </div>
 
     <div class="content">
@@ -75,7 +76,7 @@
                 <!-- Step Wise Form Content -->
                 <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST">
                     <!-- Step 1 Content -->
-                    <section id="step-1" class="form-step">
+                    <section id="step-1" class="form-step" style="width: 700px;">
                         <h2 class="font-normal">PERSONAL DETAILS</h2>
                         <!-- Step 1 input fields -->
                         <div class="mt-3">
@@ -148,7 +149,7 @@
                         </div>
                     </section>
                     <!-- Step 2 Content, default hidden on page load. -->
-                    <section id="step-2" class="form-step d-none">
+                    <section id="step-2" class="form-step d-none" style="width: 750px;">
                         <h2 class="font-normal">ACADEMIC PROFILE</h2>
                         <!-- Step 2 input fields -->
                         <div class="mt-3">
@@ -204,7 +205,7 @@
                         </div>
                     </section>
                     <!-- Step 3 Content, default hidden on page load. -->
-                    <section id="step-3" class="form-step d-none">
+                    <section id="step-3" class="form-step d-none" style="width: 700px;">
                         <h2 class="font-normal"></h2>
                         <!-- Step 3 input fields -->
                         <div class="mt-3">
@@ -245,7 +246,9 @@
             </div>
         </div>
     </div>
-    <script src="../public/scripts/mentorApplication.js"></script>
+
+    <script src="/scripts/mentorApplication.js"></script>
+
 </body>
 
 </html>
