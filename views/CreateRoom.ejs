@@ -43,7 +43,7 @@
                 <div class="gallery">
 
                     <button id="btn1">
-                        <img id="first" src="/images/profile_pic.png" alt="Team logo" onclick="changePic(event)">
+                        <img id="first" src="/images/machine-learning.png" alt="Team logo" onclick="changePic(event)">
                     </button>
                 </div>
 
@@ -70,7 +70,7 @@
 
         </div>
         <div class="Form">
-            <form action="/actionpage" method="post">
+            <form action="/createRoom" method="post">
                 <div class="mb-3">
                     <label for="title" class="form-label my-3" required>Study Room Title</label>
                     <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId"
@@ -106,20 +106,19 @@
                         <div class="mb-3">
                             <label for="others" class="form-label">Please enter Appropriate Tags</label>
                             <input type="text" class="form-control" name="others" aria-describedby="helpId"
-                                placeholder="" required>
+                                placeholder="">
 
                         </div>
                     </div>
+                    <label class="my-3">Public Access</label>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
                 </div>
-                <label class="my-4">Access</label>
-                <div class="switch-button">
+                
 
-                    <input class="switch-button-checkbox" type="checkbox"></input>
-                    <label class="switch-button-label" for=""><span
-                            class="switch-button-label-span">Public</span></label>
-                </div>
-
-                <button type="submit" class="btn btn-primary my-4">Create a Room</button>
+                <input type="submit" class="btn btn-primary my-4 " value="Create a Room">
                 <a href="/dashboard"><button type="button" class="btn btn-danger mx-xxl-5">Cancel</button></a>
 
             </form>

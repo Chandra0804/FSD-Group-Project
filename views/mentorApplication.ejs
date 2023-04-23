@@ -1,106 +1,254 @@
+<!-- Mentor Application Form -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application for a Mentor</title>
+
+    <title>Mentor Application Form</title>
     <link rel="stylesheet" href="/styles/mentorApplication.css">
+
 </head>
 
 <body>
-    <a href="/dashboard"><button id="back">Back</button></a>
-    
+    <div class="quote">
+        <h3>"Mentoring is a brain to pick, an ear to listen, and a push in the right direction." - John C. Crosby</h3>
+    </div>
 
-    <div class="container">
-        <h1>Come teach with us</h1>
-        <p id="text">
-        Open the young minds with knowledge
+    <div class="header">
+        <h1>Empower a person to see a possible future...</h1>
+    </div>
+
+    <div class="banner">
+        <img src="/images/mentorbanner.png" alt="Become a Mentor" style="max-width: 100%; height: auto;">
+    </div>
+
+    <div class="content">
+        <p>
+            Learnen is committed to fostering growth and development among motivated individuals, and we believe
+            that mentorship is a powerful way to achieve this goal. We are looking for mentors who can provide
+            guidance, support, and advice to active learners as they pursue their professional goals.
+
+            We believe that your experience and expertise would be invaluable, and we would like to invite you to
+            join us as a mentor. <br><br>
+            
+            We will be glad to have you onboard.
         </p>
-    </div>
+    </div> <br> <br>
 
-    <div class="submitApplication">
-        <button data-popup-target="#popUp" id="show-login">
-            <span>Submit Application</span>
-            <svg width="34" height="34" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="37" cy="37" r="35.5" stroke="black" stroke-width="3"></circle>
-                <path d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z" fill="black"></path>
-            </svg>
-        </button>
-    </div>
-       
-    <div class="popup">
-        <div data-close-button class="close-btn">&times;</div>
+    <div>
+        <div class="multi-step">
+            <h1 id="form-heading">Mentor Application Form</h1>
+            <div id="multi-step-form-container">
+                <!-- Form Steps / Progress Bar -->
+                <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
+                    <!-- Step 1 -->
+                    <li class="form-stepper-active text-center form-stepper-list" step="1">
+                        <a class="mx-2">
+                            <span class="form-stepper-circle">
+                                <span>1</span>
+                            </span>
+                            <div class="label">Personal Details</div>
+                        </a>
+                    </li>
+                    <!-- Step 2 -->
+                    <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                        <a class="mx-2">
+                            <span class="form-stepper-circle text-muted">
+                                <span>2</span>
+                            </span>
+                            <div class="label text-muted">Academic Profile</div>
+                        </a>
+                    </li>
+                    <!-- Step 3 -->
+                    <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                        <a class="mx-2">
+                            <span class="form-stepper-circle text-muted">
+                                <span>3</span>
+                            </span>
+                            <div class="label text-muted">Upload a CV</div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Step Wise Form Content -->
+                <form action="/submit-form" id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST">
+                    <!-- Step 1 Content -->
+                    <section id="step-1" class="form-step" style="width: 700px;">
+                        <h2 class="font-normal">PERSONAL DETAILS</h2>
+                        <!-- Step 1 input fields -->
+                        <div class="mt-3">
+                            <label for="name" class="head-label">Name of Applicant</label> <br>
+                            <div class="name-wrapper" style="display: flex;">
 
-        <h2 style="text-align: center;">Lernen Mentor Application Form</h2>
-        <h3 style="text-align: center;">Basic Information</h3>
+                                <div style="display: flex; flex-direction: column;">
+                                    <input type="text" name="fname" style="width: 170%;" autofocus required>
+                                    <label for="fname" class="foot-label">First Name</label>
+                                </div>
+                                <div style="display: flex; flex-direction: column; margin-left: 10rem;">
+                                    <input type="text"  name="fname" style="width: 170%" autofocus required>
+                                    <label for="lname" class="foot-label">Last Name</label>
+                                </div>
+                            </div> <br>
 
-        <form name="application" method="post">
-            <div class= "form-element">
-                <label for="firstName">First Name</label>
-                <input type="text" placeholder="Enter first name" name="firstName" id="firstName" required>
+                            <label for="email" class="head-label">Email</label>
+                            <label for="phno" class="head-label" style="margin-left: 19.3rem;">Phone Number</label>
+                            <div class="email-phno-wrapper" style="display: flex;">
+                                <div style="display: flex; flex-direction: column;">
+                                    <input type="email" name="email" style="width: 170%;" autofocus required>
+                                    <label for="email" class="foot-label">myname@example.com</label>
+                                </div>
+                                <div style="display: flex; flex-direction: column; margin-left: 10rem;">
+                                    <input type="text" name="phno" style="width: 138%;" autofocus required>
+                                    <label for="phno" class="foot-label">Please enter a valid phone number</label>
+                                </div>
+                            </div> <br>
 
-                <label for="lastName">Last Name</label>
-                <input type="text" placeholder="Enter last name" name="lastName" id="lastName" required> <br>
+                            <div class="address">
+                                <label for="address" class="head-label">Address</label> <br>
+                                <input type="text" name="addressLine1" autofocus style="width: 96%;"> <br>
+                                <label for="lane1" class="foot-label">Street Address</label> <br>
+                                <input type="text" name="addressLine2" autofocus style="width: 96%;"> <br>
+                                <label for="lane2" class="foot-label">Street Address Line 2</label>
+                                <div class="city-state-wrapper" style="display: flex;">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <input type="text" name="city" style="width: 170%;" autofocus required>
+                                        <label for="city" class="foot-label">City</label>
+                                    </div>
+                                    <div style="display: flex; flex-direction: column;">
+                                        <input type="text" name="state" style="width: 96%;  margin-left: 10rem;" autofocus required>
+                                        <label for="state" class="foot-label" style="margin-left: 10rem;">State / Province</label>
+                                    </div> 
+                                </div>
+                                <div class="pincode-country-wrapper" style="display: flex;">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <input type="text" name="pincode" style="width: 170%" autofocus required>
+                                        <label for="zipcode" class="foot-label">Postal / Zip Code</label>
+                                    </div>
+                                    <div style="display: flex; flex-direction: column;">
+                                        <select name="country" id="country" style="width: 125%; margin-left: 10rem;" required>
+                                            <option value="india">India</option>
+                                            <option value="america">America</option>
+                                            <option value="britain">Britain</option>
+                                            <option value="china">China</option>
+                                            <option value="denmark">Denmark</option>
+                                            <option value="ethiopia">Ethiopia</option>
+                                            <option value="france">France</option>
+                                            <option value="germany">Germany</option>
+                                            <option value="hungary">Hungary</option>
+                                        </select>
+                                        <label for="country" class="foot-label" style="margin-left: 10rem;">Country</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <button class="button btn-navigate-form-step button-step1" type="button" step_number="2">Next</button>
+                        </div>
+                    </section>
+                    <!-- Step 2 Content, default hidden on page load. -->
+                    <section id="step-2" class="form-step d-none" style="width: 750px;">
+                        <h2 class="font-normal">ACADEMIC PROFILE</h2>
+                        <!-- Step 2 input fields -->
+                        <div class="mt-3">
+                            <div class="education-wrapper" style="display: flex;">
+                                <div style="display: flex; flex-direction: column;">
+                                    <label for="level" class="head-label">Highest Level of Education</label>
+                                    <input type="text" name="level" style="width: 120%;" autofocus required>
+                                </div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <label for="year" class="head-label" style="margin-left: 10rem;">Year of Gradution</label>
+                                    <select name="year" id="year" style="width: 100%; margin-left: 10rem;" required>
+                                        <option value="2025">2025</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                    </select>
+                                </div>
+                            </div> <br>
 
+                            <div class="university-wrapper" style="display: flex;">
+                                <div style="display: flex; flex-direction: column;">
+                                    <label for="uname" class="head-label">University Name</label>
+                                    <input type="text" name="uname" style="width: 147%;" autofocus required>
+                                </div>
+                                <div style="display: flex; flex-direction: column;">
+                                    <label for="percentage" class="head-label" style="margin-left: 13rem;">Marks in CGPA / %</label>
+                                    <input type="number" name="marks" style="width: 80%; margin-left: 13rem;" autofocus required>
+                                </div>
+                            </div> <br>
 
-                <label for="dob">Date of Birth (DD/MM/YYYY)</label>
-                <input type="date" placeholder="DOB" name="dob" required>
+                            <div>
+                                <label for="certificate" class="head-label">Upload Your Transcripts</label> <br>
+                                <input type="file" id="certificate" name="certificate" accept=".pdf, .png, .jpeg, .jpg"> <br>
+                            </div> <br>
 
-                <label for="gender">Gender</label>
-                <select name="gender" id="gender">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="prefer not to state">Prefer not to state</option>
-                </select> <br>
+                            <div>
+                                <label for="additional" class="head-label">Additional Information</label>
+                            </div>
 
-                <label for="nationality">Nationality</label>
-                <input type="text" name="nationality" id="nationality"> <br> <br>
+                            <div>
+                                <textarea name="additional" id="additional" cols="90" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <button class="button btn-navigate-form-step" type="button" step_number="1">Back</button>
+                            <button class="button btn-navigate-form-step" type="button" step_number="3" id="next-2">Next</button>
+                        </div>
+                    </section>
+                    <!-- Step 3 Content, default hidden on page load. -->
+                    <section id="step-3" class="form-step d-none" style="width: 700px;">
+                        <h2 class="font-normal"></h2>
+                        <!-- Step 3 input fields -->
+                        <div class="mt-3">
+                            <div class="question-wrapper">
+                                <div>
+                                    <label for="question" class="head-label">How were you referred to us?</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="walk-in" name="check" value="Walk-in" autofocus>
+                                    <label for="walk-in">Walk-In</label> <br>
+                                    <input type="checkbox" id="newspaper-ad" name="check" value="Newspaper Ad" autofocus>
+                                    <label for="newspaper-ad">Newspaper Ad</label> <br>
+                                    <input type="checkbox" id="referral" name="check" value="Referral" autofocus>
+                                    <label for="referral">Referral</label> <br>
+                                    <input type="checkbox" id="linkedin" name="check" value="LinkedIn" autofocus>
+                                    <label for="linkedin">LinkedIn</label> <br>
+                                </div>
+                            </div> <br>
 
-                <hr>
+                            <div>
+                                <label for="resume" class="head-label">Upload Your CV</label> <br>
+                                <input type="file" id="resume" name="resume" accept=".pdf, .png, .jpeg, .jpg"> <br>
+                            </div> <br>
+
+                            <div>
+                                <label for="motivation" class="head-label">What is your motivation for applying as a mentor?</label>
+                            </div>
+                            <div>
+                                <textarea name="motivation" id="motivation" cols="90" rows="10" required></textarea>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <button class="button btn-navigate-form-step" type="button" step_number="2">Back</button>
+                            <button class="button submit-btn" type="submit" id="submit-1">Submit</button>
+                        </div>
+                    </section>
+                </form>
             </div>
-
-            <div class="form-element">
-                <h3 style="text-align: center;">Qualification</h3>
-
-                <label for="level">Highest level of study</label>
-                <select name="level" id="level" required>
-                    <option value="bachelor's">Bachelor's</option>
-                    <option value="master's">Master's</option>
-                    <option value="doctoral">Doctoral</option>
-                </select> <br>
-
-                <label for="institute">Institute Name</label>
-                <input type="text" name="institute" id="institute" required> <br>
-
-                <label for="transcript">Transcript (PDF)</label>
-                <input type="file" name="transcript" id="transcript" required> <br> <br>
-
-                <hr>
-            </div>
-
-            <div class="form-element">
-                <h3 style="text-align: center;">Supplementary Information</h3>
-
-                <label for="question">Why do you want to apply for this position?</label>
-                <textarea rows="4" cols="50" name="question" required></textarea> <br>
-
-                <label for="notice">Notice Period (optional)</label>
-                <select name="notice" id="notice">
-                <option value="one month">1 Month</option>
-                <option value="two months">2 Months</option>
-                <option value="three months">3 Months</option>
-                </select> <br>
-
-                <input type="checkbox" id="policy" name="policy" value="Policy" required>
-                <label for="policy">By applying, I agree to Lernen terms of use and privacy policy</label> <br>
-
-                <button type="submit" style="margin-left: 280px;" id="submitForm">Submit</button>
-            </div>
-        </form>
-
+        </div>
     </div>
 
     <script src="/scripts/mentorApplication.js"></script>
+
 </body>
+
 </html>

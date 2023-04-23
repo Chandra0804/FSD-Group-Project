@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-body{
-  background-color: #7acce8;
-}
+
 .btn {
   text-align: right;
   border: none;
@@ -157,9 +155,15 @@ body{
     margin: 0;
   }
 
-  section{
-    background-color: #7acce8;
+  body{
+    background-image: url('../images/laptop0.jpg');
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
     font-family: 'Poppins';
+    backdrop-filter: blur(8px);
+
   }
   
 
@@ -173,77 +177,55 @@ body{
     font-family: 'Bebas Neue',cursive;
     font-size: 70px;
     padding : 1rem;
+
   }
   .about-1 p{
     text-align: center;
-    padding: 3px;
+    padding: 10px;
     color: black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+    letter-spacing: normal;
+    font-weight: 700;
   }
 
-  .about-item{
-    margin-bottom: 20px;
-    margin-top: 20px;
-    background-color: white;
-    padding: 80px,30px;
-    box-shadow: 0 0 9px rgba(0,0,0, .6);
-    border-radius: 20px;
-
-  }
-
-  .about-item:hover{
-    transform: scale(1.15);
-    transition: 500ms ;
-  }
-  .about-item i{
-    font-size: 43px;
-    margin: 10px;
 
 
-  }
+.about-row{
+  width: 60%;
+   margin: 100px auto 100px auto;
+   text-align: left;
+   line-height: 2;
+}
 
-  .about-item h3{
-    font-size: 25px;
-    margin-bottom: 10px;
-  }
+.about-row h1{
+  font-weight: bolder;
+}
+.about-row p{
+  font-size: 25px;
+  font-weight: bold;
+}
 
-  .about-item hr{
-    width: 46px;
-    height: 3px;
-    background-color: #5fbff9;
-    margin: 0 auto;
-    border: none;
-  }
+.left-image
+{
+    width: 34%;
+    float: left;
+    margin-right: 30px;
 
-  .about-item p{
-    margin-top: 20px;
-    color: black;
-    padding: 20px;
-  }
-  .about-item p::selection{
-    background-color: black;
-    color: white;
+}
 
+.right-image
+{
+    width: 34%;
+    float: right;
+    margin-left: 30px;
+}
+.right-image img{
+  height:max-content;
+}
 
-  }
-  .about-item:hover{
-    background-color: #feb200;
-  }
-  .about-item:hover i,
-  .about-item:hover h3,
-  .about-item:hover p{
-    color: #fff;
-  }
-
-  .about-item:hover hr{
-    background-color: #fff;
-    
-  }
-  .about-item:hover i{
-    transform: translateY(-5px);
-
-  }
-
-  .about-item:hover i,h3,hr{
-    transition: all 400ms ease-in-out;
-  }
-
+.motto{
+  width: 250px;
+  zoom: 0.8;
+  
+}
