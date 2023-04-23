@@ -1,0 +1,25 @@
+
+
+<% for(let i = 0; i < 11; i++) { %>
+<ul class="user-list">
+    <li class="user-item">
+        <div class="user-info">
+            <h2>user<%= i+1 %></h2>
+            <p>user1@example.com</p>
+        </div>
+        <div class="dropdown">
+            <button class="icon" style="margin:10px">
+                <i class="fas fa-ellipsis-h"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Edit</a>
+              <a href="#">Delete</a>
+            </div>
+        </div>
+        <!-- <ul class="user-options">
+            <li>Delete User</li>
+            <li>Change Permissions</li>
+        </ul> -->
+    </li>
+</ul>
+<% } %>
