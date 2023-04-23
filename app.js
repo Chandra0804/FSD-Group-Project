@@ -5,14 +5,10 @@ const bodyparser = require("body-parser")
 const mongoose = require('mongoose')
 const { create } = require('domain')
 
-<<<<<<< HEAD
 const nodemailer = require('nodemailer');
 const multer = require('multer')
 // Set up middleware to handle form data
 app.use(multer().any());
-=======
-
->>>>>>> 25f40cb4932fb0698e6a5e25332416001d1b9cc2
 
 url = 'mongodb+srv://Cluster56859:Hari123@cluster56859.rute9cj.mongodb.net/Learnen'
 
@@ -261,7 +257,6 @@ app.post('/createRoom', (req,res)=>{
 
 })
 
-<<<<<<< HEAD
 app.post('/submit-form', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: "gmail",
@@ -316,7 +311,6 @@ app.post('/submit-form', (req, res) => {
           }
     });
 })
-=======
 
 // app.post('/uploadAssignment',(req,res)=>{
 //     const 
@@ -339,6 +333,4 @@ app.post('/submit-form', (req, res) => {
 //     .catch(err => console.log(err))
 
 // })
->>>>>>> 25f40cb4932fb0698e6a5e25332416001d1b9cc2
-
 app.listen(3000)
