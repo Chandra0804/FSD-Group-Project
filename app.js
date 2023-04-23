@@ -3,10 +3,11 @@ const path = require('path')
 const app = express()
 const bodyparser = require("body-parser")
 const mongoose = require('mongoose')
+const { create } = require('domain')
 
 
 
-url = 'mongodb://0.0.0.0/Learnen'
+url = 'mongodb+srv://Cluster56859:Hari123@cluster56859.rute9cj.mongodb.net/Learnen'
 
 mongoose.connect(url)
 let security_question = ""
@@ -193,13 +194,23 @@ app.post('/signup', (req, res) => {
     const password = req.body.signuppass;
     const security_question = req.body.security_question;
     const security_answer = req.body.security_answer;
+    const JoinedRoom = []
+    const createdRooms = []
+    const role = "Student"
+    const tags = []
+    const isPremium = "False"
 
     const newUser = {
         userId : username,
         Email : email,
         Password: password,
         Security_Question: security_question,
-        Security_Answer: security_answer
+        Security_Answer: security_answer,
+        Joined_Room : JoinedRoom,
+        Created_Room : createdRooms,
+        Position: role,
+        Tags : tags,
+        Premium : isPremium
     }
 
     con.collection('users').insertOne(newUser)
@@ -212,5 +223,58 @@ app.post('/signup', (req, res) => {
 });
 
 
+app.post('/createRoom', (req,res)=>{
+    const title = req.body.title
+    const tags = req.body.tags
+    const description = req.body.desc
+    const publicAccess = req.body.access 
+    const assignments =  []
+    const resources = []
+    const participants = []
+    const syllabus = req.body.syllabus
+    const mentor = userName
+
+    const newRoom = {
+        Title  : title,
+        Description : description,
+        Tags : tags,
+        Access : publicAccess,
+        Assignments :assignments,
+        Syllabus: syllabus,
+        Resources : resources,
+        Participants : participants,
+        Mentor : mentor
+    }
+
+    con.collection('Study-rooms').insertOne(newRoom)
+    .then(async ()=>{
+        res.redirect('/dashboard')
+    })  
+    .catch(err => console.log(err))
+
+})
+
+
+// app.post('/uploadAssignment',(req,res)=>{
+//     const 
+// })
+
+
+// app.post('/addNote',(req,res)=>{
+//     const title = req.body.title
+//     const description = req.body.desc
+
+//     const newNote = {
+//         Title : title,
+//         Description : description
+//     }
+
+//     con.collection('Notes').insertOne(newNote)
+//     .then(async ()=>{
+//         res.render('RoomViewPage')
+//     })  
+//     .catch(err => console.log(err))
+
+// })
 
 app.listen(3000)

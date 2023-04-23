@@ -1,7 +1,6 @@
 const btn1 = document.getElementById('btn1');
 const btn2 = document.getElementById('btn2');
 const btn3 = document.getElementById('btn3');
-const btn4 = document.getElementById('btn4');
 
 const closebtn = document.getElementById('closebutton');
 btn1.addEventListener('click',()=>{
@@ -16,11 +15,6 @@ btn3.addEventListener('click',()=>{
     const image = document.getElementById('blah');
     image.src = document.getElementById('third').getAttribute('src');
 });
-btn4.addEventListener('click',()=>{
-    const image = document.getElementById('blah');
-    image.src = document.getElementById('fourth').getAttribute('src');
-});
-
 // closebtn.addEventListener('click',()=>{
 //     document.getElementById.
 // })

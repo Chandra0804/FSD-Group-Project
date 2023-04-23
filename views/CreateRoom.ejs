@@ -70,7 +70,7 @@
 
         </div>
         <div class="Form">
-            <form action="/actionpage" method="post">
+            <form action="/createRoom" method="post">
                 <div class="mb-3">
                     <label for="title" class="form-label my-3" required>Study Room Title</label>
                     <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId"
@@ -106,7 +106,7 @@
                         <div class="mb-3">
                             <label for="others" class="form-label">Please enter Appropriate Tags</label>
                             <input type="text" class="form-control" name="others" aria-describedby="helpId"
-                                placeholder="" required>
+                                placeholder="">
 
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                 </div>
                 
 
-                <button type="submit" class="btn btn-primary my-4 ">Create a Room</button>
+                <input type="submit" class="btn btn-primary my-4 " value="Create a Room">
                 <a href="/dashboard"><button type="button" class="btn btn-danger mx-xxl-5">Cancel</button></a>
 
             </form>
