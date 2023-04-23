@@ -1,0 +1,53 @@
+<%- include('./partials/db_header') %>
+<%- include('./partials/db_sidebar') %>
+
+<div class="main">
+
+    <nav style="display: flex; justify-content: space-between; background-color: blue;">
+        <button id="admin-userslist-button" style="border: none; background-color: transparent;color: aliceblue; font-weight: bolder; margin: 20px;">Users</button>
+        <button id="admin-roomslist-button" style="border: none; background-color: transparent;color: aliceblue; font-weight: bolder; margin: 20px;">Rooms</button>
+        <button id="admin-announcements" style="border: none; background-color: transparent;color: aliceblue; font-weight: bolder; margin: 20px;">Announcements</button>
+    </nav>
+
+    <div id="admin-content" style="width: 100%; text-align: center;margin: 50px;">
+        <h1>Welcome to your console, <span style="color:red;font-weight: bolder;">Admin.</span></h1><hr>
+        <h2>You may freely alter the fabrics of the universe <br> with the help of the <span style="color: rgb(0, 110, 73); font-weight: bolder;">buttons</span> above.</h2>
+    </div>
+
+    <div style="width: 100%; text-align: center;">
+        <img src="/images/Learnen.svg" alt="learnen" style="height: 50px;">
+    </div>
+
+
+
+</div>
+<script>
+    const usersButton = document.getElementById('admin-userslist-button');
+    const roomsButton = document.getElementById('admin-roomslist-button');
+    const adminAnnouncements = document.getElementById('admin-announcements');
+    const adminContent = document.getElementById('admin-content');
+
+    usersButton.addEventListener('click', function() {
+
+        adminContent.innerHTML = 'users';
+
+        
+    });
+    roomsButton.addEventListener('click', function() {
+
+    adminContent.innerHTML = 'rooms';
+
+
+    });
+    adminAnnouncements.addEventListener('click', function() {
+
+    adminContent.innerHTML = 'announcements';
+
+
+    });
+
+    
+
+</script>
+
+<%- include('./partials/db_footer') %>
