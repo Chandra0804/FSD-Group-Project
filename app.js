@@ -5,10 +5,14 @@ const bodyparser = require("body-parser")
 const mongoose = require('mongoose')
 const { create } = require('domain')
 
+<<<<<<< HEAD
 const nodemailer = require('nodemailer');
 const multer = require('multer')
 // Set up middleware to handle form data
 app.use(multer().any());
+=======
+
+>>>>>>> 25f40cb4932fb0698e6a5e25332416001d1b9cc2
 
 url = 'mongodb+srv://Cluster56859:Hari123@cluster56859.rute9cj.mongodb.net/Learnen'
 
@@ -257,6 +261,7 @@ app.post('/createRoom', (req,res)=>{
 
 })
 
+<<<<<<< HEAD
 app.post('/submit-form', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: "gmail",
@@ -311,5 +316,29 @@ app.post('/submit-form', (req, res) => {
           }
     });
 })
+=======
+
+// app.post('/uploadAssignment',(req,res)=>{
+//     const 
+// })
+
+
+// app.post('/addNote',(req,res)=>{
+//     const title = req.body.title
+//     const description = req.body.desc
+
+//     const newNote = {
+//         Title : title,
+//         Description : description
+//     }
+
+//     con.collection('Notes').insertOne(newNote)
+//     .then(async ()=>{
+//         res.render('RoomViewPage')
+//     })  
+//     .catch(err => console.log(err))
+
+// })
+>>>>>>> 25f40cb4932fb0698e6a5e25332416001d1b9cc2
 
 app.listen(3000)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <%- include('./partials/db_header') -%>  
 <%- include('./partials/db_sidebar') -%>
@@ -53,4 +54,61 @@
 
   
 </div>
+=======
+
+<%- include('./partials/db_header') -%>  
+<%- include('./partials/db_sidebar') -%>
+<div class="main">
+
+  <div style="width: 100%; display: flex; justify-content: center;">
+
+    <nav style="width: 75%; margin: 20px;">
+
+      <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search Tags..." aria-label="Search" style="background-color: #e9edc9;border: 2px solid #ccd5ae;">
+          <button class="btn btn-outline-primary" style="background-color: #023047;" type="submit">Search</button>
+        </form>
+      </div>
+
+    </nav>
+
+  </div>
+  
+  
+  <div style="width:100%; display: flex; justify-content: center;">
+    <div class="room-tags-wrapper">
+      <ul class="room-tags">
+        <li title="Hygiene"><i style="margin-left: 30px;" class="tag-icon fa-sharp fa-solid fa-bath"></i></li>
+        <li title="Mechanical"><i style="margin-left: 30px;" class="tag-icon fa-solid fa-gears"></i></li>
+        <li title="Security"><i style="margin-left: 30px;" class="tag-icon fa-sharp fa-solid fa-shield"></i></li>
+        <li title="Technology"><i style="margin-left: 30px;" class="tag-icon fa-solid fa-microchip"></i></li>
+        <li title="Safety"><i style="margin-left: 30px;" class="tag-icon fa-sharp fa-solid fa-fire-extinguisher"></i></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div style="width: 100%; text-align: center;margin: 50px;">
+    <div class="card-grid" style="width:100%;">
+      <% for(let i = 0; i < 11; i++) { %>
+
+        <div class="card" style="width: 18rem; margin: 10px;">
+          <img src="/images/lotus.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Room title</h5>
+            <p class="card-text">Room description</p>
+            <a href="#" class="btn btn-primary">Join Room</a>
+          </div>
+        </div>
+        
+      <% } %>
+    </div>
+  </div>
+
+
+
+  
+</div>
+>>>>>>> 25f40cb4932fb0698e6a5e25332416001d1b9cc2
 <%- include('./partials/db_footer') -%>

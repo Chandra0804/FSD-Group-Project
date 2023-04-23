@@ -1,0 +1,303 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Century Gothic;
+    overflow: hidden;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar {
+    /* background-color: #4CAF50; */
+    background-color: #fefae0;
+    height: 100vh;
+    position: relative;
+    left: 0;
+    overflow-x: hidden;
+    width: 200px;
+    box-shadow: 2px 2px 5px #aaa;
+}
+
+.sidebar-links a {
+    font-weight: bolder;
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+    color: #000;
+    transition: background-color 0.3s;
+}
+
+.sidebar-links a:hover {
+    background-color: #ddd;
+}
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+/* Style the sidebar icons */
+.sidebar i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: ease 0.3s;
+}
+
+.btn:hover {
+    background-color: #666;
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {
+        float: left;
+    }
+    .content {
+        margin-left: 0;
+    }
+}
+
+/* CREATEROOM BUTTON STYLES */
+#create-room {
+    background: #FBCA1F;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0em 0.1em;
+    margin: 10px;
+}
+
+#create-room:hover {
+    transform: translate(0em, -0.05em);
+    box-shadow: 0em 0.15em;
+    cursor:pointer;
+}
+
+#create-room:active {
+    transform: translate(0em, 0.05em);
+    box-shadow: 0em 0.05em;
+}
+
+
+/* admin button styles */
+#admin-corner{
+    bottom:0;
+    position:absolute;
+    width: 100%;
+    color: red;
+}
+#admin-corner:hover{
+    background-color: red;
+    color: white;
+}
+
+.card-grid {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    max-height: 500px; 
+    overflow-y: auto; 
+  }
+
+
+/* search bar */
+
+
+
+  /* room tags styling */
+
+  .main{
+    width: 100%;
+    background-color: #faedcd;
+
+  }
+
+  .room-tags{
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+    margin: 10px;
+    list-style-type: none;
+    font-size: 20px;
+    color: #023047;
+  }
+  
+  .tag-icon{
+    padding:10px;
+    margin: 5px;
+    border-radius: 50%;
+    border-width: 10px;
+    background-color: #d4a373;
+    border: 3px solid rgb(255, 241, 162);
+  }
+
+
+/* styles for admin page */
+.user-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 600px;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-item i {
+    cursor: pointer;
+}
+
+.user-item h2 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.user-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.user-options {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    list-style: none;
+}
+
+.user-options li {
+    cursor: pointer;
+}
+
+section:not(.hidden) {
+    display: block;
+}
+  
+.hidden {
+    display: none;
+}
+
+
+.active{
+    color: rgb(245, 220, 0);
+}
+
+
+/* dropdown card  */
+
+.card {
+    width: 300px;
+    height: 300px;
+    background-color: #f9f9f9;
+    margin: 20px;
+    padding: 20px;
+    position: relative;
+    display: block;
+  }
+  
+  .icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 40px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 8px 0;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+/* explore styles */
+
+.scrollable-cards {
+    margin-bottom: 20px; 
+  }
+  
+  .scrollable-cards .card-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  
+  .scrollable-cards .card {
+    flex: 0 0 auto;
+    width: 200px; 
+    margin-right: 10px; 
+  }
+  
