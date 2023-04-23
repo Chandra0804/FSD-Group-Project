@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room</title>
+    <link rel="stylesheet" href="/styles/Room.css">
+    <script src="https://kit.fontawesome.com/9608e97d56.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-W3qk+hN/p75NnLW7G8tY1Ct7BvcfhoEkrG7kXcL1+d/W4GB4o0fzn76JxxqwYzY67Qa1LnMctE0Q2OlaBv9Cug==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title-wrapper">
+                <h1 class="title-text">My Room Title</h1>
+            </div>
+            <div class="header-icons">
+                <button id="playBtn" class="focus-button" title="Play Music">
+                    <i class="fa-solid fa-music" style="color: #013049; font-size: 25px;"></i>
+                </button>
+                <button class="focus-button" title="Focus mode">
+                    <i class="fa-solid fa-brain" style="color: #013049; font-size: 25px;"></i>
+                </button>
+                <button class="focus-button" title="Leave Room">
+                    <i class="fa-solid fa-circle-xmark" style="color: red; font-size: 25px;"></i>
+                </button>
+                <button class="focus-button" title="Room dp">
+                    <i class="fa-solid fa-user" style="color: black; font-size: 25px;"></i>
+                </button>
+            </div>
+        </div>
+        <div class="screen" id="screen">
+            <!-- <div id="musicPopup" class="music-popup">
+                <audio id="audio" src=""></audio>
+                <div id="playPause" class="play"></div>
+
+                <div id="progressBar"></div>
+            </div> -->
+            <div class="content-wrapper">
+                <div class="modal-background"></div>
+                <div class="room-modal">
+                    <div class="room-modal-header">
+                        <h2 class="room-modal-title">Room Title</h2>
+                        <span class="room-modal-close">&times;</span>
+                    </div>
+                    <div class="room-modal-content">
+                        <p>
+                            <span class="room-modal-mentor">Mentor Name</span>
+                        </p>
+                        <p>
+                            <span class="room-modal-tags">Tag 1, Tag 2, Tag 3</span>
+                        </p>
+                        <p>
+                            Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nulla eu arcu
+                            fringilla semper. Vestibulum vel nisl euismod, rutrum libero eget, sollicitudin velit.
+                            Phasellus ut faucibus lectus.
+                        </p>
+                        <iframe class="room-modal-syllabus" src=""></iframe>
+                    </div>
+                </div>
+
+                <div class="left-wrapper">
+                    <div class="left-top">
+                        <div class="wrapper-timer">
+                            <h1 class="heading">Timer</h1>
+                            <audio id="alarm" src="/audio/alarm.mp3"></audio>
+                            <div class="timer-top">
+                                <details class="custom-select">
+                                    <summary class="radios">
+                                        <input class="timer-input" type="radio" name="item" id="default"
+                                            title="Timer length" checked>
+                                        <input class="timer-input" type="radio" name="item" id="item1"
+                                            title="10 seconds" data-time="10">
+                                        <input class="timer-input" type="radio" name="item" id="item2" title="5 minutes"
+                                            data-time="300">
+                                        <input class="timer-input" type="radio" name="item" id="item3"
+                                            title="10 minutes" data-time="600">
+                                        <input class="timer-input" type="radio" name="item" id="item4"
+                                            title="15 minutes" data-time="900">
+                                        <input class="timer-input" type="radio" name="item" id="item5"
+                                            title="20 minutes" data-time="1200">
+                                        <input class="timer-input" type="radio" name="item" id="item6"
+                                            title="30 minutes" data-time="1800">
+                                    </summary>
+                                    <ul class="list">
+                                        <li>
+                                            <label for="item1">
+                                                10 seconds
+                                                <span></span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label for="item2">
+                                                5 minutes
+                                                <span></span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label for="item3">10 minutes</label>
+                                        </li>
+                                        <li>
+                                            <label for="item4">15 minutes</label>
+                                        </li>
+                                        <li>
+                                            <label for="item5">20 minutes</label>
+                                        </li>
+                                        <li>
+                                            <label for="item6">30 minutes</label>
+                                        </li>
+                                    </ul>
+                                </details>
+                                <button id="start" class="timer-icon"><i class="fa-solid fa-clock"></i></button>
+                                <button id="stop" class="timer-icon" hidden><i class="fa-solid fa-stop"></i></button>
+                                <button id="pause" class="timer-icon" hidden><i class="fas fa-pause"></i></button>
+
+                                <button id='play' class="timer-icon" hidden><i class="fa-solid fa-play"></i></button>
+
+                            </div>
+                            <div class="timer-bottom">
+                                <div class="timer">
+                                    <h2>Time remaining:</h2>
+                                    <p class="display">00:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-bottom">
+                        <div class="wrapper-todo">
+                            <div class="todo-topwrapper">
+                                <ul>
+                                    <li class="line" id="tasks">Tasks</li>
+                                    <li class="line" id="notes">Notes</li>
+                                </ul>
+                            </div>
+                            <div class="todo-bottomwrapper">
+                                <div id="tasks-wrapper">
+                                    <div class="tasks-container">
+                                        <div class="tasks-card">
+                                            <div class="todoList">
+                                                <div class="title-content">
+                                                    <form class="add">
+                                                        <input type="text" name="add" placeholder="Add item...">
+                                                        <div class="input-buttons">
+                                                            <a href="#" class="add-todo">
+                                                                <i class="fas fa-plus add"></i>
+                                                            </a>
+                                                        </div>
+                                                    </form>
+                                                    <div>
+                                                        <ul class="todos">
+                                                            <li>
+                                                                <input type="checkbox" id="todo_1" />
+                                                                <label for="todo_1">
+                                                                    <span class="check"></span>
+                                                                    Complete something
+                                                                </label>
+                                                                <i class="far fa-trash-alt delete"></i>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="notes-wrapper">
+                                    <div class="notes-container">
+                                        <div class="popup-box">
+                                            <div class="popup">
+                                                <div class="content">
+                                                    <header>
+                                                        <p></p>
+                                                        <i class="uil uil-times"></i>
+                                                    </header>
+                                                    <form class="notes-add" action="#">
+                                                        <div class="row-title">
+                                                            <label class="label-style">Title</label>
+                                                            <input type="text" spellcheck="false">
+                                                        </div>
+                                                        <div class="row-description">
+                                                            <label>Description</label>
+                                                            <textarea spellcheck="false"></textarea>
+                                                        </div>
+                                                        <button></button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="notes-main-wrapper">
+                                            <li class="add-box">
+                                                <div class="icon"><i class="uil uil-plus"></i></div>
+                                                <p>Add new note</p>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-wrapper">
+                    <div class="chat-box">
+                        <div class="chat-box-header">
+                            Chat
+                        </div>
+
+                        <div class="chat-box-body">
+                            <div class="chat-box-overlay">
+                            </div>
+                            <div class="chat-logs">
+
+                            </div>
+                            <!--chat-log -->
+                        </div>
+                        <div class="chat-header">
+                            <div class="chat-header-options">
+                                <button class="option-btn bold" id="bold-button">
+                                    <i class="fas fa-bold"></i>
+                                </button>
+                                <button class="option-btn italic" id="italic-button">
+                                    <i class="fas fa-italic"></i>
+                                </button>
+                                <button class="option-btn underline" id="underline-button">
+                                    <i class="fas fa-underline"></i>
+                                </button>
+                                <button id="strikethrough-button" class="option-btn">
+                                    <i class="fas fa-strikethrough"></i>
+                                </button>
+                                <input type="color" id="color-picker">
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <form>
+                                <input type="text" id="chat-input" placeholder="Send a message..." />
+                                <button type="submit" class="chat-submit" id="chat-submit"><i
+                                        class="material-icons">send</i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-navigation">
+            <nav class="navigation-bar">
+                <ul class="list-items">
+                    <span class="pointer"></span>
+                    <li class="item active">
+                        <a class="link" id="home">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="link" id="info">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="link" id="assignments">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="link" id="resources">
+                            <i class="fa-solid fa-folder-open"></i>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="link" id="">
+                            <i class="fas fa-bell fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a class="link" id="participants">
+                            <i class="fas fa-user fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="left-sidebar" id="left-sidebar">
+            <div id="assignment-wrapper">
+                <div class="assignments-section">
+                    <button class="add-assignment-btn">+</button>
+                    <div class="add-assignment-popup">
+                        <form>
+                            <label for="assignment-title">Assignment Title:</label>
+                            <input type="text" id="assignment-title" name="assignment-title"><br>
+
+                            <label for="assignment-link">Assignment Link:</label>
+                            <input type="text" id="assignment-link" name="assignment-link"><br>
+
+                            <button type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="assignments-heading">
+                    <p class="section-heading">Assignments</p>
+                </div>
+                <div class="assignments-list">
+                    <ol>
+                        <% if(assignmentName.length>0){ %>
+                            <% for(let i=0;i<assignmentName.length;i++){ %>
+                        <li class="assignments-list-items">
+                            <div class="list-item-wrapper">
+                                <a href="#" style="text-decoration: none;">
+                                    <div class="icon-and-text">
+                                        <div class="icon-assignment">
+                                            <i class="material-icons">assignment</i>
+                                        </div>
+                                        <div class="text-assignment">
+                                            <div class="divide-text-assignment">
+                                                <div class="divide-text-assignment-container">
+                                                    <p class="text-top-assignment">
+                                                        <%= assignmentName[i] %>
+                                                    </p>
+                                                    <p class="text-bottom-assignment">
+                                                        <%= assignmentPosted[i] %>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <% } %>
+											<% }else{ %>
+												<p>No Assignments</p>
+												<% } %>
+                    </ol>
+                </div>
+            </div>
+            <div id="resources-wrapper">
+                <div class="resources-section">
+                    <button class="add-resource-btn">+</button>
+                    <div class="add-resource-popup">
+                        <form>
+                            <label for="resource-title">Resource Title:</label>
+                            <input type="text" id="resource-title" name="resource-title"><br>
+
+                            <label for="resource-link">Resource Link:</label>
+                            <input type="text" id="resource-link" name="resource-link"><br>
+
+                            <label for="resource-date">Resource Date:</label>
+                            <input type="date" id="resource-date" name="resource-date"><br>
+
+                            <button type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="resources-heading">
+                    <p class="section-heading">Resources</p>
+                </div>
+                <div class="resource-container">
+                    <div class="resource-date">
+                        <h3>April 22, 2023</h3>
+                        <button class="toggle-files"><i class="fas fa-folder"></i></button>
+                        <ul class="file-list">
+                            <li><a href="#"><i class="fas fa-file"></i>File 1.pdf</a></li>
+                            <li><a href="#"><i class="fas fa-file"></i>File 2.docx</a></li>
+                            <li><a href="#"><i class="fas fa-file"></i>File 3.xlsx</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-date">
+                        <h3>April 21, 2023</h3>
+                        <button class="toggle-files"><i class="fas fa-folder"></i></button>
+                        <ul class="file-list">
+                            <li><a href="#"><i class="fas fa-file"></i>File 4.pdf</a></li>
+                            <li><a href="#"><i class="fas fa-file"></i>File 5.docx</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource-date">
+                        <h3>April 20, 2023</h3>
+                        <button class="toggle-files"><i class="fas fa-folder"></i></button>
+                        <ul class="file-list">
+                            <li><a href="#"><i class="fas fa-file"></i>File 6.pdf</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-sidebar" id="right-sidebar">
+            <div class="particpants-heading">
+                <p class="section-heading">Participants</p>
+            </div>
+            <div class="participants-list">
+                <!-- Participants List -->
+                <% for(let i=0;i<participantNames.length;i++){ %>
+                <div class="participant">
+                    <div><i class="fas fa-user user-icon"></i>
+                        <span><%= participantNames[i]%></span>
+                    </div>
+                    <i class="fas fa-ellipsis-h more-options"></i>
+                    <div class="options-dropdown">
+                        <div class="option">Edit</div>
+                        <div class="option">Remove</div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        </div>
+
+
+        <script src="/scripts/Room.js"></script>
+</body>
+
+</html>

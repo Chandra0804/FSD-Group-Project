@@ -4,11 +4,12 @@ const app = express()
 const bodyparser = require("body-parser")
 const mongoose = require('mongoose')
 const { create } = require('domain')
-
 const nodemailer = require('nodemailer');
 const multer = require('multer')
 // Set up middleware to handle form data
 app.use(multer().any());
+
+
 
 url = 'mongodb+srv://Cluster56859:Hari123@cluster56859.rute9cj.mongodb.net/Learnen'
 
@@ -22,6 +23,8 @@ let taskslists = ["Completing Assignment-1"];
 let title = "Room";
 
 let emailCheck = ""
+let mentor = false;
+let admin = true;
 
 
 
@@ -43,11 +46,11 @@ app.get('/signup',(req,res)=>{
 app.get('/contactus', (req, res) => {
     res.render('contact_us')
 })
-app.get('/login/mentorApplication', (req, res) => {
+app.get('/mentorApplication', (req, res) => {
     res.render('mentorApplication')
 })
 
-app.get('/login/createroom', (req, res) => {
+app.get('/createroom', (req, res) => {
     res.render('createroom')
 })
 
@@ -87,7 +90,13 @@ con.on('error', (err)=> {
     console.log(err);
 })
 
+app.get('/dashboard/joined',(req,res)=>{
+    res.render('dashboard_joined',{user : userName,mentor,admin})
+})
 
+app.get('/dashboard/admin',(req,res)=>{
+    res.render('admin_console',{user : userName,mentor,admin})
+})
 
 app.post('/login', async (req, res) => {
     
@@ -97,7 +106,7 @@ app.post('/login', async (req, res) => {
         const result = req.body.logpass === user.Password;
         if(result){
             userName = user.userId;
-            res.render("dashboard_page",{user: userName});
+            res.render("dashboard",{user : userName,mentor,admin});
         }
         else{
             res.status(400).json({ error: "password doesn't match" });
@@ -166,8 +175,8 @@ app.post('/changepassword', (req, res) => {
 
 })
   
-app.get('/login/room', (req, res) => {
-    res.render('RoomViewPage', { participantNames: participantNames, assignmentName: assignmentName, assignmentPosted: assignmentPosted, taskslists: taskslists, userName: userName, title: title })
+app.get('/room', (req, res) => {
+    res.render('Room', { participantNames: participantNames, assignmentName: assignmentName, assignmentPosted: assignmentPosted, taskslists: taskslists, userName: userName, title: title })
 })
 
 app.get('/termsconditions',(req,res)=>{
@@ -176,7 +185,7 @@ app.get('/termsconditions',(req,res)=>{
 
 app.get('/dashboard',(req,res)=>{
     if(userName!=null){
-    res.render('dashboard_page',{user : userName});
+    res.render('dashboard',{user : userName,mentor,admin});
     }
     else{
         res.redirect('/login');
@@ -256,6 +265,7 @@ app.post('/createRoom', (req,res)=>{
     .catch(err => console.log(err))
 
 })
+
 
 app.post('/submit-form', (req, res) => {
     const transporter = nodemailer.createTransport({
