@@ -1,11 +1,13 @@
-
-
-<% for(let i = 0; i < 11; i++) { %>
+<% for(let i = 0; i < user.length; i++) { %>
 <ul class="user-list">
     <li class="user-item">
         <div class="user-info">
-            <h2>user<%= i+1 %></h2>
-            <p>user1@example.com</p>
+            <% if (user[i]) { %>
+                <h2><%=user[i].userId %></h2>
+                <p><%=user[i].Email %></p>
+            <% } else { %>
+                <p>User not found</p>
+            <% } %>
         </div>
         <div class="dropdown">
             <button class="icon" style="margin:10px">
@@ -13,13 +15,45 @@
             </button>
             <div class="dropdown-content">
               <a class="edit-button">Edit</a>
-              <a href="#">Delete</a>
+              <!-- <form method="post">
+                <input type="hidden" name="userId" value="<%=user[i].userId %>">
+                <button style="margin-bottom: 3px;" type="submit">Edit</button>
+              </form> -->
+              <form method="post">
+                <input type="hidden" name="userId" value="<%=user[i].userId %>">
+                <button type="submit">Delete</button>
+              </form>
             </div>
         </div>
-        <!-- <ul class="user-options">
+         <!-- <ul class="user-options">
             <li>Delete User</li>
             <li>Change Permissions</li>
-        </ul> -->
+        </ul>  -->
+        
     </li>
+    <div id="edit-popup" class="popup">
+        <div class="popup-content">
+          <span class="close">&times;</span>
+          <h2>Edit User Information</h2>
+          <form method="post" action="/edit/<%= user[i].userId %>">
+            
+            <label for="signupname">New Username:</label>
+            <input type="text" id="signupname" name="signupname"><br><br>
+            
+            <label for="signupemail">Email:</label>
+            <input type="email" id="signupemail" name="signupemail" disabled><br><br>
+            
+            <label for="tags">Tags:</label>
+            <input type="text" id="tags" name="tags"><br><br>
+            
+            <label for="position">Position:</label>
+            <input type="text" id="position" name="position"><br><br>
+            
+            <button type="submit">Save Changes</button>
+          </form>
+        </div>
+      </div>
 </ul>
 <% } %>
+
+

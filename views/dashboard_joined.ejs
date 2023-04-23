@@ -21,18 +21,18 @@
   <div style="width: 100%; text-align: center;margin: 50px;">
 
     <div class="card-grid" style="width:100%;">
-      <% for(let i = 0; i < 11; i++) { %>
+      <% myrooms.forEach(room => { %>
   
         <div class="card" style="width: 18rem; margin: 10px;">
           <img src="/images/lotus.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Room title</h5>
-            <p class="card-text">Room description</p>
-            <a href="#" class="btn btn-primary">Enter Room</a>
+            <h5 class="card-title"><%= room.title %></h5>
+            <p class="card-text"><%= room.description %></p>
+            <a href="/join/<%= room._id %>" class="btn btn-primary">Enter Room</a>
           </div>
         </div>
         
-      <% } %>
+      <% }); %>
     </div>
 
   </div>

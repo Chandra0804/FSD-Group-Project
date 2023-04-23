@@ -38,8 +38,11 @@ Learnen was made in:
 with:
 * [NodeJS](https://nodejs.org/en/docs)
 * [Express](https://expressjs.com/)
-* [SQLite3 Database](https://www.sqlite.org/docs.html)
 * [EJS Template engine.](https://ejs.co/#docs)
+* [Mongoose](https://mongoosejs.com/docs/)
+* [Nodemailer](https://nodemailer.com/about/)
+* [Multer](https://www.npmjs.com/package/multer)
+* [Express-session](https://expressjs.com/en/resources/middleware/session.html)
 
 ### Learnen on my laptop:
 
@@ -59,9 +62,14 @@ You can do that by using the GIT CLI or by downloading the ZIP folder. <br>
 after running `npm init` on your terminal 
 in the current working directory, install: <br>
 
-- Express: `npm install express`
-- EJS    : `npm install ejs`
-- SQLite : `npm install sqlite`
+- Express        : `npm install express`
+- EJS            : `npm install ejs`
+- Path           : `npm install path`
+- Body-Parser    : `npm install body-parser`
+- Mongoose       : `npm install mongoose`
+- Multer         : `npm install multer`
+- NodeMailer     : `npm install nodemailer`
+- Express-session: `npm install express-session`
 
 3. Start the server:
 
@@ -101,8 +109,14 @@ Enjoy your learning!
 
 ### Possible additions : 
 
-💸 2 Subscriptions for casual users and mentors for an enhanced experience! <br>
-🕒 Focus mode that mutes the chat and starts a timer that cant be stopped! <br>
+💬 Chat!<br>
+🎧 Music!<br>
 🌞 Light Mode!<br>
 🌜 Dark Mode!<br>
 🔥 Streaks! <br>
+
+# Github Clone Link
+(https://github.com/Chandra0804/FSD-Group-Project.git)
+
+# GitHub Repo Link
+[Click here](https://github.com/Chandra0804/FSD-Group-Project)

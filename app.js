@@ -25,7 +25,7 @@ app.use(session({
     secret: 'your-secret-key',
     resave: false,
     saveUninitialized: false,
-    cookie: {maxAge:60*60*1000},
+    cookie: { maxAge: 60 * 60 * 1000 },
     store: new session.MemoryStore()
 }));
 
@@ -49,11 +49,11 @@ app.use(bodyparser.urlencoded({ extended: true }));
 
 
 function requireLogin(req, res, next) {
-  if (req.session && req.session.user) {
-    next();
-  } else {
-    res.redirect('/login');
-  }
+    if (req.session && req.session.user) {
+        next();
+    } else {
+        res.redirect('/login');
+    }
 }
 
 app.get('/', (req, res) => {
@@ -63,7 +63,7 @@ app.get('/', (req, res) => {
 app.get('/login', (req, res) => {
     res.render('Login')
 })
-app.get('/signup',(req,res)=>{
+app.get('/signup', (req, res) => {
     res.render('SignUp');
 })
 
@@ -75,19 +75,19 @@ app.get('/mentorApplication', (req, res) => {
 })
 
 app.get('/createroom', (req, res) => {
-    res.render('CreateRoom',{user:req.session.user});
+    res.render('CreateRoom', { user: req.session.user });
 })
 
 app.get('/about', (req, res) => {
     res.render('AboutUs')
 })
 
-app.get('/login/forgot',(req,res)=>{
+app.get('/login/forgot', (req, res) => {
     res.render('Forgot_Password');
 
 })
 
-app.get('/login/forgot/change',(req,res)=>{
+app.get('/login/forgot/change', (req, res) => {
     res.render('Change_Password');
 })
 
@@ -95,7 +95,7 @@ app.get('/login/index', (req, res) => {
     res.redirect('/')
 })
 
-app.get('/login/premium', (req, res) => {
+app.get('/dashboard/premium', (req, res) => {
     res.render('premium')
 })
 
@@ -104,80 +104,126 @@ app.get('/logout', (req, res) => {
     // res.redirect('/'); 
 
     req.session.destroy((err) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.redirect('/');
-      }
+        if (err) {
+            console.log(err);
+        } else {
+            res.redirect('/');
+        }
     });
 
 
-  });
+});
 const con = mongoose.connection;
 
-con.on('open',()=>{
+con.on('open', () => {
     console.log("MongoDB Connected")
     console.log("Table Created")
 })
 
-con.on('error', (err)=> {
+con.on('error', (err) => {
     console.log(err);
 })
 
-app.get('/dashboard/joined',(req,res)=>{
-    res.render('dashboard_joined',{user : userName,mentor,admin})
+app.get('/dashboard/joined',requireLogin, async (req, res) => {
+
+
+    const user = req.session.user;
+     const rooms = await Room.find({ participants: user }).populate('mentor').populate('participants');
+    // res.render('dashboard_joined', { user: userName, mentor, admin })
+    res.render('dashboard_joined', {
+        user,
+        rooms,
+        myrooms: user.Joined_Room
+    });
+    
+
+
 })
 
-app.get('/dashboard/admin',(req,res)=>{
-    res.render('admin_console',{user : userName,mentor,admin})
+app.get('/dashboard/admin', (req, res) => {
+    con.collection('users').find({}).toArray().then((result) => {
+        res.render('admin_console', { user: result, mentor, admin })
+    }).catch((err) => {
+        throw err;
+    });
 })
 
+app.post('/dashboard/admin', (req, res) => {
+    var n1 = req.body.userId;
+    var myquery = { userId: n1 };
+    con.collection('users').deleteOne(myquery, function (err, obj) {
+        if (err) throw err;
+    });
+    con.collection('users').find({}).toArray().then((result) => {
+        res.render('admin_console', { user: result, mentor, admin })
+    }).catch((err) => {
+        throw err;
+    });
+});
 
+app.post('/edit/:id', (req, res) => {
+
+    var un = req.params.id;
+    var un1 = req.body.signupname;
+    var ta = req.body.tags;
+    var po = req.body.position;
+    var myquery = { userId: un };
+    var newvalues = { $set: { userId: un1, Tags: ta, Position: po } };
+    con.collection('users').updateOne(myquery, newvalues, function (err, res) {
+        if (err) throw err;
+    });
+    con.collection('users').find({}).toArray().then((result) => {
+        res.render('admin_console', { user: result, mentor, admin })
+    }).catch((err) => {
+        throw err;
+    });
+})
 
 app.post('/delete-room/:id', requireLogin, async (req, res) => {
-  const user = req.session.user;
-  const room = await Room.findById(req.params.id);
-  
-  if (!room || user._id.toString() !== room.mentor._id.toString()) {
-  res.redirect('/dashboard');
-  } else {
-  // Remove room from all participants' joined_rooms array
-  for (const participant of room.participants) {
-  participant.joined_rooms = participant.joined_rooms.filter(
-  joined_room => joined_room._id.toString() !== room._id.toString()
-  );
-  await participant.save();
-  }
-  user.created_rooms = user.created_rooms.filter(
-      created_room => created_room._id.toString() !== room._id.toString()
-    );
-    await user.save();
-    
-    // Delete the room
-    await Room.findByIdAndDelete(room._id);
-    
-    res.redirect('/dashboard');}
-  });
+    const user = req.session.user;
+    const room = await Room.findById(req.params.id);
+
+    if (!room || user._id.toString() !== room.mentor._id.toString()) {
+        res.redirect('/dashboard');
+    } else {
+        // Remove room from all participants' joined_rooms array
+        for (const participant of room.participants) {
+            participant.joined_rooms = participant.joined_rooms.filter(
+                joined_room => joined_room._id.toString() !== room._id.toString()
+            );
+            await participant.save();
+        }
+        user.created_rooms = user.created_rooms.filter(
+            created_room => created_room._id.toString() !== room._id.toString()
+        );
+        await user.save();
+
+        // Delete the room
+        await Room.findByIdAndDelete(room._id);
+
+        res.redirect('/dashboard');
+    }
+});
 
 app.post('/login', async (req, res) => {
 
     const Email = req.body.logemail;
     const Password = req.body.logpass;
 
-  // Find user by username
-     const user = await User.findOne({ Email });
+    // Find user by username
+    const user = await User.findOne({ Email });
 
-  // If user not found or password doesn't match, redirect back to login page
+    // If user not found or password doesn't match, redirect back to login page
     if (!user || user.Password !== Password) {
         return res.redirect('/login');
     }
 
-  // Set session variable for currently logged in user
-  req.session.user = user;
+    // Set session variable for currently logged in user
+    req.session.user = user;
 
-  // Redirect to home page
-  res.redirect('/dashboard');
-    
+    // Redirect to home page
+    res.redirect('/dashboard');
+
     // const email = req.body.logemail;
     // const user = await User.findOne({Email: email});
     // if (user){
@@ -219,7 +265,7 @@ app.post('/login', async (req, res) => {
     // const email = req.body.logemail;
     // const password = req.body.logpass;
     // const user = await User.findOne({ email });
-  
+
     // if (!user || user.password !== password) {
     //   res.render('Login');
     // } else {
@@ -229,114 +275,128 @@ app.post('/login', async (req, res) => {
 
 });
 
-app.post('/forgotpassword',async (req,res)=>{
+app.post('/forgotpassword', async (req, res) => {
     const email = req.body.email;
     emailCheck = email;
-    const user = await con.collection('users').findOne({Email: email});
-    res.render('Security_Question',{sec_ques : user.Security_Question});
+    const user = await con.collection('users').findOne({ Email: email });
+    res.render('Security_Question', { sec_ques: user.Security_Question });
 })
 
 
-app.post('/changePW',async (req,res)=>{
+app.post('/changePW', async (req, res) => {
     const email = emailCheck;
-    const user = await con.collection('users').findOne({Email: email});
+    const user = await con.collection('users').findOne({ Email: email });
     const answer = req.body.sec_ans;
-    if (user){
+    if (user) {
         const answerCheck = answer === user.Security_Answer;
-        if(answerCheck){
+        if (answerCheck) {
             res.render('Change_Password');
         }
-        else{
+        else {
             res.status(404).send("Wrong Answer");
         }
     }
-    else{
+    else {
         res.status(401).send("User Not Found");
     }
-    
+
 });
-  
+
 app.post('/changepassword', (req, res) => {
-    const { newPassword ,confirmPW} = req.body;
+    const { newPassword, confirmPW } = req.body;
     const users = con.collection('users');
     const email = emailCheck;
-      // Find the user with the given email
-      return users.findOne({Email: email })
+    // Find the user with the given email
+    return users.findOne({ Email: email })
         .then(user => {
-          if (!user) {
-            return res.status(404).send('User not found');
-          }
+            if (!user) {
+                return res.status(404).send('User not found');
+            }
 
-          if (newPassword != confirmPW) {
-            return res.send('Please match the Confirm Password');
-          }
+            if (newPassword != confirmPW) {
+                return res.send('Please match the Confirm Password');
+            }
 
-          // Update the user's password in the database
-          return users.updateOne({Email: email }, { $set: { Password: newPassword } })
-            .then(result => {
-              if (result.modifiedCount === 1) {
-                res.redirect('/login');
-                // return res.status(200).send('Password updated successfully');
-              } else {
-                return res.status(500).send('Error updating password');
-              }
-            });
+            // Update the user's password in the database
+            return users.updateOne({ Email: email }, { $set: { Password: newPassword } })
+                .then(result => {
+                    if (result.modifiedCount === 1) {
+                        res.redirect('/login');
+                        // return res.status(200).send('Password updated successfully');
+                    } else {
+                        return res.status(500).send('Error updating password');
+                    }
+                });
         });
 
 })
-  
+
 // app.get('/room', (req, res) => {
 //     res.render('Room', { participantNames: participantNames, assignmentName: assignmentName, assignmentPosted: assignmentPosted, taskslists: taskslists, userName: userName, title: title })
 // })
 
 app.get('/room/:id', requireLogin, async (req, res) => {
-  const user = req.session.user;
-  const room = await Room.findById(req.params.id)
-  .populate('mentor', 'username')
-  .populate('participants', 'username')
-  .populate('assignments')
-  .populate('resources')
-  .populate('notes');
-      
-if (!room) {
-  res.redirect('/dashboard');
-} else {
-  const isParticipant = room.participants.some(
-  participant => participant._id.toString() === user._id.toString()
-  );
-  const isMentor = user._id.toString() === room.mentor._id.toString();
-  res.render('room', { user, room, isParticipant, isMentor });
-}
+    const user = req.session.user;
+    const room = await Room.findById(req.params.id)
+        .populate('mentor', 'username')
+        .populate('participants', 'username')
+        .populate('assignments')
+        .populate('resources')
+        .populate('notes');
+
+    if (!room) {
+        res.redirect('/dashboard');
+    } else {
+        const isParticipant = room.participants.some(
+            participant => participant._id.toString() === user._id.toString()
+        );
+        const isMentor = user._id.toString() === room.mentor._id.toString();
+        res.render('room', { user, room, isParticipant, isMentor });
+    }
 });
 
 app.post('/createroom', requireLogin, async (req, res) => {
-  const user = req.session.user;
-  const { title, description, tags, syllabus } = req.body;
-  
-  const newRoom = new Room({
-  title,
-  description,
-  tags,
-  syllabus,
-  mentor: user,
-  });
-  try {
-      await newRoom.save();
-      user.created_rooms.push(newRoom);
-      await user.save();
-      res.redirect(`/room/${newRoom._id}`);} 
-  catch (err) {
-          console.error(err);
-          res.redirect('/dashboard');
-      }
+    const user = req.session.user;
+    const { title, description, tags, syllabus } = req.body;
+
+    const newRoom = new Room({
+        title,
+        description,
+        tags,
+        syllabus,
+        mentor: user,
+    });
+
+    try {
+        await newRoom.save();
+        user.Created_Room.push(newRoom);
+
+        if (newRoom.Participants) {  // check if Participants array exists
+            newRoom.Participants.push({ user: user, notes: [] });
+        } else {
+            newRoom.Participants = [{ user: user, notes: [] }];
+        }
+
+        await newRoom.save();
+        await user.save();
+
+        // Log the newly created room to the console
+        console.log('New room:', newRoom);
+
+        res.redirect(`/room/${newRoom._id}`);
+    } catch (err) {
+        console.error(err);
+        res.redirect('/dashboard');
+    }
 });
 
 
-app.get('/termsconditions',(req,res)=>{
+app.get('/termsconditions', (req, res) => {
     res.render('terms_conditions');
 })
 
-app.get('/dashboard', requireLogin,async (req,res)=>{
+app.get('/dashboard', requireLogin, async (req, res) => {
+
     // if(userName!=null){
     // res.render('dashboard',{user : userName,mentor,admin});
     // }
@@ -346,35 +406,54 @@ app.get('/dashboard', requireLogin,async (req,res)=>{
 
     const user = req.session.user;
     const rooms = await Room.find();
-  //   const rooms = await Room.find({ participants: user }).populate('mentor').populate('participants');
-    res.render('dashboard', { 
-      user, 
-      rooms,
-      myrooms:user.Joined_Room 
-  });
+    //   const rooms = await Room.find({ participants: user }).populate('mentor').populate('participants');
+    res.render('dashboard', {
+        user,
+        rooms,
+        myrooms: user.Joined_Room
+    });
 })
 
-app.get('/login/payment',(req,res)=>{
+app.get('/login/payment', (req, res) => {
     res.render('payment');
 })
 
-app.get('/paymentstatus',(req,res)=>{
+app.get('/paymentstatus', (req, res) => {
     res.render('paymentstatus');
 })
 
-app.post('/join/:id', requireLogin, async (req, res) => {
-  const user = req.session.user;
-  const room = await Room.findById(req.params.id);
+app.get('/join/:id', requireLogin, async (req, res) => {
+    try {
+        const userId = req.session.user._id;
+        const room = await Room.findById(req.params.id);
+        const user = await User.findById(userId);
 
-  if (!room) {
-    res.redirect('/dashboard');
-  } else {
-    room.participants.push(user);
-    await room.save();
-    user.joined_rooms.push(room);
-    await user.save();
-    res.redirect(`/room/${room._id}`);
-}});
+        if (!room) {
+            res.redirect('/dashboard');
+            return;
+        }
+
+        // check if user is already a participant in the room
+        const isParticipant = room.Participants.some(participant => new mongoose.Types.ObjectId(String(participant.user)).equals(userId));
+        if (isParticipant) {
+            res.redirect(`/room/${room._id}`);
+            return;
+        }
+
+        // add user to the Participants list of the room
+        room.Participants.push({ user: userId, notes: [] });
+        await room.save();
+
+        // add room to the Joined_Room list of the user
+        user.Joined_Room.push(room);
+        await user.save();
+
+        res.redirect(`/room/${room._id}`);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+});
 
 
 app.post('/signup', async (req, res) => {
@@ -409,28 +488,32 @@ app.post('/signup', async (req, res) => {
     // })  
     // .catch(err => console.log(err))
 
-    const { username, email, password, securityQuestion, securityAnswer} = req.body;
+    const username = req.body.signupname;
+    const email = req.body.signupemail;
+    const password = req.body.signuppass;
+    const securityQuestion = req.body.security_question;
+    const securityAnswer = req.body.aecurity_answer;
 
-  try {
-    const user = new User({
-      username,
-      email,
-      password,
-      securityQuestion,
-      securityAnswer,
-      joinedRooms: [],
-      createdRooms: [],
-      position:"student",
-      tags: [],
-      premium:"false" ,
-    });
-    await user.save();
-    req.session.user = user;
-    res.redirect('/dashboard');
-  } catch (err) {
-    console.error(err);
-    res.render('SignUp');
-  }
+    try {
+        const user = new User({
+            username,
+            email,
+            password,
+            securityQuestion,
+            securityAnswer,
+            joinedRooms: [],
+            createdRooms: [],
+            position: "student",
+            tags: [],
+            premium: "false",
+        });
+        await user.save();
+        req.session.user = user;
+        res.redirect('/login');
+    } catch (err) {
+        console.error(err);
+        res.render('SignUp');
+    }
 
 
 });
@@ -469,24 +552,24 @@ app.post('/signup', async (req, res) => {
 
 // })
 app.post('/leave/:id', requireLogin, async (req, res) => {
-  const user = req.session.user;
-  const room = await Room.findById(req.params.id);
-  
-  if (!room) {
-  res.redirect('/dashboard');
-  } else {
-  // Remove user from participants array
-  room.participants = room.participants.filter(
-  participant => participant._id.toString() !== user._id.toString()
-  );
-  await room.save();
-  user.joined_rooms = user.joined_rooms.filter(
-      joined_room => joined_room._id.toString() !== room._id.toString()
-    );
-    await user.save();
-    
-    res.redirect('/dashboard');
-  }
+    const user = req.session.user;
+    const room = await Room.findById(req.params.id);
+
+    if (!room) {
+        res.redirect('/dashboard');
+    } else {
+        // Remove user from participants array
+        room.participants = room.participants.filter(
+            participant => participant._id.toString() !== user._id.toString()
+        );
+        await room.save();
+        user.joined_rooms = user.joined_rooms.filter(
+            joined_room => joined_room._id.toString() !== room._id.toString()
+        );
+        await user.save();
+
+        res.redirect('/dashboard');
+    }
 });
 
 
@@ -521,25 +604,57 @@ app.post('/submit-form', requireLogin, (req, res) => {
           <p>Additional: ${req.body.additional}</p>
           <p>How were you referred to us?: ${req.body.check}</p>
           <p>What is your motivation for applying as a mentor: ${req.body.motivation}</p>
-        ` 
+        `
     };
 
     // If an attachment was uploaded, add it to the email data
     if (req.files && req.files.length > 0) {
         mailOptions.attachments = req.files.map(file => ({
-        filename: file.originalname,
-        content: file.buffer
+            filename: file.originalname,
+            content: file.buffer
         }));
     }
-    
-    transporter.sendMail(mailOptions, function(error, info) {
+
+    transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error);
             res.status(500).send('Error sending email');
-          } else {
+        } else {
             console.log('Email sent: ' + info.response);
             res.status(200).send('Email sent');
-          }
+        }
+    });
+})
+
+app.post('/feedback', (req, res) => {
+    const nodemailer = require('nodemailer');
+
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: "user.learnen@gmail.com",
+            pass: "ypzqhkpbtowzmedn"
+        }
+    });
+
+    const mailOptions = {
+        from: "user.learnen@gmail.com",
+        to: "console.learnen@gmail.com",
+        subject: "Feedback from a customer",
+        html: `
+        <p>Email: ${req.body.email}</p>
+        <p>Feedback: ${req.body.message}</p>
+    `
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+            res.status(500).send('Error sending email');
+        } else {
+            console.log('Email sent: ' + info.response);
+            res.status(200).send('Email sent');
+        }
     });
 })
 
@@ -564,6 +679,8 @@ app.post('/submit-form', requireLogin, (req, res) => {
 //     .catch(err => console.log(err))
 
 // })
-app.listen(3000,()=>{
-  console.log('server running at port 3000');
+
+
+app.listen(3000, () => {
+    console.log('server running at port 3000');
 })

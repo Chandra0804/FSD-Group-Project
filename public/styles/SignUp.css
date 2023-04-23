@@ -7,6 +7,7 @@
 
 body {
     background: linear-gradient(90deg, #f3ebe2, #f6e3cf);
+    margin: 0;
 }
 
 .wrapper-image {
@@ -30,6 +31,7 @@ img {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin-top: 30px;
 }
 
 .wrapper {
