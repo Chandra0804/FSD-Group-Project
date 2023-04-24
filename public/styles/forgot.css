@@ -1,0 +1,107 @@
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #FEF4E8;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px 20px;
+  }
+  
+  .wrapper {
+    position: relative;
+  }
+  
+  .content-wrapper {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  input[type="email"] {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    border: solid 1px black;
+  }
+  
+  button[type="submit"] {
+    background-color: #013049;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #014b73;
+  }
+  
+  #back {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+  
+  #back:hover {
+    text-decoration: underline;
+  }
+  
+  .background-shape {
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .background-shape-1 {
+    width: 100px;
+    height: 100px;
+    background-color: #007bff;
+    top: -50px;
+    left: -50px;
+  }
+  
+  .background-shape-2 {
+    width: 80px;
+    height: 80px;
+    background-color: #f7d794;
+    top: 30%;
+    left: -40px;
+  }
+  
+  .background-shape-3 {
+    width: 60px;
+    height: 60px;
+    background-color: #eb4d4b;
+    top: 20%;
+    right: -30px;
+  }
+  
+  .background-shape-4 {
+    width: 120px;
+    height: 120px;
+    background-color: #f0932b;
+    bottom: -60px;
+    right: -60px;
+  }
+  

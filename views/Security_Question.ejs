@@ -1,14 +1,22 @@
 <html>
-
+<head>
+  <link rel="stylesheet" href="/styles/security_question.css">
+</head>
 <body>
   <h1>Security Question</h1>
   <p id="security_question">
     <%= sec_ques %>
   </p>
   <form action="/changePW" method="post">
-  <input type="text" name="sec_ans" id="sec_ans">
+  <input type="text" name="sec_ans" id="sec_ans" placeholder="Enter Security answer">
   <button type="submit">Change Password</button>
   </form>
+  <div class="background-wrapper">
+    <span class="background-shape background-shape-4"></span>
+    <span class="background-shape background-shape-3"></span>
+    <span class="background-shape background-shape-2"></span>
+    <span class="background-shape background-shape-1"></span>
+</div>
 </body>
 
 </html>

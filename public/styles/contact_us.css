@@ -125,7 +125,20 @@
     margin-bottom: 20px;
     border-width: 2px;
     background-color: #ffffff;
-    left: 19%;
+    left:3%;
+  }
+  .block_m{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    /* position: absolute;
+    bottom:10px; */
+    width: 90%;
+    height: 300px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #ffffff;
+    right : 35%;
   }
   .block_r{
     display: flex;
@@ -138,7 +151,7 @@
     border-style: solid;
     border-width: 2px;
     background-color: #ffffff;
-    right: 19%;
+    right: 3%;
   }
   .call{
     padding-top: 10%;
@@ -311,9 +324,9 @@
     margin-bottom: 20px;
     border-width: 2px;
     background-color: #ffffff;
-    left: 19%;
+    left:3%;
   }
-  .block_r{
+  .block_m{
     display: flex;
     flex-direction: column; 
     align-items: center;
@@ -324,7 +337,20 @@
     border-style: solid;
     border-width: 2px;
     background-color: #ffffff;
-    right: 19%;
+    right : 35%;
+  }
+  .block_r{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    /* position: absolute;
+    bottom:10px; */
+    width: 80%;
+    height: 500px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #ffffff;
+    right: 3%;
   }
   .call{
     padding-top: 10%;
@@ -497,7 +523,20 @@ h3{
   margin-bottom: 20px;
   border-width: 2px;
   background-color: #ffffff;
-  left: 19%;
+  left:3%;
+}
+.block_m{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  /* position: absolute;
+  bottom:10px; */
+  width: 60%;
+  height: 300px;
+  border-style: solid;
+  border-width: 2px;
+  background-color: #ffffff;
+  right : 35%;
 }
 .block_r{
   display: flex;
@@ -510,7 +549,7 @@ h3{
   border-style: solid;
   border-width: 2px;
   background-color: #ffffff;
-  right: 19%;
+  right: 3%;
 }
 .call{
   padding-top: 10%;
@@ -675,7 +714,20 @@ h3{
     border-style: solid;
     border-width: 2px;
     background-color: #ffffff;
-    left: 19%;
+    left:3%;
+  }
+  .block_m{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    position: absolute;
+    top:330px;
+    width: 30%;
+    height: 370px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #ffffff;
+    right : 35%;
   }
   .block_r{
     display: flex;
@@ -688,7 +740,7 @@ h3{
     border-style: solid;
     border-width: 2px;
     background-color: #ffffff;
-    right: 19%;
+    right: 3%;
   }
   .call{
     padding-top: 10%;
@@ -851,7 +903,20 @@ h3{
     border-style: solid;
     border-width: 2px;
     background-color: #ffffff;
-    left: 19%;
+    left:3%;
+  }
+  .block_m{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    position: absolute;
+    top:330px;
+    width: 30%;
+    height: 370px;
+    border-style: solid;
+    border-width: 2px;
+    background-color: #ffffff;
+    right : 35%;
   }
   .block_r{
     display: flex;
@@ -864,7 +929,7 @@ h3{
     border-style: solid;
     border-width: 2px;
     background-color: #ffffff;
-    right: 19%;
+    right: 3%;
   }
   .call{
     padding-top: 10%;
@@ -913,4 +978,62 @@ h3{
     padding-right: 10px;
     height: 35px;
  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 5px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+input[type="submit"]:active {
+  background-color: #3e8e41;
+}
+
+input[type="submit"]:focus {
+  outline: none;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
