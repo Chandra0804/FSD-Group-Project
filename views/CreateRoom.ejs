@@ -70,7 +70,7 @@
 
         </div>
         <div class="Form">
-            <form action="/createRoom" method="post">
+            <form action="/createroom" method="post">
                 <div class="mb-3">
                     <label for="title" class="form-label my-3" required>Study Room Title</label>
                     <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId"
@@ -92,15 +92,16 @@
                 <div class="mb-3">
                     <label for="tags" class="form-label my-3">Tags</label>
                     <select class="form-select form-select-lg" name="tags" id="tags" onchange="CheckOther(this.value)" required>
-                        <option selected>Select One</option>
-                        <option value="1">Web Development</option>
-                        <option value="2">AI/ML</option>
-                        <option value="3">Cyber Security</option>
-                        <option value="4">Data Science</option>
-                        <option value="5">Arts and Humanities</option>
-                        <option value="6">Mathematics</option>
-                        <option value="7">Science</option>
-                        <option value="8">Other</option>
+                        <%= user.userId %>
+                        <% user.Tags.forEach(element => { %>
+                            <option value="<%= element %>"> <%= element %> </option>
+                        <% }); %>
+                        <!-- <option selected>Select One</option>
+                        <option value=>Wellbeing</option>
+                        
+                        <option value="3">Security</option>
+                        <option value="4">Technology</option>
+                        <option value="5">Safety</option> -->
                     </select>
                     <div id="other" class="py-4">
                         <div class="mb-3">

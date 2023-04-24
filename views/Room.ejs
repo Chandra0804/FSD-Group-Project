@@ -35,12 +35,9 @@
             </div>
         </div>
         <div class="screen" id="screen">
-            <!-- <div id="musicPopup" class="music-popup">
-                <audio id="audio" src=""></audio>
-                <div id="playPause" class="play"></div>
-
-                <div id="progressBar"></div>
-            </div> -->
+            <div class="music-box">
+                <audio id="musicPlayer" src="/audio/audio1.mp3"></audio>
+            </div>
             <div class="content-wrapper">
                 <div class="modal-background"></div>
                 <div class="room-modal">
@@ -289,6 +286,8 @@
                     <button class="add-assignment-btn">+</button>
                     <div class="add-assignment-popup">
                         <form>
+                            <button class="close-button">&times;</button>
+
                             <label for="assignment-title">Assignment Title:</label>
                             <input type="text" id="assignment-title" name="assignment-title"><br>
 
@@ -306,33 +305,33 @@
                     <ol>
                         <% if(assignmentName.length>0){ %>
                             <% for(let i=0;i<assignmentName.length;i++){ %>
-                        <li class="assignments-list-items">
-                            <div class="list-item-wrapper">
-                                <a href="#" style="text-decoration: none;">
-                                    <div class="icon-and-text">
-                                        <div class="icon-assignment">
-                                            <i class="material-icons">assignment</i>
-                                        </div>
-                                        <div class="text-assignment">
-                                            <div class="divide-text-assignment">
-                                                <div class="divide-text-assignment-container">
-                                                    <p class="text-top-assignment">
-                                                        <%= assignmentName[i] %>
-                                                    </p>
-                                                    <p class="text-bottom-assignment">
-                                                        <%= assignmentPosted[i] %>
-                                                    </p>
+                                <li class="assignments-list-items">
+                                    <div class="list-item-wrapper">
+                                        <a href="#" style="text-decoration: none;">
+                                            <div class="icon-and-text">
+                                                <div class="icon-assignment">
+                                                    <i class="material-icons">assignment</i>
+                                                </div>
+                                                <div class="text-assignment">
+                                                    <div class="divide-text-assignment">
+                                                        <div class="divide-text-assignment-container">
+                                                            <p class="text-top-assignment">
+                                                                <%= assignmentName[i] %>
+                                                            </p>
+                                                            <p class="text-bottom-assignment">
+                                                                <%= assignmentPosted[i] %>
+                                                            </p>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
-                                </a>
-                            </div>
-                        </li>
-                        <% } %>
-											<% }else{ %>
-												<p>No Assignments</p>
-												<% } %>
+                                </li>
+                                <% } %>
+                                    <% }else{ %>
+                                        <p>No Assignments</p>
+                                        <% } %>
                     </ol>
                 </div>
             </div>
@@ -341,6 +340,8 @@
                     <button class="add-resource-btn">+</button>
                     <div class="add-resource-popup">
                         <form>
+                            <button class="close-button">&times;</button>
+
                             <label for="resource-title">Resource Title:</label>
                             <input type="text" id="resource-title" name="resource-title"><br>
 
@@ -392,24 +393,25 @@
             <div class="participants-list">
                 <!-- Participants List -->
                 <% for(let i=0;i<participantNames.length;i++){ %>
-                <div class="participant">
-                    <div><i class="fas fa-user user-icon"></i>
-                        <span><%= participantNames[i]%></span>
+                    <div class="participant">
+                        <div><i class="fas fa-user user-icon"></i>
+                            <span>
+                                <%= participantNames[i]%>
+                            </span>
+                        </div>
+                        <i class="fas fa-ellipsis-h more-options"></i>
+                        <div class="options-dropdown">
+                            <div class="option">Edit</div>
+                            <div class="option">Remove</div>
+                        </div>
                     </div>
-                    <i class="fas fa-ellipsis-h more-options"></i>
-                    <div class="options-dropdown">
-                        <div class="option">Edit</div>
-                        <div class="option">Remove</div>
-                    </div>
-                </div>
-                <% } %>
+                    <% } %>
             </div>
         </div>
         <div id="focus-popup" class="focus-popup">
             <div class="popup-wrapper">
                 <button class="close-button">&times;</button>
                 <p class="popup-text">Focus on your work! Turn off all distractions and focus on the timer.</p>
-  </div>
             </div>
         </div>
         <script src="/scripts/Room.js"></script>

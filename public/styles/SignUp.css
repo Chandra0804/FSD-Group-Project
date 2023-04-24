@@ -9,6 +9,22 @@ body {
     background: linear-gradient(90deg, #f3ebe2, #f6e3cf);
 }
 
+.wrapper-image {
+    display: flex;
+    flex-direction: row-reverse;
+}
+/* 
+.image{
+    height: 720px;
+    width: 400px;
+} */
+
+img {
+    object-fit: fill;
+    height: 910px;
+    width: 500px;
+}
+
 .container {
     display: flex;
     justify-content: center;

@@ -337,7 +337,7 @@ section:not(.hidden) {
   
   form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   
   label {
@@ -364,3 +364,5 @@ section:not(.hidden) {
   button[type=submit]:hover {
     background-color: #3e8e41;
   }
+
+  

@@ -89,6 +89,17 @@ const underlineButton = document.getElementById('underline-button');
 const colorButton = document.getElementById('color-picker');
 const strikethroughButton = document.getElementById('strikethrough-button');
 
+const exitButton1 = document.querySelector('.close-button');
+exitButton1.addEventListener('click', () => {
+  window.close();
+});
+
+
+const exitButton2 = document.querySelector('.close-button');
+exitButton2.addEventListener('click', () => {
+  window.close();
+});
+
 let boldActive = false;
 let italicActive = false;
 let underlineActive = false;
@@ -454,7 +465,7 @@ toggleFiles.forEach(button => {
 const addResourceBtn = document.querySelector('.add-resource-btn');
 const addResourcePopup = document.querySelector('.add-resource-popup');
 const resourceForm = document.querySelector('.add-resource-popup form');
-const resourceList = document.querySelector('.resource-list');
+const resourceList = document.querySelector('.file-list');
 
 addResourceBtn.addEventListener('click', () => {
   addResourcePopup.style.display = 'block';
@@ -508,46 +519,19 @@ assignmentForm.addEventListener('submit', (e) => {
   addAssignmentPopup.style.display = 'none';
 });
 
+//Music
+const playBtn = document.getElementById("playBtn");
+const musicPlayer = document.getElementById("musicPlayer");
 
-//Music 
-// const songs = ["song1.mp3", "song2.mp3", "song3.mp3", "song4.mp3", "song5.mp3"];
-// let currentSong = "";
-
-// const playBtn = document.getElementById("playBtn");
-// const popup = document.getElementById("musicPopup");
-// const playPause = document.getElementById("playPause");
-// const audio = document.getElementById("audio");
-// const progressBar = document.getElementById("progressBar");
-
-// playBtn.addEventListener("click", function() {
-//   currentSong = songs[Math.floor(Math.random() * songs.length)];
-//   audio.src = currentSong;
-//   popup.style.display = "block";
-// });
-
-// playPause.addEventListener("click", function() {
-//   if (audio.paused) {
-//     audio.play();
-//     playPause.classList.remove("play");
-//     playPause.classList.add("pause");
-//   } else {
-//     audio.pause();
-//     playPause.classList.remove("pause");
-//     playPause.classList.add("play");
-//   }
-// });
-
-// audio.addEventListener("timeupdate", function() {
-//   const progress = (audio.currentTime / audio.duration) * 100;
-//   progressBar.querySelector("#progress").style.width = `${progress}%`;
-// });
-
-// progressBar.addEventListener("click", function(e) {
-//   const progressWidth = progressBar.offsetWidth;
-//   const clickedPosition = e.offsetX;
-//   const duration = audio.duration;
-//   audio.currentTime = (clickedPosition / progressWidth) * duration;
-// });
+playBtn.addEventListener("click", function() {
+  if (musicPlayer.paused) {
+    musicPlayer.play();
+    playBtn.innerHTML = '<i class="fa-solid fa-pause" style="color: #013049; font-size: 25px;"></i>';
+  } else {
+    musicPlayer.pause();
+    playBtn.innerHTML = '<i class="fa-solid fa-music" style="color: #013049; font-size: 25px;"></i>';
+  }
+});
 
 
 //Info section
@@ -604,5 +588,3 @@ closePopupButton.addEventListener('click', function() {
   leftWrapper.style.zIndex = '0';
   leftWrapper.style.width = '100%';
 });
-
-

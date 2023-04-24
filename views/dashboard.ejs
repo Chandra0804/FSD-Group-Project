@@ -1,5 +1,6 @@
 <%- include('./partials/db_header') -%>  
 <%- include('./partials/db_sidebar') -%>
+
 <div class="main" style="overflow-y: scroll;max-height: 100vh;overflow-x: hidden;">
 
   <div style="width: 100%; display: flex; justify-content: center;">
@@ -37,18 +38,16 @@
       <h2 style="font-weight:bolder;"><i style="margin: 30px; color: #ff7d00;" class="fa-sharp fa-solid fa-bath"></i>Wellbeing</h2>
       <div class="card-container">
 
-        <% for(let i = 0; i < 11; i++) { %>
-
+        <% rooms.filter(room => room.tags.includes('wellbeing')).forEach(room => { %>
           <div class="card" style="width: 18rem; margin: 10px;">
             <img src="/images/lotus.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Room title</h5>
-              <p class="card-text">Room description</p>
-              <a href="/room" class="btn btn-primary">Join Room</a>
+              <h5 class="card-title"><%= room.title %></h5>
+              <p class="card-text"><%= room.description %></p>
+              <a href="#" class="btn btn-primary">Join Room</a>
             </div>
           </div>
-          
-        <% } %>
+        <% }); %>
 
       </div>
     </div>
@@ -56,72 +55,64 @@
     <div id="mechanics" class="scrollable-cards">
       <h2><i style="margin: 30px; color: #ff7d00;" class="fa-solid fa-gears"></i>Mechanics</h2>
       <div class="card-container">
-        <% for(let i = 0; i < 11; i++) { %>
-
+        <% rooms.filter(room => room.tags.includes('mechanics')).forEach(room => { %>
           <div class="card" style="width: 18rem; margin: 10px;">
             <img src="/images/lotus.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Room title</h5>
-              <p class="card-text">Room description</p>
-              <a href="/room" class="btn btn-primary">Join Room</a>
-            </div>
+              <h5 class="card-title"><%= room.title %></h5>
+              <p class="card-text"><%= room.description %></p>
+              <a href="#" class="btn btn-primary">Join Room</a>
+            </div> 
           </div>
-          
-        <% } %>
+        <% }); %>
       </div>
     </div>
 
     <div id="security" class="scrollable-cards">
       <h2><i style="margin: 30px; color: #ff7d00;" class="fa-sharp fa-sharp fa-solid fa-shield"></i>Security</h2>
       <div class="card-container">
-        <% for(let i = 0; i < 11; i++) { %>
-
+        <% rooms.filter(room => room.tags.includes('security')).forEach(room => { %>
           <div class="card" style="width: 18rem; margin: 10px;">
             <img src="/images/lotus.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Room title</h5>
-              <p class="card-text">Room description</p>
-              <a href="/room" class="btn btn-primary">Join Room</a>
+              <h5 class="card-title"><%= room.title %></h5>
+              <p class="card-text"><%= room.description %></p>
+              <a href="#" class="btn btn-primary">Join Room</a>
             </div>
           </div>
-          
-        <% } %>
+        <% }); %>
       </div>
     </div>
 
     <div id="technology" class="scrollable-cards">
       <h2><i style="margin: 30px; color: #ff7d00;" class="fa-sharp fa-solid fa-microchip"></i>Technology</h2>
       <div class="card-container">
-        <% for(let i = 0; i < 11; i++) { %>
-
+        <% rooms.filter(room => room.tags.includes('technology')).forEach(room => { %>
           <div class="card" style="width: 18rem; margin: 10px;">
             <img src="/images/lotus.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Room title</h5>
-              <p class="card-text">Room description</p>
-              <a href="/room" class="btn btn-primary">Join Room</a>
+              <h5 class="card-title"><%= room.title %></h5>
+              <p class="card-text"><%= room.description %></p>
+              <a href="#" class="btn btn-primary">Join Room</a>
             </div>
           </div>
-          
-        <% } %>
+        <% }); %>
       </div>
     </div>
 
     <div id="safety" class="scrollable-cards">
       <h2><i style="margin: 30px; color: #ff7d00;" class="fa-sharp fa-solid fa-fire-extinguisher"></i>Safety</h2>
       <div class="card-container">
-        <% for(let i = 0; i < 11; i++) { %>
-
+        <% rooms.filter(room => room.tags.includes('safety')).forEach(room => { %>
           <div class="card" style="width: 18rem; margin: 10px;">
             <img src="/images/lotus.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Room title</h5>
-              <p class="card-text">Room description</p>
-              <a href="/room" class="btn btn-primary">Join Room</a>
+              <h5 class="card-title"><%= room.title %></h5>
+              <p class="card-text"><%= room.description %></p>
+              <a href="#" class="btn btn-primary">Join Room</a>
             </div>
           </div>
-          
-        <% } %>
+        <% }); %>
       </div>
     </div>
   

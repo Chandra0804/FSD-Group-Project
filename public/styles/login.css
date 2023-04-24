@@ -9,6 +9,22 @@ body {
     background: linear-gradient(90deg, #f3ebe2, #f6e3cf);
 }
 
+.wrapper-image {
+    display: flex;
+    flex-direction: row-reverse;
+}
+/* 
+.image{
+    height: 720px;
+    width: 400px;
+} */
+
+img {
+    object-fit: fill;
+    height: 720px;
+    width: 400px;
+}
+
 .container {
     padding-top: 5px;
     display: flex;
@@ -84,7 +100,7 @@ body {
 }
 
 .login {
-    width: 320px;
+    width: 70%;
     padding: 30px;
 	padding-top: 156px;
 }

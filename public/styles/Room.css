@@ -41,7 +41,6 @@ body {
   font-size: 30px;
   font-weight: normal;
   color: #013049;
-  text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
   letter-spacing: 2px;
   margin: 0;
   padding: 5px;
@@ -486,6 +485,7 @@ body {
   padding: 20px;
   border: 1px solid #888;
   width: 50%;
+  height: 47%;
 }
 
 .add-resource-popup form label {
@@ -1436,57 +1436,11 @@ details[open] summary:after {
   padding: 5px 0;
 }
 
-/* Music player */
-/* .music-popup {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 250px;
-  height: 80px;
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* Music sectioin */
+audio {
   display: none;
 }
 
-.music-popup #playPause {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 40px;
-  height: 40px;
-  font-size: 24px;
-  line-height: 40px;
-  text-align: center;
-  color: #333;
-  cursor: pointer;
-}
-
-.music-popup #playPause.pause:before {
-  content: "\f28c";
-}
-
-.music-popup #playPause.play:before {
-  content: "\f144";
-}
-
-.music-popup #progressBar {
-  position: absolute;
-  top: 55px;
-  left: 20px;
-  width: 210px;
-  height: 5px;
-  background-color: #ccc;
-}
-
-.music-popup #progressBar #progress {
-  height: 100%;
-  background-color: #4CAF50;
-}
-
-.music-popup #progressBar #progress:hover {
-  cursor: pointer;
-} */
 
 /* Info section */
 .modal-background {
