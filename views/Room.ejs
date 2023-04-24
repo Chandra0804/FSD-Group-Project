@@ -17,7 +17,9 @@
     <div class="container">
         <div class="header">
             <div class="title-wrapper">
-                <h1 class="title-text">My Room Title</h1>
+                <h1 class="title-text">
+                    <%= room.title %>
+                </h1>
             </div>
             <div class="header-icons">
                 <button id="playBtn" class="focus-button" title="Play Music">
@@ -26,12 +28,24 @@
                 <button class="focus-button focus-popup-button" title="Focus mode">
                     <i class="fa-solid fa-brain" style="color: #013049; font-size: 25px;"></i>
                 </button>
-                <button class="focus-button" title="Leave Room">
+                <% if(isMentor){ %>
+
+                <button class="focus-button" id="leave" title="delete Room" onclick="window.location.href='/delete-room/<%= room._id %>'">
                     <i class="fa-solid fa-circle-xmark" style="color: red; font-size: 25px;"></i>
                 </button>
+
+                <% }else{ %>
+
+                <button class="focus-button" id="leave" title="Leave Room" onclick="window.location.href='/leave/<%= room._id %>'">
+                <i class="fa-solid fa-circle-xmark" style="color: red; font-size: 25px;"></i>
+                </button>
+
+                <% } %>
+                
                 <button class="focus-button" title="Room dp">
                     <i class="fa-solid fa-user" style="color: black; font-size: 25px;"></i>
                 </button>
+                
             </div>
         </div>
         <div class="screen" id="screen">
@@ -42,22 +56,26 @@
                 <div class="modal-background"></div>
                 <div class="room-modal">
                     <div class="room-modal-header">
-                        <h2 class="room-modal-title">Room Title</h2>
+                        <h2 class="room-modal-title">
+                            <%= room.title %>
+                        </h2>
                         <span class="room-modal-close">&times;</span>
                     </div>
                     <div class="room-modal-content">
                         <p>
-                            <span class="room-modal-mentor">Mentor Name</span>
+                            <span class="room-modal-mentor">
+                                <%= room.mentor.userId %>
+                            </span>
                         </p>
                         <p>
-                            <span class="room-modal-tags">Tag 1, Tag 2, Tag 3</span>
+                            <span class="room-modal-tags">
+                                <% room.tags.forEach(tag=> {tag}); %>
+                            </span>
                         </p>
                         <p>
-                            Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nulla eu arcu
-                            fringilla semper. Vestibulum vel nisl euismod, rutrum libero eget, sollicitudin velit.
-                            Phasellus ut faucibus lectus.
+                            <%= room.description %>
                         </p>
-                        <iframe class="room-modal-syllabus" src=""></iframe>
+                        <iframe class="room-modal-syllabus" src=<%=room.syllabus %> ></iframe>
                     </div>
                 </div>
 
@@ -282,108 +300,128 @@
         </div>
         <div class="left-sidebar" id="left-sidebar">
             <div id="assignment-wrapper">
-                <div class="assignments-section">
-                    <button class="add-assignment-btn">+</button>
-                    <div class="add-assignment-popup">
-                        <form>
+                <% if(isMentor){ %>
+                    <div class="assignments-section">
+                        <button class="add-assignment-btn">+</button>
+                        <div class="add-assignment-popup">
                             <button class="close-button">&times;</button>
+                            <form action="/submit-assignment/<%= room._id %>" method="post">
 
-                            <label for="assignment-title">Assignment Title:</label>
-                            <input type="text" id="assignment-title" name="assignment-title"><br>
 
-                            <label for="assignment-link">Assignment Link:</label>
-                            <input type="text" id="assignment-link" name="assignment-link"><br>
+                                <label for="assignment-title">Assignment Title:</label>
+                                <input type="text" id="assignment-title" name="assignment_title"><br>
 
-                            <button type="submit">Add</button>
-                        </form>
+                                <label for="assignment-link">Assignment Link:</label>
+                                <input type="text" id="assignment-link" name="assignment_link"><br>
+
+                                <button type="submit">Add</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <div class="assignments-heading">
-                    <p class="section-heading">Assignments</p>
-                </div>
-                <div class="assignments-list">
-                    <ol>
-                        <% if(assignmentName.length>0){ %>
-                            <% for(let i=0;i<assignmentName.length;i++){ %>
-                                <li class="assignments-list-items">
-                                    <div class="list-item-wrapper">
-                                        <a href="#" style="text-decoration: none;">
-                                            <div class="icon-and-text">
-                                                <div class="icon-assignment">
-                                                    <i class="material-icons">assignment</i>
-                                                </div>
-                                                <div class="text-assignment">
-                                                    <div class="divide-text-assignment">
-                                                        <div class="divide-text-assignment-container">
-                                                            <p class="text-top-assignment">
-                                                                <%= assignmentName[i] %>
-                                                            </p>
-                                                            <p class="text-bottom-assignment">
-                                                                <%= assignmentPosted[i] %>
-                                                            </p>
+                    <script>
+                        const addAssignmentBtn = document.querySelector('.add-assignment-btn');
+                        const addAssignmentPopup = document.querySelector('.add-assignment-popup');
+                        const assignmentForm = document.querySelector('.add-assignment-popup form');
+                        const closeAssignmentPopup = document.querySelector('.close-button')
+
+                        addAssignmentBtn.addEventListener('click', () => {
+                            addAssignmentPopup.style.display = 'block';
+                        });
+
+                        closeAssignmentPopup.addEventListener('click', function () {
+                            addAssignmentPopup.style.display = 'none';
+                        });
+                    </script>
+                    <% } %>
+
+                        <div class="assignments-heading">
+                            <p class="section-heading">Assignments</p>
+                        </div>
+                        <div class="assignments-list">
+                            <ol>
+                                <% assignments.forEach(assignment=> { %>
+                                    <li class="assignments-list-items">
+                                        <div class="list-item-wrapper">
+                                            <a href=<%=assignment.Link %> style="text-decoration: none;">
+                                                <div class="icon-and-text">
+                                                    <div class="icon-assignment">
+                                                        <i class="material-icons">assignment</i>
+                                                    </div>
+                                                    <div class="text-assignment">
+                                                        <div class="divide-text-assignment">
+                                                            <div class="divide-text-assignment-container">
+                                                                <p class="text-top-assignment">
+                                                                    <%= assignment.Title %>
+                                                                </p>
+                                                                <p class="text-bottom-assignment">
+                                                                    <%= assignment.Date %>
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                                <% } %>
-                                    <% }else{ %>
-                                        <p>No Assignments</p>
-                                        <% } %>
-                    </ol>
-                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <% }); %>
+                            </ol>
+                        </div>
             </div>
             <div id="resources-wrapper">
-                <div class="resources-section">
-                    <button class="add-resource-btn">+</button>
-                    <div class="add-resource-popup">
-                        <form>
-                            <button class="close-button">&times;</button>
+                <% if(isMentor){ %>
+                    <div class="resources-section">
+                        <button class="add-resource-btn">+</button>
+                        <div class="add-resource-popup">
+                            <button class="close-resource">&times;</button>
+                            <form action="/submit-resource/<%= room._id %>" method="post">
 
-                            <label for="resource-title">Resource Title:</label>
-                            <input type="text" id="resource-title" name="resource-title"><br>
+                                <label for="resource-title">Resource Title:</label>
+                                <input type="text" id="resource-title" name="resource_title"><br>
 
-                            <label for="resource-link">Resource Link:</label>
-                            <input type="text" id="resource-link" name="resource-link"><br>
+                                <label for="resource-link">Resource Link:</label>
+                                <input type="text" id="resource-link" name="resource_link"><br>
 
-                            <label for="resource-date">Resource Date:</label>
-                            <input type="date" id="resource-date" name="resource-date"><br>
+                                <label for="resource-date">Resource Date:</label>
+                                <input type="date" id="resource-date" name="resource_date"><br>
 
-                            <button type="submit">Add</button>
-                        </form>
+                                <button type="submit">Add</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <div class="resources-heading">
-                    <p class="section-heading">Resources</p>
-                </div>
-                <div class="resource-container">
-                    <div class="resource-date">
-                        <h3>April 22, 2023</h3>
-                        <button class="toggle-files"><i class="fas fa-folder"></i></button>
-                        <ul class="file-list">
-                            <li><a href="#"><i class="fas fa-file"></i>File 1.pdf</a></li>
-                            <li><a href="#"><i class="fas fa-file"></i>File 2.docx</a></li>
-                            <li><a href="#"><i class="fas fa-file"></i>File 3.xlsx</a></li>
-                        </ul>
-                    </div>
-                    <div class="resource-date">
-                        <h3>April 21, 2023</h3>
-                        <button class="toggle-files"><i class="fas fa-folder"></i></button>
-                        <ul class="file-list">
-                            <li><a href="#"><i class="fas fa-file"></i>File 4.pdf</a></li>
-                            <li><a href="#"><i class="fas fa-file"></i>File 5.docx</a></li>
-                        </ul>
-                    </div>
-                    <div class="resource-date">
-                        <h3>April 20, 2023</h3>
-                        <button class="toggle-files"><i class="fas fa-folder"></i></button>
-                        <ul class="file-list">
-                            <li><a href="#"><i class="fas fa-file"></i>File 6.pdf</a></li>
-                        </ul>
-                    </div>
-                </div>
+                    <script>
+                        const addResourceBtn = document.querySelector('.add-resource-btn');
+                        const addResourcePopup = document.querySelector('.add-resource-popup');
+                        const resourceForm = document.querySelector('.add-resource-popup form');
+                        const resourceList = document.querySelector('.file-list');
+                        const resourceclose = document.querySelector('.close-resource')
+
+                        addResourceBtn.addEventListener('click', () => {
+                            addResourcePopup.style.display = 'block';
+                        });
+
+                        resourceclose.addEventListener('click', function () {
+                            addResourcePopup.style.display = 'none';
+                        });
+                    </script>
+                    <% } %>
+                        <div class="resources-heading">
+                            <p class="section-heading">Resources</p>
+                        </div>
+                        <div class="resource-container">
+                            <% resources.forEach(resource=> { %>
+                                <div class="resource-date">
+                                    <h3>
+                                        <%= resource.Date %>
+                                    </h3>
+                                    <button class="toggle-files"><i class="fas fa-folder"></i></button>
+                                    <ul class="file-list">
+                                        <li><a href=<% resource.Links %> > <i class="fas fa-file"></i>
+                                                <%= resource.Title %>
+                                            </a></li>
+                                    </ul>
+                                </div>
+                                <% }); %>
+                        </div>
             </div>
         </div>
         <div class="right-sidebar" id="right-sidebar">
@@ -392,11 +430,11 @@
             </div>
             <div class="participants-list">
                 <!-- Participants List -->
-                <% for(let i=0;i<participantNames.length;i++){ %>
+                <% participantList.forEach(participant=> { %>
                     <div class="participant">
                         <div><i class="fas fa-user user-icon"></i>
                             <span>
-                                <%= participantNames[i]%>
+                                <%= participant %>
                             </span>
                         </div>
                         <i class="fas fa-ellipsis-h more-options"></i>
@@ -405,12 +443,12 @@
                             <div class="option">Remove</div>
                         </div>
                     </div>
-                    <% } %>
+                <% }); %>
             </div>
         </div>
         <div id="focus-popup" class="focus-popup">
             <div class="popup-wrapper">
-                <button class="close-button">&times;</button>
+                <button class="close-focus">&times;</button>
                 <p class="popup-text">Focus on your work! Turn off all distractions and focus on the timer.</p>
             </div>
         </div>

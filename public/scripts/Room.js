@@ -89,17 +89,6 @@ const underlineButton = document.getElementById('underline-button');
 const colorButton = document.getElementById('color-picker');
 const strikethroughButton = document.getElementById('strikethrough-button');
 
-const exitButton1 = document.querySelector('.close-button');
-exitButton1.addEventListener('click', () => {
-  window.close();
-});
-
-
-const exitButton2 = document.querySelector('.close-button');
-exitButton2.addEventListener('click', () => {
-  window.close();
-});
-
 let boldActive = false;
 let italicActive = false;
 let underlineActive = false;
@@ -462,62 +451,12 @@ toggleFiles.forEach(button => {
     filelist.classList.toggle('file-list');
   });
 });
-const addResourceBtn = document.querySelector('.add-resource-btn');
-const addResourcePopup = document.querySelector('.add-resource-popup');
-const resourceForm = document.querySelector('.add-resource-popup form');
-const resourceList = document.querySelector('.file-list');
 
-addResourceBtn.addEventListener('click', () => {
-  addResourcePopup.style.display = 'block';
-});
 
-resourceForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const titleInput = document.querySelector('#resource-title');
-  const linkInput = document.querySelector('#resource-link');
-  const title = titleInput.value;
-  const link = linkInput.value;
-  const currentDate = new Date();
-
-  // format the date to display in the required format
-  const formattedDate = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}`;
-
-  // create a new list item with the resource details
-  const listItem = document.createElement('li');
-  listItem.innerHTML = `
-    <div class="resource-title">${title}</div>
-    <div class="resource-link"><a href="${link}" target="_blank">${link}</a></div>
-    <div class="resource-date">${formattedDate}</div>
-  `;
-  resourceList.appendChild(listItem);
-
-  // clear the input fields and hide the popup
-  titleInput.value = '';
-  linkInput.value = '';
-  addResourcePopup.style.display = 'none';
-});
 
 
 //Assignment section
-const addAssignmentBtn = document.querySelector('.add-assignment-btn');
-const addAssignmentPopup = document.querySelector('.add-assignment-popup');
-const assignmentForm = document.querySelector('.add-assignment-popup form');
 
-addAssignmentBtn.addEventListener('click', () => {
-  addAssignmentPopup.style.display = 'block';
-});
-
-assignmentForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const titleInput = document.querySelector('#assignment-title');
-  const linkInput = document.querySelector('#assignment-link');
-  const title = titleInput.value;
-  const link = linkInput.value;
-  // do something with the title and link inputs, e.g. add them to a list
-  titleInput.value = '';
-  linkInput.value = '';
-  addAssignmentPopup.style.display = 'none';
-});
 
 //Music
 const playBtn = document.getElementById("playBtn");
@@ -548,10 +487,6 @@ roomModalClose.innerHTML = '&times;';
 
 infoIcon.addEventListener('click', async () => {
   // Populate the room modal with hardcoded values
-  roomModalTitle.textContent = 'Example Room';
-  roomModalMentor.textContent = 'Mentor: John Doe';
-  roomModalTags.textContent = 'Tags: Math, Science';
-  roomModalSyllabus.src = 'https://github.com/Chandra0804/FSD-Group-Project/blob/70724472697105f0bf354fe0a371a26d18a6125e/3-9.pdf';
 
   // Show the room modal and modal background
   roomModal.style.display = 'block';
@@ -571,7 +506,7 @@ roomModal.addEventListener('click', (event) => {
 //Focus section
 const focusButton = document.querySelector('.focus-popup-button');
 const focusPopup = document.querySelector('#focus-popup');
-const closePopupButton = document.querySelector('.close-button');
+const closePopupButton = document.querySelector('.close-focus');
 const rightWrapper = document.querySelector('.right-wrapper');
 const leftWrapper = document.querySelector('.left-wrapper');
 

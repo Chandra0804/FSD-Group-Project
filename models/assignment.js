@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const AssignmentSchema = new mongoose.Schema({
     Title: String,
-    Date: Date,
+    Date: String,
     link: String
 });
 
-module.exports = mongoose.model('Assignment', AssignmentSchema);
+module.exports = mongoose.model('assignments', AssignmentSchema);

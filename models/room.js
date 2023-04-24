@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const Assignment = require('./assignment');
+const Resource = require('./resource');
+const User = require('./user');
 
 const roomSchema = new mongoose.Schema({
   title: String,
@@ -11,7 +14,11 @@ const roomSchema = new mongoose.Schema({
       date: { type: Date, default: Date.now }
     }]
   }],
-  tags: [String]
+  syllabus: String,
+  tags: [String],
+  assignments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Assignment' }], // Add the assignments field
+  resources: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Resource' }], // Add the resources field
+  mentor: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });
 
-module.exports = mongoose.model('Study-rooms',roomSchema);
+module.exports = mongoose.model('rooms-studies',roomSchema);

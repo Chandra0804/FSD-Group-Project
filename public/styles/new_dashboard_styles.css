@@ -337,7 +337,7 @@ section:not(.hidden) {
   
   form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
   
   label {

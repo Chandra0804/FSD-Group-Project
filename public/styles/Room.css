@@ -1560,7 +1560,7 @@ audio {
   padding: 1rem;
 }
 
-.close-button {
+.close-button,.close-resource,.close-focus {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -1571,7 +1571,7 @@ audio {
   cursor: pointer;
 }
 
-.close-button:hover {
+.close-button,.close-resource,.close-focus:hover {
   color: #ccc;
 }
 
