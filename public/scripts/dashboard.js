@@ -48,3 +48,31 @@ announcementsBtn.addEventListener("click", () => {
   usersBtn.classList.remove("active");
   roomsBtn.classList.remove("active");
 });
+
+var popup = document.getElementById("edit-popup");
+
+// Get the button that opens the popup
+var btns = document.querySelectorAll(".edit-button");
+
+// Get the <span> element that closes the popup
+var span = popup.querySelector(".close");
+
+// When the user clicks the button, open the popup 
+btns.forEach(btn=>{
+  btn.onclick = function() {
+    popup.style.display = "block";
+  }
+})
+
+
+// When the user clicks on <span> (x), close the popup
+span.onclick = function() {
+  popup.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the popup, close it
+window.onclick = function(event) {
+  if (event.target == popup) {
+    popup.style.display = "none";
+  }
+}

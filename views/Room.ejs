@@ -23,7 +23,7 @@
                 <button id="playBtn" class="focus-button" title="Play Music">
                     <i class="fa-solid fa-music" style="color: #013049; font-size: 25px;"></i>
                 </button>
-                <button class="focus-button" title="Focus mode">
+                <button class="focus-button focus-popup-button" title="Focus mode">
                     <i class="fa-solid fa-brain" style="color: #013049; font-size: 25px;"></i>
                 </button>
                 <button class="focus-button" title="Leave Room">
@@ -68,7 +68,7 @@
                     <div class="left-top">
                         <div class="wrapper-timer">
                             <h1 class="heading">Timer</h1>
-                            <audio id="alarm" src="/audio/alarm.mp3"></audio>
+                            <audio id="alarm" src="./audio/alarm.mp3"></audio>
                             <div class="timer-top">
                                 <details class="custom-select">
                                     <summary class="radios">
@@ -270,11 +270,11 @@
                             <i class="fa-solid fa-folder-open"></i>
                         </a>
                     </li>
-                    <li class="item">
+                    <!-- <li class="item">
                         <a class="link" id="">
                             <i class="fas fa-bell fa-2x"></i>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="item">
                         <a class="link" id="participants">
                             <i class="fas fa-user fa-2x"></i>
@@ -405,8 +405,13 @@
                 <% } %>
             </div>
         </div>
-
-
+        <div id="focus-popup" class="focus-popup">
+            <div class="popup-wrapper">
+                <button class="close-button">&times;</button>
+                <p class="popup-text">Focus on your work! Turn off all distractions and focus on the timer.</p>
+  </div>
+            </div>
+        </div>
         <script src="/scripts/Room.js"></script>
 </body>
 

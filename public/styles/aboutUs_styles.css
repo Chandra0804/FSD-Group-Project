@@ -46,10 +46,11 @@
   }
   
 .banner{
-    background-image: url('https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8ZWR1Y2F0aW9ufHx8fHx8MTY3OTM4OTgwOA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200');
-    background-size: cover;
+    background-image: url('/images/aboutus_banner.png');
+    background-size: contain;
     min-height: 500px;
     min-width: 1200px;
+    opacity: 0.8;
 }
 
 .focus-in-expand-fwd {
@@ -57,7 +58,7 @@
 	        animation: focus-in-expand-fwd 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
   font-size: 72px;
-  color: white;
+  color: black;
   font-family: 'Poppins';
   text-align: center;
 }
@@ -84,10 +85,12 @@
 }
 
 .caption{
-	color: white;
+	color: black;
 	padding: 50px;
 	font-family: 'Poppins';
 	font-size: 20px;
+  font-weight: 700;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 }
 
  @-webkit-keyframes focus-in-expand-fwd {
@@ -173,7 +176,7 @@
   .about-1 h1{
     text-align: center;
     color: black;
-    font-weight: bold;
+    font-weight: 700;
     font-family: 'Bebas Neue',cursive;
     font-size: 70px;
     padding : 1rem;
@@ -186,7 +189,7 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 30px;
     letter-spacing: normal;
-    font-weight: 700;
+    font-weight: 500;
   }
 
 
@@ -198,12 +201,21 @@
    line-height: 2;
 }
 
+.glass-effect {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
 .about-row h1{
-  font-weight: bolder;
+  font-weight: 600;
 }
 .about-row p{
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .left-image
@@ -227,5 +239,4 @@
 .motto{
   width: 250px;
   zoom: 0.8;
-  
 }

@@ -338,7 +338,7 @@ document.getElementById("notes").onmousedown = function () {
 let countdown;
 let paused = false;
 let remainingTime = 0;
-const alarmSound = new Audio('alarm.mp3');
+const alarmSound = new Audio('/audio/alarm.mp3');
 
 function timer(seconds) {
   clearInterval(countdown);
@@ -583,3 +583,26 @@ roomModal.addEventListener('click', (event) => {
     roomModal.removeChild(roomModalClose);
   }
 });
+
+//Focus section
+const focusButton = document.querySelector('.focus-popup-button');
+const focusPopup = document.querySelector('#focus-popup');
+const closePopupButton = document.querySelector('.close-button');
+const rightWrapper = document.querySelector('.right-wrapper');
+const leftWrapper = document.querySelector('.left-wrapper');
+
+focusButton.addEventListener('click', function() {
+  focusPopup.style.display = 'block';
+  rightWrapper.classList.add('hidden');
+  leftWrapper.style.zIndex = '10000';
+  leftWrapper.style.width = '200%';
+});
+
+closePopupButton.addEventListener('click', function() {
+  focusPopup.style.display = 'none';
+  rightWrapper.classList.remove('hidden');
+  leftWrapper.style.zIndex = '0';
+  leftWrapper.style.width = '100%';
+});
+
+
