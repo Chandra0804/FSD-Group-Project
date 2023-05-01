@@ -31,19 +31,9 @@ app.use(session({
     store: new session.MemoryStore()
 }));
 
-
-let security_question = ""
-let userName = ""
-let participantNames = ["Bhanu Prakash Bhaskarla", "Chappati Teja Sanjeev", "Tarun Patibandla", "HariPrasad Anuganti"];
-let assignmentName = ["Lab-01", "Lab-02", "Lab-03", "Lab-04"];
-let assignmentPosted = ["Posted Wednesday, Jan22, 2022", "Posted Tuesday, Jan21, 2022", "Posted Monday, Jan20, 2022", "Posted Sunday, Jan19, 2022"];
-let taskslists = ["Completing Assignment-1"];
-let title = "Room";
 let emailCheck = ""
 let mentor = true;
 let admin = true;
-
-
 
 app.set('view engine', 'ejs')
 app.use(express.static("public"))
@@ -105,8 +95,6 @@ app.get('/dashboard/premium', (req, res) => {
 })
 
 app.get('/logout', (req, res) => {
-    // userName = null;
-    // res.redirect('/'); 
 
     req.session.destroy((err) => {
         if (err) {
@@ -134,7 +122,6 @@ app.get('/dashboard/joined',requireLogin, async (req, res) => {
 
     const user = req.session.user;
      const rooms = await Room.find({ participants: user });
-    // res.render('dashboard_joined', { user: userName, mentor, admin })
     res.render('dashboard_joined', {
         user,
         rooms,
@@ -144,14 +131,6 @@ app.get('/dashboard/joined',requireLogin, async (req, res) => {
 
 
 })
-
-// app.get('/dashboard/admin',requireLogin, (req, res) => {
-    // con.collection('users').find({}).toArray().then((result) => {
-//         res.render('admin_console', { user: result, mentor, admin })
-//     }).catch((err) => {
-//         throw err;
-//     });
-// })
 
 app.get('/dashboard/admin',requireLogin, async (req, res) => {
 
@@ -188,32 +167,6 @@ app.post('/edit/:id', (req, res) => {
         throw err;
     });
 })
-
-// app.post('/delete-room/:id', requireLogin, async (req, res) => {
-//     const user = req.session.user;
-//     const room = await Room.findById(req.params.id);
-
-//     if (!room || user._id.toString() !== room.mentor._id.toString()) {
-//         res.redirect('/dashboard');
-//     } else {
-//         // Remove room from all participants' joined_rooms array
-//         for (const participant of room.participants) {
-//             participant.joined_rooms = participant.joined_rooms.filter(
-//                 joined_room => joined_room._id.toString() !== room._id.toString()
-//             );
-//             await participant.save();
-//         }
-//         user.created_rooms = user.created_rooms.filter(
-//             created_room => created_room._id.toString() !== room._id.toString()
-//         );
-//         await user.save();
-
-//         // Delete the room
-//         await Room.findByIdAndDelete(room._id);
-
-//         res.redirect('/dashboard');
-//     }
-// });
 
 app.get('/delete-room/:id', requireLogin, async (req, res) => {
     const user = req.session.user;
@@ -259,56 +212,6 @@ app.post('/login', async (req, res) => {
 
     // Redirect to home page
     res.redirect('/dashboard');
-
-    // const email = req.body.logemail;
-    // const user = await User.findOne({Email: email});
-    // if (user){
-    //     const result = req.body.logpass === user.Password;
-    //     if(result){
-    //         // userName = user.userId;
-    //         req.session.user = user;
-    //         res.render("dashboard",{user : userName,mentor,admin});
-    //     }
-    //     else{
-    //         res.status(400).json({ error: "password doesn't match" });
-    //     }
-
-    // }
-    // else{
-    //     res.status(400).json({ error: "User doesn't exist" });
-    // }
-    // const email = req.body.logemail;
-    // const password = req.body.logpass
-    // const user = await User.findOne({email});
-    // if (user){
-    //     const result = password === user.Password;
-    //     if(result){
-    //         req.session.user = user;
-    //         // userName = user.userId;
-    //         // res.render("dashboard",{user : userName,mentor,admin});
-    //         res.redirect('/dashboard');
-    //     }
-    //     else{
-    //         res.status(400).json({ error: "password doesn't match" });
-    //     }
-
-    // }
-    // else{
-    //     res.status(400).json({ error: "User doesn't exist" });
-    // }
-
-    // const { email, password } = req.body;
-    // const email = req.body.logemail;
-    // const password = req.body.logpass;
-    // const user = await User.findOne({ email });
-
-    // if (!user || user.password !== password) {
-    //   res.render('Login');
-    // } else {
-    //   req.session.user = user;
-    //   res.redirect('/dashboard');
-    // }
-
 });
 
 app.post('/forgotpassword', async (req, res) => {
@@ -366,35 +269,6 @@ app.post('/changepassword', (req, res) => {
         });
 
 })
-
-// app.get('/room', (req, res) => {
-//     res.render('Room', { participantNames: participantNames, assignmentName: assignmentName, assignmentPosted: assignmentPosted, taskslists: taskslists, userName: userName, title: title })
-// })
-
-// app.get('/room/:id', requireLogin, async (req, res) => {
-//     const user = req.session.user;
-//     const room = await Room.findById(req.params.id);
-//     const usertable = await User.find({});
-
-//     if (!room) {
-//         res.redirect('/dashboard');
-//     } else {
-//         const isParticipant = room.participants.some(
-//             participant => participant._id.toString() === user._id.toString()
-//         );
-//         const isMentor = user._id.toString() === room.mentor._id.toString();
-        
-        
-        
-//         // let list = [];
-//         // room.participants.forEach(participant => {
-//         //     const value = await User.findById(participant.user);
-//         //     console.log(value);
-//         //     // console.log(await usertable.findById(participant.user));
-//         // });
-//         res.render('Room', { user, room, isParticipant, isMentor ,participantList: participantNames});
-//     }
-// });
 
 app.get('/room/:id', requireLogin, async (req, res) => {
     const user = req.session.user;
@@ -476,35 +350,6 @@ app.post('/submit-assignment/:id', async (req, res) => {
         console.log("Assignment inserted");
     });
 });
-
-
-// app.post('/submit-resource/:id', async (req, res) => {
-
-//     const roomID = req.params.id;
-//     const room = await Room.findOne({_id:roomID});
-//     let date = new Date();
-
-//     const newResource = new Resource ({
-//         Title: req.body.resource_title,
-//         Links: req.body.resource_link,
-//         Date: req.body.resource_date,
-//     });
-
-//     try{
-//         room.resources.push(newResource);
-//         console.log('pushed resource to room');
-
-//     }catch(err){
-//         console.log(err)
-//     }
-
-//     con.collection('resources').insertOne(newResource, (err, result) => {
-//         if(err) {
-//             throw err;
-//         }
-//         console.log("Resource uploaded");
-//     });
-// });
 
  
 app.post('/submit-resource/:id', async (req, res) => {
@@ -617,12 +462,6 @@ app.get('/termsconditions', (req, res) => {
 
 app.get('/dashboard',requireLogin, async (req, res) => {
 
-    // if(userName!=null){
-    // res.render('dashboard',{user : userName,mentor,admin});
-    // }
-    // else{
-    //     res.redirect('/login');
-    // }
         try {
             const user = req.session.user;
             // console.log(user);
@@ -639,7 +478,7 @@ app.get('/dashboard',requireLogin, async (req, res) => {
         }
 })
 
-app.get('/login/payment', (req, res) => {
+app.get('/dashboard/payment', (req, res) => {
     res.render('payment');
 })
 
@@ -647,121 +486,6 @@ app.get('/paymentstatus', (req, res) => {
     res.render('paymentstatus');
 })
 
-// app.get('/join/:id', requireLogin, async (req, res) => {
-//     console.log("join room"+req.params.id)
-//     try {
-//         const userId = req.session.user._id;
-//         const room = await Room.findById(req.params.id);
-//         const user = await User.findById(userId);
-
-//         if (!room) {
-//             res.redirect('/dashboard');
-//             return;
-//         }
-
-//         // check if user is already a participant in the room
-
-//         const isParticipant = room.participants.find(participant => new mongoose.Types.ObjectId(String(participant.user)).equals(userId));
-//         if (isParticipant) {
-//             res.redirect(`/room/${room._id}`);
-//             return;
-//         }
-
-//         // add user to the Participants list of the room
-//         room.Participants.push({ user: userId, notes: [] });
-//         await room.save();
-
-//         // add room to the Joined_Room list of the user
-//         user.Joined_Room.push(room);
-//         await user.save();
-
-//         res.redirect(`/room/${room._id}`);
-//     } catch (err) {
-//         console.error(err);
-//         res.status(500).send('Server Error');
-//     }
-// });
-
-
-// app.get('/join/:id', requireLogin, async (req, res) => {
-//     console.log('Joining room with ID:', req.params.id);
-//     try {
-//       const user = req.session.user;
-//       const roomId = req.params.id;
-  
-//       // Find the room and user by their IDs
-//       const room = await Room.findById(roomId);
-//     //   const user = await User.findById(userId);
-//       if (!room) {
-//         res.redirect('/dashboard');
-//         return;
-//       }
-  
-//       // Check if user is already a participant in the room
-//     //   const isParticipant = room.participants.find(participant => participant.user && participant.user.equals(userId));
-//     //   if (isParticipant) {
-//     //     res.redirect(`/room/${room._id}`);
-//     //     return;
-//     //   }/
-
-  
-//       // Add user to the participants list of the room
-
-//       room.participants = room.participants || [];
-
-//       room.participants.push({ user:user, notes: [] });
-//       await room.save();
-  
-//       // Add room to the joined_rooms list of the user
-//       user.Joined_Room.push(room);
-//       console.log('hehe');
-//       console.log(user);
-//       await user.save();
-  
-//       res.redirect(`/room/${room._id}`);
-//     } catch (err) {
-//       console.error(err);
-//       res.status(500).send('Server Error');
-//     }
-//   });
- 
-// app.get('/join/:id', requireLogin, async (req, res) => {
-//     console.log('Joining room with ID:', req.params.id);
-//     try {
-//       const user = req.session.user;
-//       const roomId = req.params.id;
-  
-//       // Find the room and user by their IDs
-//       const room = await Room.findById(roomId);
-//     //   const user = await User.findById(userId);
-//       if (!room) {
-//         res.redirect('/dashboard');
-//         return;
-//       }
-  
-//       // Check if user is already a participant in the room
-//     //   const isParticipant = room.participants.find(participant => participant.user && participant.user.equals(userId));
-//     //   if (isParticipant) {
-//     //     res.redirect(`/room/${room._id}`);
-//     //     return;
-//     //   }/
-  
-//       // Add user to the participants list of the room
-//       room.participants = room.participants || [];
-//       room.participants.push({ user: user, notes: [] });
-//       await room.save();
-  
-//       // Add room to the joined_rooms list of the user
-//       user.Joined_Room.push(room);
-//       console.log('hehe');
-//       console.log(user);
-  
-//       res.redirect(`/room/${room._id}`);
-//     } catch (err) {
-//       console.error(err);
-//       res.status(500).send('Server Error');
-//     }
-// });
 
 app.get('/join/:id', requireLogin, async (req, res) => {
     console.log('Joining room with ID:', req.params.id);
@@ -798,11 +522,7 @@ app.get('/join/:id', requireLogin, async (req, res) => {
         catch(err){
             console.log('error!! join room invalid')
         }
-        
-
-        // Update the user's Joined_Room field in the database
-        // const collection = con.collection('users');
-        // await collection.updateOne({_id: user._id}, {$set: {Joined_Room: user.Joined_Room}});
+    
 
         res.redirect(`/room/${room._id}`);
     } catch (err) {
@@ -812,36 +532,7 @@ app.get('/join/:id', requireLogin, async (req, res) => {
 });
 
 app.post('/signup', async (req, res) => {
-    // const username = req.body.signupname;
-    // const email = req.body.signupemail;
-    // const password = req.body.signuppass;
-    // const security_question = req.body.security_question;
-    // const security_answer = req.body.security_answer;
-    // const JoinedRoom = []
-    // const createdRooms = []
-    // const role = "Student"
-    // const tags = []
-    // const isPremium = "False"
-
-    // const newUser = {
-    //     userId : username,
-    //     Email : email,
-    //     Password: password,
-    //     Security_Question: security_question,
-    //     Security_Answer: security_answer,
-    //     Joined_Room : JoinedRoom,
-    //     Created_Room : createdRooms,
-    //     Position: role,
-    //     Tags : tags,
-    //     Premium : isPremium
-    // }
-
-    // con.collection('users').insertOne(newUser)
-    // .then(async ()=>{
-    //     userName = newUser.userId;
-    //     res.redirect("/login");
-    // })  
-    // .catch(err => console.log(err))
+    
     console.log("signup")
     //console.log(req.body);
     const username = req.body.signupname;
@@ -872,72 +563,8 @@ app.post('/signup', async (req, res) => {
         res.render('SignUp');
     }
 
-
 });
 
-
-
-
-// app.post('/createRoom', (req,res)=>{
-//     const title = req.body.title
-//     const tags = req.body.tags
-//     const description = req.body.desc
-//     const publicAccess = req.body.access 
-//     const assignments =  []
-//     const resources = []
-//     const participants = []
-//     const syllabus = req.body.syllabus
-//     const mentor = userName
-
-//     const newRoom = {
-//         Title  : title,
-//         Description : description,
-//         Tags : tags,
-//         Access : publicAccess,
-//         Assignments :assignments,
-//         Syllabus: syllabus,
-//         Resources : resources,
-//         Participants : participants,
-//         Mentor : mentor
-//     }
-
-//     con.collection('Study-rooms').insertOne(newRoom)
-//     .then(async ()=>{
-//         res.redirect('/dashboard')
-//     })  
-//     .catch(err => console.log(err))
-
-// })
-
-// app.get('/leave/:id', requireLogin, async (req, res) => {
-//     const user = req.session.user;
-//     const room = await Room.findById(req.params.id);
-
-//     if (!room) {
-//         res.redirect('/dashboard');
-//     } else {
-//         // Remove user from participants array
-//         room.participants = room.participants.filter(
-//             participant => participant._id.toString() !== user._id.toString()
-//         );
-//         await room.save();
-//         // user.Joined_Room = user.Joined_Room.filter(
-//         //     jroom => jroom._id.toString() !== room._id.toString()
-//         // );
-//         console.log('before')
-
-//         try{
-//             user.Joined_Room = user.Joined_Room.filter(
-//             jroom => jroom._id.toString() != room._id.toString())
-//             await user.save();
-//             res.redirect('/dashboard');
-            
-//         }catch(err){
-//             console.log('oops')
-//         }
-        
-//     }
-// });
 
 app.get('/leave/:id', requireLogin, async (req, res) => {
     try {
@@ -1055,27 +682,6 @@ app.post('/feedback', (req, res) => {
     });
 })
 
-// app.post('/uploadAssignment',(req,res)=>{
-//     const 
-// })
-
-
-// app.post('/addNote',(req,res)=>{
-//     const title = req.body.title
-//     const description = req.body.desc
-
-//     const newNote = {
-//         Title : title,
-//         Description : description
-//     }
-
-//     con.collection('Notes').insertOne(newNote)
-//     .then(async ()=>{
-//         res.render('RoomViewPage')
-//     })  
-//     .catch(err => console.log(err))
-
-// })
 
 
 app.listen(3000, () => {

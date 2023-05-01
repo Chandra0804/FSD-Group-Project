@@ -1,4 +1,8 @@
+#footer{
+	background-color: #013049;
+}
 @media  (min-width: 00px) and (max-width: 473px) {
+
 	.Learnenf {
 		text-align: center;
 		letter-spacing: 2px;
