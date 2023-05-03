@@ -9,7 +9,7 @@ const multer = require('multer');
 const session = require('express-session');
 // Set up middleware to handle form data
 app.use(multer().any());
-
+const functions = require('firebase-functions');
 
 url = 'mongodb+srv://Cluster56859:Hari123@cluster56859.rute9cj.mongodb.net/Learnen'
 mongoose.connect(url)
@@ -682,8 +682,4 @@ app.post('/feedback', (req, res) => {
     });
 })
 
-
-
-app.listen(3000, () => {
-    console.log('server running at port 3000');
-})
+exports.app = functions.https.onRequest(app)
